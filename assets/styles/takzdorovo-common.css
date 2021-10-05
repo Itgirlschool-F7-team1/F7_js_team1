@@ -340,4 +340,8 @@ template {
 [hidden] {
   display: none;
 }
-/*# sourceMappingURL=normalize.css.map */
+
+.header__title {
+  font-family: 'Montserrat-Semibold', sans-serif;
+}
+/*# sourceMappingURL=takzdorovo-common.css.map */
