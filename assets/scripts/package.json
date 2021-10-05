@@ -1,0 +1,16 @@
+{
+  "name": "project_health",
+  "version": "1.0.0",
+  "description": "dashboard \"health tracker\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zoya Ponomareva, Elena Volkova, Yuliya Batsyus, Elena Khlopotinina, Diana Tkesheliadze",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^3.5.1",
+    "js-datepicker": "^5.18.0",
+    "moment": "^2.29.1"
+  }
+}
