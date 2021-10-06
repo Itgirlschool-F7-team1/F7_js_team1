@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,88 @@
     <link rel="stylesheet" href="./assets/styles/takzdorovo-common.css">
     <title>takzdorovo</title>
 </head>
+
 <body class="body">
-<header class="header">
-    <h2 class="header__title">Интерактивные сервисы</h2>
-    <div class="header__buttons">
-        <div class="header__button"></div>
-        <div class="header__button"></div>
+    <header class="header">
+        <h2 class="header__title">Интерактивные сервисы</h2>
+        <div class="header__buttons">
+            <div class="header__button header__button_active">Про активность</div>
+            <div class="header__button">Про питание</div>
 
-    </div>
-</header>
-<main class="main">
-<div class="main__container">
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__content-container main__content-container_pink hidden">
+            <div class="content-container__left-column">
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/workout.svg" alt="Дневник">
+                    </div>
+                    <p class="button__text">Дневник движения</p>
+                </div>
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/calorie-calculator.svg" alt="Калькулятор">
+                    </div>
+                    <p class="button__text">Калькулятор калорий</p>
+                </div>
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы">
+                    </div>
+                    <p class="button__text">ИМТ и оптимальный вес</p>
+                </div>
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/motion-diary.svg" alt="Дневник">
+                    </div>
+                    <p class="button__text">Дневник давления</p>
+                </div>
+            </div>
+            <div class="content-container__right-column">
+                <img src="./assets/images/about-activity-image.svg" alt="Девушка делает упражнения"
+                    class="right-column__image">
+            </div>
 
-</div>
-</main>
+        </div>
+        <div class="main__content-container main__content-container_green hidden">
+            <div class="content-container__left-column">
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/recipes.svg" alt="Сборник рецептов">
+                    </div>
+                    <p class="button__text">Мои рецепты</p>
+                </div>
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/menu.svg" alt="Блюдо под крышкой">
+                    </div>
+                    <p class="button__text">Случайный рецепт</p>
+                </div>
+                <!-- <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы">
+                    </div>
+                    <p class="button__text">ИМТ и оптимальный вес</p>
+                </div>
+                <div class="left-column__button">
+                    <div class="button__img">
+                        <img src="./assets/images/motion-diary.svg" alt="Дневник">
+                    </div>
+                    <p class="button__text">Дневник давления</p>
+                </div> -->
+            </div>
+            <div class="content-container__right-column">
+                <img src="./assets/images/about-food-image.svg" alt="Девушка, ведущая здоровый образ жизни"
+                    class="right-column__image">
+            </div>
 
-    
+        </div>
+        
+        <div class="main__content-container main__content-container-empty"></div>
+    </main>
+
+    <script src="./assets/scripts/takzdorovo-common.js"></script>
 </body>
+
 </html>
