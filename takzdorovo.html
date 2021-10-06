@@ -19,31 +19,31 @@
         </div>
     </header>
     <main class="main">
-        <div class="main__content-container main__content-container_pink hidden">
+        <div class="main__content-container main__content-container_pink">
             <div class="content-container__left-column">
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="motionDiary">
                     <div class="button__img">
-                        <img src="./assets/images/workout.svg" alt="Дневник">
+                        <img src="./assets/images/workout.svg" alt="Дневник" data-tabs-handler="motionDiary">
                     </div>
-                    <p class="button__text">Дневник движения</p>
+                    <p class="button__text" data-tabs-handler="motionDiary">Дневник движения</p>
                 </div>
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="calorieСalculator">
                     <div class="button__img">
-                        <img src="./assets/images/calorie-calculator.svg" alt="Калькулятор">
+                        <img src="./assets/images/calorie-calculator.svg" alt="Калькулятор" data-tabs-handler="calorieСalculator">
                     </div>
-                    <p class="button__text">Калькулятор калорий</p>
+                    <p class="button__text" data-tabs-handler="calorieСalculator">Калькулятор калорий</p>
                 </div>
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="BMI">
                     <div class="button__img">
-                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы">
+                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы" data-tabs-handler="BMI">
                     </div>
-                    <p class="button__text">ИМТ и оптимальный вес</p>
+                    <p class="button__text" data-tabs-handler="BMI">ИМТ и оптимальный вес</p>
                 </div>
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="pressureDiary">
                     <div class="button__img">
-                        <img src="./assets/images/motion-diary.svg" alt="Дневник">
+                        <img src="./assets/images/motion-diary.svg" alt="Дневник" data-tabs-handler="pressureDiary">
                     </div>
-                    <p class="button__text">Дневник давления</p>
+                    <p class="button__text" data-tabs-handler="pressureDiary">Дневник давления</p>
                 </div>
             </div>
             <div class="content-container__right-column">
@@ -52,19 +52,19 @@
             </div>
 
         </div>
-        <div class="main__content-container main__content-container_green">
+        <div class="main__content-container main__content-container_green hidden">
             <div class="content-container__left-column">
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="myRecipes">
                     <div class="button__img">
-                        <img src="./assets/images/recipes.svg" alt="Сборник рецептов">
+                        <img src="./assets/images/recipes.svg" alt="Сборник рецептов" data-tabs-handler="myRecipes">
                     </div>
-                    <p class="button__text">Мои рецепты</p>
+                    <p class="button__text" data-tabs-handler="myRecipes">Мои рецепты</p>
                 </div>
-                <div class="left-column__button">
+                <div class="left-column__button" data-tabs-handler="randomRecipe">
                     <div class="button__img">
-                        <img src="./assets/images/menu.svg" alt="Блюдо под крышкой">
+                        <img src="./assets/images/menu.svg" alt="Блюдо под крышкой" data-tabs-handler="randomRecipe">
                     </div>
-                    <p class="button__text">Случайный рецепт</p>
+                    <p class="button__text" data-tabs-handler="randomRecipe">Случайный рецепт</p>
                 </div>
                 <!-- <div class="left-column__button">
                     <div class="button__img">
@@ -86,7 +86,14 @@
 
         </div>
         
-        <div class="main__content-container main__content-container-empty hidden"></div>
+        <div class="main__content-container main__content-container-empty hidden">
+            <div class="content-container__content" data-tabs-field="motionDiary">Дневник давления</div>
+            <div class="content-container__content" data-tabs-field="calorieСalculator">Калькулятор калорий</div>
+            <div class="content-container__content" data-tabs-field="BMI">ИМТ и оптимальный вес</div>
+            <div class="content-container__content" data-tabs-field="pressureDiary">Дневник давления</div>
+            <div class="content-container__content" data-tabs-field="myRecipes">Мои рецепты</div>
+            <div class="content-container__content" data-tabs-field="randomRecipe">Случайный рецепт</div>
+        </div>
     </main>
 
     <script src="./assets/scripts/takzdorovo-common.js"></script>
