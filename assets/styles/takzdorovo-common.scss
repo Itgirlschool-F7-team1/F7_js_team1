@@ -181,7 +181,7 @@ $dark-green: #219653;
 }
 
 .main__content-container-empty {
-    height: 70vh;
+    min-height: 70vh;
     background-color: white;
     border-radius: 20px;
     padding: 15px;
