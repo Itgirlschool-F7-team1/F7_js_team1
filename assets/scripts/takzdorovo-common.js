@@ -13,7 +13,6 @@ function changeScreen(event) {
     })
     commonButtons.forEach((buttonItem, index) => {
 
-
         if (buttonItem === target) {
             buttonItem.classList.add("header__button_active");
             commonContentContainers[index].classList.remove('hidden');
@@ -32,6 +31,29 @@ function changeScreen(event) {
 }
 
 document.querySelector(".header__buttons").addEventListener("click", changeScreen);
+
+document.querySelectorAll(".content-container__left-column").forEach((contentContainer) =>{
+
+    contentContainer.addEventListener('click', (event)=>{
+        const target = event.target;
+        const commonContentContainers = document.querySelectorAll(".main__content-container");
+        commonContentContainers.forEach((contentItem) => {
+            contentItem.classList.add('hidden');
+        })
+        document.querySelector('.main__content-container-empty').classList.remove('hidden');
+        // const tabsHandlerElements = document.querySelectorAll('[data-tabs-handler]');
+        const tabsContentElements = document.querySelectorAll('[data-tabs-field]');
+        tabsContentElements.forEach(content =>{
+            if(content.dataset.tabsField === target.dataset.tabsHandler){
+                content.classList.remove('hidden');
+            } else{
+                content.classList.add('hidden');
+            }
+        })
+        
+    })
+})
+
 
 
 // const Chart = require('chart.js');
