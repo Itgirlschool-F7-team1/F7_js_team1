@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,32 @@
     <link rel="stylesheet" href="./assets/styles/motion_diary.css">
     <title>Дневник движения</title>
 </head>
+
 <body class="body">
     <main class="main">
         <div class="main_content_container">
             <div class="main_title">
-                <h1>Перевести шаги в калории</h1>
 
+                <form name="form" onsubmit="return false;">
+                    <p>
+                        <label for="date">Дата</label>
+                        <input type="date" id="localdate" name="date" />
+                    </p>
+                    <p>
+                        <label for="s_t">Количество шагов </label>
+                        <input type="number" id="steps_today" name="s_t" />
+                    </p>
+
+                    <p>
+                        <button type="button" id="btn">Сохранить</button>
+                    </p>
+                    <div id="saveInfo"></div>
+                </form>
             </div>
-        </div>
+
     </main>
-    
-<script src="./assets/scripts/motion_diary.js"></script>
+
+    <script src="./assets/scripts/bundle_motion_d.js"></script>
 </body>
+
 </html>
