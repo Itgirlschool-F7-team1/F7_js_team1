@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,113 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles/normalize.css">
     <link rel="stylesheet" href="./assets/styles/my_recipes.css">
-    <link rel="shortcut icon" href="./assets/images/icon6.png">
+    <link rel="shortcut icon" href="./assets/images/icon4.png">
 </head>
+
 <body>
-    <div class="content-container__content" data-tabs-field="myRecipes">
+    <section class="content-container__recipe-section">
+        <aside class="recipe-section__aside">
+            <div class="aside__button">Добавить</div>
+            <div class="recipe-section__tags">
+                <ul class="tags__list">
+                    <li class="tags__item">Супы</li>
+                    <li class="tags__item">Мясо/рыба</li>
+                    <li class="tags__item">Гарниры</li>
+                    <li class="tags__item">Салаты</li>
+                    <li class="tags__item">Десерты</li>
+                    <li class="tags__item">Консервация</li>
+                </ul>
+            </div>
 
-        <img src="./assets/images/plate.png" alt="">
-        <img src="./assets/images/icon6.png" alt="">
-        <img src="./assets/images/icon2.png" alt="">
-        <img src="./assets/images/icon3.png" alt="">
-        <img src="./assets/images/icon4.png" alt="">
-        <img src="./assets/images/icon5.png" alt="">
+        </aside>
+        <div class="recipe-section__recipes hidden">
+            <h3 class="recipes__title">Мои рецепты</h3>
+            <h4 class="recipes__subtitle">Супы</h4>
+
+            <div class="recipe-section__cards">
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+                <div class="recipe-section__card">
+                    <img src="./assets/images/plate.png" alt="Тарелка" class="card__img">
+                    <h5 class="card__subtitle">Суп из морепродуктов</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-section__enter-recipe">
+            <div class="enter-recipe__header-container">
+                <h3 class="recipes__title">Новый рецепт</h3>
+                <div class="cl-btn-7 enter-recipe__close-button" id="enterRecipeCloseButton"></div>
+            </div>
+            <div class="enter-recipe__form">
+                <label for="recipeCategory" class="enter-recipe__label">Выберите категорию</label>
+                <select name="recipeCategory" id="recipeCategory" class="enter-recipe__selection">
+                    <option value="soup" class="enter-recipe__categorie">Супы</option>
+                    <option value="meatFish" class="enter-recipe__categorie">Мясо/рыба</option>
+                    <option value="garnish" class="enter-recipe__categorie">Гарниры</option>
+                    <option value="salad" class="enter-recipe__categorie">Салаты</option>
+                    <option value="dessert" class="enter-recipe__categorie">Десерты</option>
+                    <option value="conservation" class="enter-recipe__categorie">Консервация</option>
+                </select>
+                <br/>
+                <label for="recipeName" class="enter-recipe__label">Введите название</label>
+                <input type="text" name="recipeName" id="recipeName" class="enter-recipe__name">
+                <br/>
+                <label for="recipePhoto" class="enter-recipe__label">Добавьте фото</label>
+                <input type="file" name="recipePhoto" id="recipePhoto" class="enter-recipe__photo">
+                <br/>
+                <label for="recipeIngredients" class="enter-recipe__label">Добавьте ингредиенты</label>
+                <textarea name="recipeIngredients" id="recipeIngredients" class="enter-recipe__ingredients"></textarea>
+                <br/>
+                <label for="recipeText" class="enter-recipe__label">Добавьте ингредиенты</label>
+                <textarea name="recipeText" id="recipeText" class="enter-recipe__text"></textarea>
+            </div>
+        </div>
+        <!-- <img src="./assets/images/plate.png" alt="">
+
+        <img src="./assets/images/icon3.png" alt=""> -->
 
 
-    </div>
+
+    </section>
 </body>
+
 </html>
