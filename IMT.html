@@ -5,32 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/IMT.css">
+    <link rel="stylesheet" href="assets/styles/normalize.css">
     <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- <input type="text" id="dateSelection" /> -->
-        <div class="calcIMT">
-            <label for="userHeight">Введите свой рост (см): </label>
-            <input type="number" id="userHeight" max="220" min="100" />
 
-            <label for="userWeight">Введите свой вес (кг): </label>
-            <input type="number" id="userWeight" max="200" min="30" />
+    <input type="text" id="dateSelection" />
 
-            <button class="btn" type="button" class="btn">Рассчитать</button>
-        </div>
+    <label for="userHeight">Введите свой рост (см): </label>
+    <input type="number" id="userHeight" max="220" min="100" />
 
-        <div class="showIMT">
-            <label for="valueIMT">Ваш ИМТ: </label>
-            <div class="valueIMT" id="valueIMT"></div>
+    <label for="userWeight">Введите свой вес (кг): </label>
+    <input type="number" id="userWeight" max="200" min="30" />
 
-            <div class="IMTinfo"></div>
+    <button type="button" class="btn">Рассчитать</button>
 
-            <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-        </div>
-    </div>
+    <label for="valueIMT">Ваш ИМТ: </label>
+    <div class="valueIMT" id="valueIMT"></div>
+
+    <div class="IMTinfo"></div>
+
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+
 
     <!-- как сделать крестик (выход из окошка) -->
 

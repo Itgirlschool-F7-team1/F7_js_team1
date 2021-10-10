@@ -9,6 +9,27 @@
 <body class="body">
     <main class="main">
         <div class="main_content_container">
+            <div class="main_title">
+
+                <form name="form" onsubmit="return false;">
+                    <p>
+                        <label for="date">Дата</label>
+                        <input type="date" id="localdate" name="date" />
+                    </p>
+                    <p>
+                        <label for="s_t">Количество шагов </label>
+                        <input type="number" id="steps_today" name="s_t" />
+                    </p>
+
+                    <p>
+                        <button type="button" id="btn">Сохранить</button>
+                    </p>
+                    <div id="saveInfo"></div>
+                </form>
+                <canvas id="myChart" width="300" height="100"></canvas>
+            </div>
+     
+    <script src="./assets/scripts/bundle_motion_d.js"></script>
             <div class="">
                 
             </div>
