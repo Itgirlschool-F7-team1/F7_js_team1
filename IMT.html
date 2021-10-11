@@ -6,35 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/IMT.css">
+    <link rel="shortcut icon" href="./assets/images/icon1.png">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- <input type="text" id="dateSelection" /> -->
-        <div class="calcIMT">
-            <label for="userHeight">Введите свой рост (см): </label>
-            <input type="number" id="userHeight" max="220" min="100" />
+    <div class="main_container_IMT">
+        <div class="btn_close">
+            <div class="cl-btn-7"></div>
+            <!-- кнопка закрытия окна -->
+        </div>
+        <h2 class="title">Идекс массы тела</h2>
+        <div class="containerIMT">
 
-            <label for="userWeight">Введите свой вес (кг): </label>
-            <input type="number" id="userWeight" max="200" min="30" />
+            <!-- ДАТА????<input type="text" id="dateSelection" /> -->
+            <div class="calcIMT">
+                <label for="userHeight">Введите свой рост (см): </label>
+                <input type="number" id="userHeight" max="220" min="100" />
 
-            <button class="btn" type="button" class="btn">Рассчитать</button>
+                <label for="userWeight">Введите свой вес (кг): </label>
+                <input type="number" id="userWeight" max="200" min="30" />
+
+                <button class="btn" type="button" class="btn">Рассчитать</button>
+            </div>
+
+            <div class="showIMT">
+                <label for="valueIMT">Ваш ИМТ: </label>
+                <div class="valueIMT" id="valueIMT">___</div>
+
+                <div class="IMTinfo"></div>
+
+                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+            </div>
         </div>
 
-        <div class="showIMT">
-            <label for="valueIMT">Ваш ИМТ: </label>
-            <div class="valueIMT" id="valueIMT"></div>
-
-            <div class="IMTinfo"></div>
-
-            <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-        </div>
     </div>
 
     <!-- как сделать крестик (выход из окошка) -->
-
-    <script src="/assets/scripts/bundleIMT.js"></script>
+    <script src="assets/scripts/bundleIMT.js"></script>
 </body>
 
 </html>
