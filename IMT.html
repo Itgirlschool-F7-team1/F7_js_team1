@@ -24,7 +24,8 @@
             <div class="calcIMT">
 
                 <label for="dateSelection">Введите дату: </label>
-                <input type="text" id="dateSelection" />
+                <!-- <input type="text" id="dateSelection" /> -->
+                <input type="date" id="dateSelection" />
 
 
 
@@ -37,7 +38,12 @@
                 <button class="btn" type="button" class="btn">Рассчитать</button>
             </div>
 
-            <div class="showIMT">
+            <!-- <div class="IMT_pic">
+                <img src="assets/images/IMT3.jpeg">
+            </div> -->
+
+
+            <div class="showIMT hidden">
                 <div class="show_valueIMT">
                     <label for="valueIMT">Ваш ИМТ:&nbsp;&nbsp;</label>
                     <div class="valueIMT" id="valueIMT">___</div>
@@ -50,7 +56,6 @@
                 </div>
 
                 <div class="IMTinfo"></div>
-
 
                 <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
             </div>
@@ -83,7 +88,7 @@
         </figure>
     </div>
 
-
+    <div class="fff">3</div>
 
     <script src="assets/scripts/bundleIMT.js"></script>
 </body>
