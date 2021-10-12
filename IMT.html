@@ -16,11 +16,18 @@
             <div class="cl-btn-7"></div>
             <!-- кнопка закрытия окна -->
         </div>
-        <h2 class="title">Идекс массы тела</h2>
+        <h2 class="title">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
+
+
         <div class="containerIMT">
 
-            <!-- ДАТА????<input type="text" id="dateSelection" /> -->
             <div class="calcIMT">
+
+                <label for="dateSelection">Введите дату: </label>
+                <input type="text" id="dateSelection" />
+
+
+
                 <label for="userHeight">Введите свой рост (см): </label>
                 <input type="number" id="userHeight" max="220" min="100" />
 
@@ -31,18 +38,53 @@
             </div>
 
             <div class="showIMT">
-                <label for="valueIMT">Ваш ИМТ: </label>
-                <div class="valueIMT" id="valueIMT">___</div>
+                <div class="show_valueIMT">
+                    <label for="valueIMT">Ваш ИМТ:&nbsp;&nbsp;</label>
+                    <div class="valueIMT" id="valueIMT">___</div>
+                </div>
+                <div class="chartIMT">
+                    <div class="chart__container">
+                        <canvas id="grafica" width="200" height="35"></canvas>
+                        <div class="IMT__gradient"></div>
+                    </div>
+                </div>
 
                 <div class="IMTinfo"></div>
+
 
                 <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
             </div>
         </div>
-
     </div>
 
-    <!-- как сделать крестик (выход из окошка) -->
+
+
+
+    <a class="IMT_details" href="#example1">&#10031;</a>
+
+    <div class="lightbox" id="example1">
+        <figure>
+            <a href="#" class="close"></a>
+            <figcaption class="IMT_details_text"><span class="IMT_details_title">Индекс массы тела</span> (англ. BMI -
+                body mass index) величина,
+                позволяющая оценить степень
+                соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса
+                недостаточной, нормальной или избыточной.<br>
+                16 и менее ► Выраженный дефицит массы тела;<br>
+                16 – 18,5 Недостаточная масса тела (дефицит);<br>
+                18,5 – 25 ► Норма;<br>
+                25 – 30 ► Избыточная масса тела (состояние, предшествующее ожирению);<br>
+                30 – 35 ► Ожирение 1-й степени;<br>
+                35 – 40 ► Ожирение 2-й степени;<br>
+                40 и более ► Ожирение 3-й степени.
+
+
+            </figcaption>
+        </figure>
+    </div>
+
+
+
     <script src="assets/scripts/bundleIMT.js"></script>
 </body>
 
