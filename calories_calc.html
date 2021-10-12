@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор калорий</title>
+</head>
+<body>
+<h1 class="heading_calories-calc">Калькулятор калорий</h1>
+<div class="container_calories-calc">
+    <form id="calories-calc_form">
+            <div>
+            <legend>Пол</legend>
+            <div id="form-radio">
+                <div>
+                <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
+                <label class="custom-control-label" for="male">Мужчина</label>
+                </div>
+                <div>
+                <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
+                <label class="custom-control-label" for="female">Женщина</label>
+                </div>  
+            </div>
+            </div> 
+                <div class="container_calories-calc_height"> <label for="calories-calc_height">Рост:</label>
+            <input type="number" id="calc_height" placeholder="см"/> </div>
+            <div class="container_calories-calc_weight"> <label for="calories-calc_weihgt">Текущий вес:</label>
+            <input type="number" id="calc_weight" placeholder="кг"/>
+        </div>
+                <div class="container_calories-calc_age"><label for="calories-calc_age">Возраст:</label>
+            <input type="number" id="calc_age"/></div>
+            
+            <div class="container_calories-calc_action"><label for="calories-calc_action">Двигательная активность:</label>
+            <select class=custom-select id="list">
+                <option value="very-low_action">Очень низкая (сидячий образ жизни)</option>
+                <option value="low_action">Низкая (легкие физ. нагрузки 1-3 р в неделю)</option>
+                <option value="middle_action">Средняя (3-5 тренировок в неделю)</option>
+                <option value="high_action">Высокая (интенсивные нагузки, 5-6 р в неделю)</option>
+                <option value="very-high_action">Очень высокая (физическая работа, тяжелые тренировки 6-7 р в неделю)</option>
+            </select></div>
+            <!--<div class="container_calories-calc_dh"><label for="calories-calc_desired-height">Желаемый вес:</label>
+                <input type="number" id="calc_desired-height"/></div>
+            <div class="container_calories-calc_dd"><label for="calories-calc_desired-date">К какой дате:</label> 
+            <input class="" type="text" name="" value="31.12.2021"></div>-->
+            <div class="form-group">
+                <input type="submit" value="Считать">
+            </div>
+        </form>
+        <div id="results">
+            <h3>Ваша суточная норма калорий</h3>
+            <div class="form-group">
+                <input type="number" class="calc-control" id="total-calories" disabled>
+            </div>
+            </div>
+        </div>
+</div>
+    </div> 
+    <script src="./assets/scripts/calories.js"></script> 
+</body>
+</html>
