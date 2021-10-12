@@ -982,4 +982,9 @@ template {
 img {
   max-width: 200px;
 }
+
+.errorMessage {
+  color: red;
+  font-size: 10px;
+}
 /*# sourceMappingURL=IMT.css.map */
