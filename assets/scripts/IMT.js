@@ -14,14 +14,14 @@ console.log('hi');
 // дата
 //может, не использовать datepicker?
 //непонятный формат
-let incomeDate = datepicker(document.getElementById("dateSelection"), {
-    startDay: 1,
-    customDays: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-});
+// let incomeDate = datepicker(document.getElementById("dateSelection"), {
+//     startDay: 1,
+//     customDays: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+//     customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+// });
 
-let now = moment();
-document.querySelector('#dateSelection').value = now.format("DD.MM.YYYY");
+// let now = moment();
+// document.querySelector('#dateSelection').value = now.format("DD.MM.YYYY");
 
 // localStorage.setItem(`dateSelection${index}`, incomeDate.dateSelected);
 
@@ -31,7 +31,9 @@ document.querySelector('#dateSelection').value = now.format("DD.MM.YYYY");
 
 let btn = document.querySelector('.btn');
 btn.addEventListener('click', calculateIMT);
+btn.addEventListener('click', chartUpdate);
 
+// функция расчета ИМТ
 function calculateIMT() {
     let userHeight = document.getElementById('userHeight').value;
     let userWeight = document.getElementById('userWeight').value;
@@ -64,30 +66,30 @@ function calculateIMT() {
     if (IMT > 40) {
         document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 3 степени)';
     }
+};
 
 
+    // график-шкала
 
-
-    // график
     const grafica = document.getElementById('grafica');
     const tags = [""]
 
-    const dataSales2020 = {
+    const dataIMT = {
         label: "",
-        data: [IMT, 50],
+        data: [0, 50],
         backgroundColor: 'rgba(96, 125, 139, 1)',
 
         borderWidth: 0,
         pointStyle: 'circle',
         pointRadius: 6,
-
     };
+
     let myChart = new Chart(grafica, {
         type: 'line',
         data: {
             labels: tags,
             datasets: [
-                dataSales2020,
+                dataIMT,
             ]
         },
         options: {
@@ -107,9 +109,24 @@ function calculateIMT() {
                         usePointStyle: true,
                     },
                 },
-
             }
         }
     });
 
-};
+    // функция построения шкалы ИМТ
+function chartUpdate(){
+    let IMT = document.querySelector('.valueIMT').innerHTML;
+
+    myChart.data.datasets = [{
+        label: "",
+        data: [IMT, 50],
+        backgroundColor: 'rgba(96, 125, 139, 1)',
+        borderWidth: 0,
+        pointStyle: 'circle',
+        pointRadius: 6,
+    }];
+    myChart.update();
+}
+
+// попытка засунуть все в localStorage
+

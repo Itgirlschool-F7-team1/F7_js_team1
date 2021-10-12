@@ -758,6 +758,7 @@ template {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  padding-top: 5px;
 }
 
 .cl-btn-7 {
@@ -976,5 +977,9 @@ template {
   background-color: rgba(0, 0, 0, 0.7);
   content: "";
   cursor: default;
+}
+
+img {
+  max-width: 200px;
 }
 /*# sourceMappingURL=IMT.css.map */
