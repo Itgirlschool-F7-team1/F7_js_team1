@@ -1,16 +1,20 @@
-const Chart = require('chart.js');
-
+// обязательно загружать  moment перед chart.js
 // const moment = require('moment');
 // require('moment/locale/ru.js');
 
+const Chart = require('chart.js');
 
-// Вообще другой вариант
+
+
+
 
 
 
 // создаем массивы для данных
 let arrDate = [];
 let arrSteps = [];
+
+
 
 // проверяем, есть ли что-нибудь в lS
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -25,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 let btnMotionDiary = document.getElementById('btn_md');
 btnMotionDiary.addEventListener('click', saveInfo);
+btnMotionDiary.addEventListener('click', chartUpdate);
 
-// btn.addEventListener('click', chartUpdate);
 
 
 function saveInfo() {
@@ -96,3 +100,29 @@ function saveInfo() {
     })
 
 }
+
+// ничего не работает
+
+
+// function chartUpdate(){
+//     let labelsMotionDiary = arrDate;
+//     let dataMotionDiary = arrSteps;
+//     let colorsMotionDiary = ['#b1a28d'];
+    
+//     myChartMotionDiary.data.datasets=[{
+//         labels: labelsMotionDiary,
+//         label: 'Количество шагов',
+//         borderWidth: 2,
+//         fill: true,
+//         backgroundColor: '#bf9999',
+//         borderColor: '#fff',
+//         data: dataMotionDiary,
+//         pointRadius: 6,
+//         pointBackgroundColor: colorsMotionDiary
+
+//     }];
+//     myChartMotionDiary.update();
+// }
+
+
+

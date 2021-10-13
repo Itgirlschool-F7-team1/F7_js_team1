@@ -1,17 +1,21 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const Chart = require('chart.js');
-
+// обязательно загружать  moment перед chart.js
 // const moment = require('moment');
 // require('moment/locale/ru.js');
 
+const Chart = require('chart.js');
 
-// Вообще другой вариант
+
+
+
 
 
 
 // создаем массивы для данных
 let arrDate = [];
 let arrSteps = [];
+
+
 
 // проверяем, есть ли что-нибудь в lS
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -26,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 let btnMotionDiary = document.getElementById('btn_md');
 btnMotionDiary.addEventListener('click', saveInfo);
+btnMotionDiary.addEventListener('click', chartUpdate);
 
-// btn.addEventListener('click', chartUpdate);
 
 
 function saveInfo() {
@@ -97,6 +101,33 @@ function saveInfo() {
     })
 
 }
+
+// ничего не работает
+
+
+// function chartUpdate(){
+//     let labelsMotionDiary = arrDate;
+//     let dataMotionDiary = arrSteps;
+//     let colorsMotionDiary = ['#b1a28d'];
+    
+//     myChartMotionDiary.data.datasets=[{
+//         labels: labelsMotionDiary,
+//         label: 'Количество шагов',
+//         borderWidth: 2,
+//         fill: true,
+//         backgroundColor: '#bf9999',
+//         borderColor: '#fff',
+//         data: dataMotionDiary,
+//         pointRadius: 6,
+//         pointBackgroundColor: colorsMotionDiary
+
+//     }];
+//     myChartMotionDiary.update();
+// }
+
+
+
+
 },{"chart.js":2}],2:[function(require,module,exports){
 /*!
  * Chart.js v3.5.1
