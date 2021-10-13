@@ -96,6 +96,7 @@ body {
   margin: 150px auto 20px;
   border-radius: 20px;
   min-height: 70vh;
+  height: 70vh;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -116,6 +117,9 @@ body {
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 

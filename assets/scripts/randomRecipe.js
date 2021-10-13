@@ -27,9 +27,9 @@ function showCardsRandomRecipe() {
                                 }
                                 
                       document.querySelector(".random-recipe-section__container").innerHTML += `<div class="random-recipe-section__little-container">
-                      <h4 href="${card.title}" class="random-recipe-section__link">${card.title}</h4>
+                      <h4 href="${card.title}" class="random-recipe-section__subtitle">${card.title}</h4>
                       <img src="${card.image}" alt="${i+1} картинка" class="random-recipe-section__img"><br/>
-                      <a href="${recipeUrl}" class="random-recipe-section__link">Ссылка на ${i+1} рецепт</a>
+                      <a href="${recipeUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
                       </div>`;
 
                             } catch (error) {
@@ -76,7 +76,7 @@ function showCardsRandomRecipe() {
                     // console.log(randomRecipe.recipes[0]);
                                 
                       document.querySelector(".random-recipe-section__container").innerHTML += `<div class="random-recipe-section__little-container">
-                      <h4 href="${randomRecipe.recipes[0].title}" class="random-recipe-section__link">${randomRecipe.recipes[0].title}</h4>
+                      <h4 href="${randomRecipe.recipes[0].title}" class="random-recipe-section__subtitle">${randomRecipe.recipes[0].title}</h4>
                       <img src="${randomRecipe.recipes[0].image}" alt="картинка" class="random-recipe-section__img"><br/>
                       <a href="${randomRecipe.recipes[0].sourceUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
                       </div>`;
@@ -99,6 +99,6 @@ function showCardsRandomRecipe() {
   }
 }
 
-document.querySelector(".random-recipe-section__button").addEventListener("click", showCardsRandomRecipe);
-// document.addEventListener("DOMContentLoaded", showCardsRandomRecipe);
+// document.querySelector(".random-recipe-section__button").addEventListener("click", showCardsRandomRecipe);
+// document.addEventListener("DOMContentLoaded", showCardsRandomRecipe);//Нужно повесить на нажатие кнопки
 
