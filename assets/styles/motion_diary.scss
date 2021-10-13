@@ -1,34 +1,24 @@
 @import 'normalize.scss';
 @import 'fonts.scss';
+// переменные с используемыми цветами
 
 $pink: #f8eae8;
 $green: #d6e7da;
-$dark-pink: #eb4b51;
-$dark-green: #219653;
 $back: #bf9999;
+
 // используемые шрифты
 $fz1:'Montserrat-Semibold',
 sans-serif;
 $fz2:'Rubik-Regular',
 sans-serif;
 
+
 .body-md {
     background-color: $pink;
 }
 
 
- .main-md {
-//      width: 600px;
-//     max-width: 1200px;
-//     min-height: 60vh;
-//     margin: auto;
-//     padding-left: 3%;
-//     padding-right: 3%;
-//     margin-top: 50px;
-//     border: 1px solid black;
-//     font-family: $fz1;
-//     border-radius: 10px;
-//     background-color: #fff;
+.main-md {
 
     max-width: 1200px;
     border-radius: 20px;
@@ -43,7 +33,7 @@ sans-serif;
     background-color: #fff;
 
 
-  // стили кнопки
+    // стили кнопки
 
     .main_close_a_window {
         display: flex;
@@ -103,7 +93,7 @@ sans-serif;
     }
 
 
-// стили заголовка
+    // стили заголовка
     .title-md {
         text-align: center;
         margin-bottom: 40px;
@@ -114,7 +104,8 @@ sans-serif;
         display: flex;
         // text-align: start;
     }
-    .section-datasets__text{
+
+    .section-datasets__text {
         display: flex;
         padding-left: 15px;
     }
@@ -123,7 +114,7 @@ sans-serif;
         width: 169px;
     }
 
- 
+
 
     .section-datasets__input_one,
     .section-datasets__input_second {
@@ -138,18 +129,17 @@ sans-serif;
 
         &:hover {
             box-shadow: 0px 0px 5px 1px $back;
-            // background: #ecc5a2;
         }
     }
 
 
     // убираю стрелки в поле
-     .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
+    .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
 
-   .section-datasets__btn {
+    .section-datasets__btn {
         margin-top: 29px;
         margin-left: 18px;
         height: 35px;
@@ -170,4 +160,7 @@ sans-serif;
     }
 
 
+}
+.chart-md{
+    margin: 40px;
 }

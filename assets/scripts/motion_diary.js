@@ -11,6 +11,7 @@ const Chart = require('chart.js');
 // создаем массивы для данных
 let arrDate = [];
 let arrSteps = [];
+
 // проверяем, есть ли что-нибудь в lS
 document.addEventListener("DOMContentLoaded", function (event) {
     if (localStorage.getItem('stepsToday') != null) {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 let btnMotionDiary = document.getElementById('btn_md');
 btnMotionDiary.addEventListener('click', saveInfo);
+
 // btn.addEventListener('click', chartUpdate);
 
 
@@ -43,13 +45,18 @@ function saveInfo() {
 
 
 
-// график
+    // график
+
+
     let labelsMotionDiary = arrDate;
     let dataMotionDiary = arrSteps;
     let colorsMotionDiary = ['#b1a28d'];
 
     let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
-  
+
+    myChartMotionDiary.canvas.width = 1200;
+    myChartMotionDiary.canvas.height = 350;
+
     let chartMotionDiary = new Chart(myChartMotionDiary, {
         type: 'line',
         data: {
@@ -59,11 +66,11 @@ function saveInfo() {
                 borderWidth: 2,
                 fill: true,
                 backgroundColor: '#bf9999',
-                borderColor:'#fff',
+                borderColor: '#fff',
                 data: dataMotionDiary,
                 pointRadius: 6,
-                pointBackgroundColor:colorsMotionDiary 
-                
+                pointBackgroundColor: colorsMotionDiary
+
             }]
         },
         options: {
@@ -80,16 +87,12 @@ function saveInfo() {
             scales: {
                 y: { // defining min and max so hiding the dataset does not change scale range
                     min: 0,
-                    max: 15000
+                    max: 20000
                 }
             }
 
         },
 
     })
-   
 
 }
-
-
-

@@ -515,4 +515,8 @@ template {
 .main-md .section-datasets__btn:active {
   background: #bf9999;
 }
+
+.chart-md {
+  margin: 40px;
+}
 /*# sourceMappingURL=motion_diary.css.map */
