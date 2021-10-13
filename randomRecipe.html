@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .IMT__gradient{
-            height: 6px;
-            background: linear-gradient(90deg, #B5D4F1 0%, #81E6DB 37.77%, #E8D284 70.4%, #E2798E 100%);
-            margin-top: -28px;
-            margin-left: 10px;
-            margin-right: 10px;
-            z-index: 1;
-            border-radius: 3px;
-        }
-
-        .chart__container{
-            width: 250px;
-            height: fit-content;
-        }
-    </style>
 </head>
 <body>
-    <div class="chart__container">
-    <canvas id="grafica" width="200" height="35"></canvas>
-    <div class="IMT__gradient"></div></div>
+<section class="content-container__random-recipe-section">
+<h3 class="random-recipe-section__title">Рецепт дня</h3>
+<div class="random-recipe-section__input-container">
+    <input type="text" class="random-recipe-section__input" id="randomRecipeSectionInput" placeholder="Enter a tag for search">
+    <div class="random-recipe-section__button">Найти</div>
+    <div class="img-amount-container">
+    <label for="img-amount" class="img-amount-label">Показывать по:</label>
+    <select name="img-amount" id="img-amount" class="img-amount">
+        <option value="5" class="amount-value" selected>5 картинок</option>
+        <option value="10" class="amount-value">10 картинок</option>
+        <option value="20" class="amount-value">20 картинок</option>
+        <option value="25" class="amount-value">25 картнок</option>
+    </select>
+</div>
+</div>
+<div class="random-recipe-section__container">
+
+</div>
 
 
-    <script src="./assets/scripts/bundle_randomRecipe.js"></script>
+</section>
+
+    <script src="./assets/scripts/randomRecipe.js"></script>
 </body>
 </html>
