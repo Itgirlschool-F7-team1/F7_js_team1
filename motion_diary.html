@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/icon1.png">
+    <link rel="stylesheet" href="./assets/styles/motion_diary.css">
     <title>Дневник движения</title>
 </head>
-<body class="body">
-    <main class="main">
-        <div class="main_content_container">
-            <div class="main_title">
 
-                <form name="form" onsubmit="return false;">
-                    <p>
-                        <label for="date">Дата</label>
-                        <input type="date" id="localdate" name="date" />
-                    </p>
-                    <p>
-                        <label for="s_t">Количество шагов </label>
-                        <input type="number" id="steps_today" name="s_t" />
-                    </p>
-
-                    <p>
-                        <button type="button" id="btn">Сохранить</button>
-                    </p>
-                    <div id="saveInfo"></div>
-                </form>
-                <canvas id="myChart" width="300" height="100"></canvas>
-            </div>
-     
-    <script src="./assets/scripts/bundle_motion_d.js"></script>
-            <div class="">
-                
-            </div>
+<body class="body-md">
+    <!-- контейнер для полей и графика -->
+    <main class="main-md">
+        <!-- кнопка для закрытия страницы -->
+        <div class="main_close_a_window">
+            <div class="cl-btn-7-md"></div>
         </div>
+        <!-- заголовок -->
+        <p>
+            <h2 class="title-md">Дневник движения</h2>
+        </p>
+        <section>
+            <div class="section-datasets">
+                <p>
+                    <label for="date" class="label_style">Дата</label>
+                    <input type="date" class="section-label_one" name="daterange" id="localdate" />
+                </p>
+                <p class="section_steps">
+                    <label for="s_t" class="label_style">Количество шагов </label>
+                    <input type="number" class="section-label_second" name="s_t" id="steps_today" />
+                </p>
+
+                <p>
+                    <button type="button" id="btn">Сохранить</button>
+                </p>
+
+            </div>
+
+            <div class="chart" width="500px" height="400px">
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </section>
+
+        <div class="">
+
+        </div>
+
     </main>
-    
+    <script src="./assets/scripts/bundle_motion_d.js"></script>
 
 </body>
+
 </html>
