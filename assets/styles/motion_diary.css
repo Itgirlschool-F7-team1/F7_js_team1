@@ -374,13 +374,13 @@ template {
 }
 
 .main-md {
-  width: 600px;
   max-width: 1200px;
+  border-radius: 20px;
   min-height: 60vh;
   margin: auto;
   padding-left: 3%;
   padding-right: 3%;
-  margin-top: 50px;
+  margin-top: 100px;
   border: 1px solid black;
   font-family: "Montserrat-Semibold", sans-serif;
   border-radius: 10px;
@@ -462,19 +462,19 @@ template {
   display: flex;
 }
 
-.main-md .section-label_second {
-  width: 169px;
-}
-
-.main-md .label_style {
+.main-md .section-datasets__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-left: 15px;
 }
 
-.main-md .section-label_one,
-.main-md .section-label_second {
+.main-md .section-datasets__input_second {
+  width: 169px;
+}
+
+.main-md .section-datasets__input_one,
+.main-md .section-datasets__input_second {
   margin: 13px;
   height: 30px;
   border: 1px solid #eedac9;
@@ -484,18 +484,18 @@ template {
   text-align: center;
 }
 
-.main-md .section-label_one:hover,
-.main-md .section-label_second:hover {
+.main-md .section-datasets__input_one:hover,
+.main-md .section-datasets__input_second:hover {
   -webkit-box-shadow: 0px 0px 5px 1px #bf9999;
           box-shadow: 0px 0px 5px 1px #bf9999;
 }
 
-.main-md .section-label_second[type="number"]::-webkit-inner-spin-button {
+.main-md .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.main-md #btn {
+.main-md .section-datasets__btn {
   margin-top: 29px;
   margin-left: 18px;
   height: 35px;
@@ -507,12 +507,12 @@ template {
   cursor: pointer;
 }
 
-.main-md #btn:hover {
+.main-md .section-datasets__btn:hover {
   -webkit-box-shadow: 0px 0px 5px 1px #bf9999;
           box-shadow: 0px 0px 5px 1px #bf9999;
 }
 
-.main-md #btn:active {
+.main-md .section-datasets__btn:active {
   background: #bf9999;
 }
 /*# sourceMappingURL=motion_diary.css.map */

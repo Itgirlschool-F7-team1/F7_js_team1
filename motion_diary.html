@@ -24,29 +24,27 @@
         <section>
             <div class="section-datasets">
                 <p>
-                    <label for="date" class="label_style">Дата</label>
-                    <input type="date" class="section-label_one" name="daterange" id="localdate" />
+                    <label for="date-md" class="section-datasets__text">Дата</label>
+                    <input type="date" class="section-datasets__input_one" name="daterange" id="localdate" />
                 </p>
                 <p class="section_steps">
-                    <label for="s_t" class="label_style">Количество шагов </label>
-                    <input type="number" class="section-label_second" name="s_t" id="steps_today" />
+                    <label for="s_t" class="section-datasets__text">Количество шагов </label>
+                    <input type="number" class="section-datasets__input_second" name="s_t" id="steps_today" />
                 </p>
 
                 <p>
-                    <button type="button" id="btn">Сохранить</button>
+                    <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
                 </p>
 
             </div>
 
-            <div class="chart" width="500px" height="400px">
-                <canvas id="myChart"></canvas>
+            <div class="chart-md" width="1200px" height="400px">
+                <canvas id="myChartMotionDiary"></canvas>
             </div>
 
         </section>
 
-        <div class="">
-
-        </div>
+       
 
     </main>
     <script src="./assets/scripts/bundle_motion_d.js"></script>

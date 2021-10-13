@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-let btn = document.getElementById('btn');
-btn.addEventListener('click', saveInfo);
+let btnMotionDiary = document.getElementById('btn_md');
+btnMotionDiary.addEventListener('click', saveInfo);
 // btn.addEventListener('click', chartUpdate);
 
 
@@ -45,25 +45,25 @@ function saveInfo() {
 
 
 // график
-    let labels = arrDate;
-    let data = arrSteps;
-    let colors = ['#b1a28d'];
+    let labelsMotionDiary = arrDate;
+    let dataMotionDiary = arrSteps;
+    let colorsMotionDiary = ['#b1a28d'];
 
-    let myChart = document.getElementById("myChart").getContext('2d');
+    let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
   
-    let chart = new Chart(myChart, {
+    let chartMotionDiary = new Chart(myChartMotionDiary, {
         type: 'line',
         data: {
-            labels: labels,
+            labels: labelsMotionDiary,
             datasets: [{
                 label: 'Количество шагов',
                 borderWidth: 2,
                 fill: true,
                 backgroundColor: '#bf9999',
                 borderColor:'#fff',
-                data: data,
+                data: dataMotionDiary,
                 pointRadius: 6,
-                pointBackgroundColor:colors 
+                pointBackgroundColor:colorsMotionDiary 
                 
             }]
         },
