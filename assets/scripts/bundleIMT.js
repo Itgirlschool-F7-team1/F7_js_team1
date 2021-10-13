@@ -26,6 +26,9 @@ console.log('hi');
 
 // localStorage.setItem(`dateSelection${index}`, incomeDate.dateSelected);
 
+// if (document.getElementById('userHeight').value === '')
+// {alert('1')}
+
 
 
 // Кнопка Рассчитать
@@ -34,12 +37,23 @@ let btn = document.querySelector('.btn');
 btn.addEventListener('click', calculateIMT);
 btn.addEventListener('click', chartUpdate);
 
-
+// функция расчета ИМТ
 function calculateIMT() {
     let userHeight = document.getElementById('userHeight').value;
     let userWeight = document.getElementById('userWeight').value;
     let IMT = Math.round(userWeight / (userHeight / 100 * userHeight) * 100);
 
+if (userHeight==='') {
+    document.querySelector('.valueIMT').innerHTML = '?';
+alert('Введите Ваш рост');
+}
+if (userWeight==='') {
+    document.querySelector('.valueIMT').innerHTML = '?';
+alert('Введите Ваш вес');
+}
+
+
+else {
     document.querySelector('.valueIMT').innerHTML = IMT;
 
     document.querySelector('.IMTinfo').innerHTML = "";
@@ -67,10 +81,11 @@ function calculateIMT() {
     if (IMT > 40) {
         document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 3 степени)';
     }
+}
 };
 
 
-    // график шкала
+    // график-шкала
 
     const grafica = document.getElementById('grafica');
     const tags = [""]
@@ -114,6 +129,7 @@ function calculateIMT() {
         }
     });
 
+    // функция построения шкалы ИМТ
 function chartUpdate(){
     let IMT = document.querySelector('.valueIMT').innerHTML;
 
@@ -127,6 +143,8 @@ function chartUpdate(){
     }];
     myChart.update();
 }
+
+// попытка засунуть все в localStorage
 
 
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
