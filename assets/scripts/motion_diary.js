@@ -25,7 +25,7 @@ if (localStorage.getItem('enteredSteps') === null) {
 let btnMotionDiary = document.getElementById('btn_md');
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
-btnMotionDiary.addEventListener('click', stepsChartUpdate);
+// btnMotionDiary.addEventListener('click', stepsChartUpdate);
 
 // создаем функцию по сохранению данных
 function saveInfoSteps() {
@@ -48,7 +48,7 @@ function saveInfoSteps() {
 
         // преобразуем полученные данные из объекта в строку
         let arrayForSave = JSON.stringify(stepsArray);
-// запись  в localStorage ключа и строки
+        // запись  в localStorage ключа и строки
         localStorage.setItem('enteredSteps', arrayForSave)
 
         console.log(stepsArray)
@@ -117,6 +117,7 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
             borderWidth: 2,
             fill: true,
             backgroundColor: '#bf9999',
+            cubicInterpolationMode: 'monotone', // сглаживание углов
             borderColor: '#fff',
             data: dataMotionDiary,
             pointRadius: 6,
@@ -138,9 +139,11 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
         scales: {
             y: { // defining min and max so hiding the dataset does not change scale range
                 min: 0,
-                max: 20000
+                max: 40000
             }
-        }
+        },
+
+
 
     },
 
@@ -151,26 +154,26 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
 // //тут  не работает, вопрос к datasets
 
 
-function stepsChartUpdate() {
+// function stepsChartUpdate() {
 
-    let labelsMotionDiary = getArrayChartDate();
-    let dataMotionDiary = getArrayChartSteps();
-    let colorsMotionDiary = ['#b1a28d'];
+//     let labelsMotionDiary = getArrayChartDate();
+//     let dataMotionDiary = getArrayChartSteps();
+//     let colorsMotionDiary = ['#b1a28d'];
 
-    myChartMotionDiary.data.datasets = [{
-        labels: getArrayChartDate(),
-        label: 'Количество шагов',
-        borderWidth: 2,
-        fill: true,
-        backgroundColor: '#bf9999',
-        borderColor: '#fff',
-        data: getArrayChartSteps(),
-        pointRadius: 6,
-        pointBackgroundColor: colorsMotionDiary
+//     myChartMotionDiary.data.datasets = [{
+//         labels: getArrayChartDate(),
+//         label: 'Количество шагов',
+//         borderWidth: 2,
+//         fill: true,
+//         backgroundColor: '#bf9999',
+//         borderColor: '#fff',
+//         data: getArrayChartSteps(),
+//         pointRadius: 6,
+//         pointBackgroundColor: colorsMotionDiary
 
-    }];
-    myChartMotionDiary.update();
-}
+//     }];
+//     myChartMotionDiary.update();
+// }
 
 
 
@@ -207,5 +210,3 @@ function stepsChartUpdate() {
 //     arrSteps.push(steps);
 //     localStorage.setItem('steps', JSON.stringify(arrSteps));
 //     // console.log(arrSteps);
-
-

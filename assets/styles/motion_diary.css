@@ -502,8 +502,9 @@ template {
   width: 169px;
   border: 1px solid #eedac9;
   border-radius: 5px;
-  background-color: #f8eae88e;
+  background-color: #bf9999;
   outline: none;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -517,6 +518,6 @@ template {
 }
 
 .chart-md {
-  margin: 40px;
+  margin: 10px 20px 40px 20px;
 }
 /*# sourceMappingURL=motion_diary.css.map */
