@@ -2,28 +2,37 @@
 @import 'fonts.scss';
 @import '../scripts/node_modules/js-datepicker/src/datepicker.scss';
 
+$pink: #f8e9e7;
+$dark-pink: #eb4b51;
+$white: #ffffff;
+
+// @media screen and (max-width: 578px) {
+//   margin-top: 15px;
+// }
+body {
+  background-color: $pink;
+}
 
 .main_container_IMT {
-  max-width: 600px;
-  min-height: 60vh;
+  max-width: 1200px;
+  min-height: 70vh;
   margin: auto;
   padding-left: 3%;
   padding-right: 3%;
   margin-top: 50px;
-  border: 1px solid black;
   font-family: 'Montserrat-Semibold', sans-serif;
   border-radius: 10px;
-  background-color: #f8eae8;
+  background-color: $white;
 }
 
 //стили кнопки закрытия - начало
-.btn_close {
+.btn_close_IMT {
   display: flex;
   justify-content: flex-end;
-  padding-top: 5px;
+  padding-top: 30px;
 }
 
-.cl-btn-7 {
+.cl-btn-7_IMT {
   width: 40px;
   height: 40px;
   border-radius: 40px;
@@ -33,9 +42,9 @@
   cursor: pointer;
 }
 
-.cl-btn-7:before {
+.cl-btn-7_IMT:before {
   content: '+';
-  color: #E43A56;
+  color: $dark-pink;
   position: absolute;
   z-index: 2;
   transform: rotate(45deg);
@@ -46,7 +55,7 @@
   transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
 }
 
-.cl-btn-7:after {
+.cl-btn-7_IMT:after {
   content: '';
   position: absolute;
   top: 0;
@@ -54,40 +63,49 @@
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  background: #E43A56;
+  background: $dark-pink;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
   transform: scale(0.01);
 }
 
-.cl-btn-7:hover:after {
+.cl-btn-7_IMT:hover:after {
   transform: scale(1);
 }
 
-.cl-btn-7:hover:before {
+.cl-btn-7_IMT:hover:before {
   transform: scale(0.8) rotate(45deg);
   color: #fff;
 }
 
 //стили кнопки закрытия - конец
 
-.title {
+.title_IMT {
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 40px;
+  font-size: 40px;
 }
 
 .containerIMT {
   display: flex;
-  gap: 30px;
+  gap: 100px;
 }
 
 .calcIMT {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
-.btn {
+.userHeight_IMT,
+.userWeight_IMT,
+.date_IMT {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_IMT {
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -100,7 +118,19 @@
   font-size: 18.0097px;
   line-height: 30px;
   color: #FFFFFF;
-  background: #E43A56;
+  background: $dark-pink;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 1px $dark-pink;
+  }
+
+  &:active {
+    background: $dark-pink;
+  }
+
+
 }
 
 .show_valueIMT {
@@ -124,8 +154,8 @@
   border-radius: 3px;
 }
 
-.chart__container {
-  width: 250px;
+.chart__container_IMT {
+  width: 280px;
   height: fit-content;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -139,19 +169,16 @@
 .IMT_details {
   vertical-align: super;
   text-decoration: none;
-  color: #E43A56;
-
+  color: $dark-pink;
 }
 
 .IMT_details_title {
   font-size: 25px;
   font-weight: bold;
-
 }
 
 .IMT_details_text {
   line-height: 150%;
-
 }
 
 /* Unopened lightbox */
@@ -195,7 +222,7 @@
   z-index: 1;
   align-items: center;
   justify-content: center;
-  background-color: #E43A56;
+  background-color: $dark-pink;
   border-radius: 50%;
   color: white;
   content: "×";
@@ -214,11 +241,7 @@
   cursor: default;
 }
 
-img {
-  max-width: 200px;
-}
-
-.errorMessage {
+.errorMessage_IMT {
   color: red;
   font-size: 10px;
 }
