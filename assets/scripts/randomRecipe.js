@@ -99,6 +99,6 @@ function showCardsRandomRecipe() {
   }
 }
 
-// document.querySelector(".random-recipe-section__button").addEventListener("click", showCardsRandomRecipe);
+document.querySelector(".random-recipe-section__button").addEventListener("click", showCardsRandomRecipe);
 // document.addEventListener("DOMContentLoaded", showCardsRandomRecipe);//Нужно повесить на нажатие кнопки
 
