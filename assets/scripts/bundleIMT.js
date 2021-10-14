@@ -1,16 +1,14 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const Chart = require('chart.js');
-const datepicker = require('js-datepicker')
 const moment = require('moment');
 require('moment/locale/ru.js');
 
+const Chart = require('chart.js');
+const datepicker = require('js-datepicker')
+
+console.dir(document.getElementById('dateSelection_IMT'))
 
 console.log('hi');
 
-//ИМТ = m/h2, где: m — масса тела в килограммах, h — рост в метрах!!!!! (надо см делить на 100).
-
-//сделать i, при клике появляется описание
-//Индекс массы тела (англ. BMI - body mass index) величина, позволяющая оценить степень соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса недостаточной, нормальной или избыточной.
 
 // дата
 //может, не использовать datepicker?
@@ -33,104 +31,119 @@ console.log('hi');
 
 // Кнопка Рассчитать
 
-let btn = document.querySelector('.btn');
+let btn = document.querySelector('.btn_IMT');
 btn.addEventListener('click', calculateIMT);
 btn.addEventListener('click', chartUpdate);
 
 // функция расчета ИМТ
 function calculateIMT() {
+
+    let userDate = document.getElementById('dateSelection_IMT').value;
     let userHeight = document.getElementById('userHeight').value;
     let userWeight = document.getElementById('userWeight').value;
     let IMT = Math.round(userWeight / (userHeight / 100 * userHeight) * 100);
 
-if (userHeight==='') {
-    document.querySelector('.valueIMT').innerHTML = '?';
-alert('Введите Ваш рост');
-}
-if (userWeight==='') {
-    document.querySelector('.valueIMT').innerHTML = '?';
-alert('Введите Ваш вес');
-}
 
-
-else {
-    document.querySelector('.valueIMT').innerHTML = IMT;
-
-    document.querySelector('.IMTinfo').innerHTML = "";
-    if (IMT <= 16) { //180-40
-        document.querySelector('.IMTinfo').innerHTML = 'Ваш вес ниже нормы (выраженный дефицит массы тела)';
+    if (userDate === '') {
+        document.getElementById('errorMessage_date_IMT').innerHTML = 'Поле не заполнено. Введите дату.';
     }
 
-    if (IMT > 16 && IMT <= 18.5) { //180-55
-        document.querySelector('.IMTinfo').innerHTML = 'Ваш вес ниже нормы (дефицит массы тела)';
+    if (userHeight === '') {
+        document.querySelector('.valueIMT').innerHTML = '?';
+        document.getElementById('errorMessage_userHeight').innerHTML = 'Поле не заполнено. Введите Ваш рост.';
     }
+    if (userWeight === '') {
+        document.querySelector('.valueIMT').innerHTML = '?';
+        document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.'
+    } else {
+        // очищаем текст ошибок
+        document.getElementById('errorMessage_userHeight').innerHTML = ''
+        document.getElementById('errorMessage_userWeight').innerHTML = ''
 
-    if (IMT > 18.5 && IMT <= 25) { //170-60
-        document.querySelector('.IMTinfo').innerHTML = 'У Вас нормальный вес';
-    }
+        //если дата будет заполнена после - убираем текст ошибки
+        if (userDate) {
+            document.getElementById('errorMessage_date_IMT').innerHTML = '';
+        }
 
-    if (IMT > 25 && IMT <= 30) { //170-80
-        document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (предожирение)';
+        //выводим ИМТ
+        document.querySelector('.valueIMT').innerHTML = IMT;
+
+        document.querySelector('.IMTinfo').innerHTML = "";
+        if (IMT <= 16) { //180-40
+            document.querySelector('.IMTinfo').innerHTML = 'Ваш вес ниже нормы (выраженный дефицит массы тела)';
+        }
+
+        if (IMT > 16 && IMT <= 18.5) { //180-55
+            document.querySelector('.IMTinfo').innerHTML = 'Ваш вес ниже нормы (дефицит массы тела)';
+        }
+
+        if (IMT > 18.5 && IMT <= 25) { //170-60
+            document.querySelector('.IMTinfo').innerHTML = 'У Вас нормальный вес';
+        }
+
+        if (IMT > 25 && IMT <= 30) { //170-80
+            document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (предожирение)';
+        }
+        if (IMT > 30 && IMT <= 35) { //170-90
+            document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 1 степени)';
+        }
+        if (IMT > 35 && IMT <= 40) {
+            document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 2 степени)';
+        }
+        if (IMT > 40) {
+            document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 3 степени)';
+            // document.querySelector('.IMTinfo').style.color: red;
+            // сделать цвет текста????
+        }
     }
-    if (IMT > 30 && IMT <= 35) { //170-90
-        document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 1 степени)';
-    }
-    if (IMT > 35 && IMT <= 40) {
-        document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 2 степени)';
-    }
-    if (IMT > 40) {
-        document.querySelector('.IMTinfo').innerHTML = 'У Вас избыточная масса тела (Ожирение 3 степени)';
-    }
-}
 };
 
+// график-шкала
 
-    // график-шкала
+const grafica = document.getElementById('grafica');
+const tags = [""]
 
-    const grafica = document.getElementById('grafica');
-    const tags = [""]
+const dataIMT = {
+    label: "",
+    data: [0, 50],
+    backgroundColor: 'rgba(96, 125, 139, 1)',
 
-    const dataIMT = {
-        label: "",
-        data: [0, 50],
-        backgroundColor: 'rgba(96, 125, 139, 1)',
+    borderWidth: 0,
+    pointStyle: 'circle',
+    pointRadius: 6,
+};
 
-        borderWidth: 0,
-        pointStyle: 'circle',
-        pointRadius: 6,
-    };
+let myChart = new Chart(grafica, {
+    type: 'line',
+    data: {
+        labels: tags,
+        datasets: [
+            dataIMT,
+        ]
+    },
+    options: {
 
-    let myChart = new Chart(grafica, {
-        type: 'line',
-        data: {
-            labels: tags,
-            datasets: [
-                dataIMT,
-            ]
-        },
-        options: {
-
-            indexAxis: 'y',
-            scales: {
-                x: {
-                    // beginAtZero: true
-                    min: 6,
-                    max: 60
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false,
-                    labels: {
-                        usePointStyle: true,
-                    },
-                },
+        indexAxis: 'y',
+        scales: {
+            x: {
+                // beginAtZero: true
+                min: 6,
+                max: 60
             }
+        },
+        plugins: {
+            legend: {
+                display: false,
+                labels: {
+                    usePointStyle: true,
+                },
+            },
         }
-    });
+    }
+});
 
-    // функция построения шкалы ИМТ
-function chartUpdate(){
+// функция построения шкалы ИМТ
+function chartUpdate() {
     let IMT = document.querySelector('.valueIMT').innerHTML;
 
     myChart.data.datasets = [{
@@ -144,8 +157,157 @@ function chartUpdate(){
     myChart.update();
 }
 
+
+
 // попытка засунуть все в localStorage
 
+// создаем класс, который будет формировать объект
+class IMT {
+    constructor(today, IMT) {
+        this.today = today;
+        this.IMT = IMT;
+    }
+}
+// создаем глобальные переменные с массивами
+let arrDate_IMT = [];
+let arrIMT = [];
+// проверка localStorage, если пусто - создаем пустой массив
+if (localStorage.getItem('enteredIMT') === null) {
+    localStorage.setItem('enteredIMT', '[]');
+}
+
+// создаем переменную с кнопкой, вешаем события по клику
+let btn_historyIMT = document.getElementById('btn_historyIMT');
+
+
+btn_historyIMT.addEventListener('click', saveInfoIMT);
+//может, повесить на кнопку рассчитать??????????
+btn_historyIMT.addEventListener('click', getArrayChartDateIMT);
+btn_historyIMT.addEventListener('click', getArrayChartIMT);
+
+
+btn_historyIMT.addEventListener('click', function () {
+    console.log(arrDate_IMT)
+    console.log(arrIMT)
+
+});
+
+// создаем функцию по сохранению данных
+function saveInfoIMT() {
+    const date_IMT = document.getElementById('dateSelection_IMT').value;
+    const IMT_value = document.getElementById('valueIMT').innerHTML;
+
+    // условие, при котором создается новый объект и пушатся новые данные
+    if (date_IMT && IMT_value) {
+        let enterIMTDay = new IMT(date_IMT, IMT_value);
+        console.log(enterIMTDay);
+
+        let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
+        IMT_Array.push(enterIMTDay);
+
+        //   сортировка по датам (от меньшего к большему)  
+        IMT_Array.sort(function (a, b) {
+            return new Date(a.today) - new Date(b.today);
+        });
+        // преобразуем полученные данные из объекта в строку
+        let arrayForSaveIMT = JSON.stringify(IMT_Array);
+        // запись  в localStorage ключа и строки
+        localStorage.setItem('enteredIMT', arrayForSaveIMT);
+    }
+}
+
+// функция для построения графика (разделяем объект на два массива) - массив дат
+
+function getArrayChartDateIMT() {
+
+    let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
+    if (IMT_Array.length > null) {
+        arrDate_IMT = IMT_Array.map(function (object) {
+            return object.IMT;
+        })
+        return arrDate_IMT;
+    }
+}
+
+function getArrayChartIMT() {
+
+    let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
+    if (IMT_Array.length > null) {
+        arrIMT = IMT_Array.map(function (object) {
+            return object.today;
+        })
+        return arrIMT;
+    }
+}
+
+
+
+// let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
+
+// ctx_historyIMT.canvas.width = 300;
+// ctx_historyIMT.canvas.height = 250;
+
+
+
+
+
+const labels2 = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+
+const data2 = {
+  labels: labels2,
+  datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+    tension: 0.1
+  }]
+};
+const config = {
+    type: 'line',
+    data: data2,
+  };
+var myChart2 = new Chart(
+    document.getElementById('myChart_historyIMT'),
+    config
+  );
+
+
+
+// let myChart_historyIMT = new Chart(ctx_historyIMT, {
+//     type: 'line',
+//     data: {
+//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//         datasets: [{
+//             label: 'Динамика Вашего Индекса массы тела',
+//             data: [12, 19, 3, 5, 2, 3],
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             y: {
+//                 beginAtZero: true
+//             }
+//         }
+//     }
+// });
 
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
 /*!
