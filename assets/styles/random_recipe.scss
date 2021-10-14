@@ -88,6 +88,24 @@ body {
     display: flex;
     justify-content: center;
     margin-right: 30px;
+
+    @media screen and (max-width: 1024px) {
+        margin-right: 0px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.random-recipe-section__search {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 420px) {
+        flex-wrap: wrap;
+    }
 }
 
 .random-recipe-section__input {
@@ -100,6 +118,10 @@ body {
     &:focus {
         background-color: #e6f9ee;
         color: $text-color;
+    }
+
+    @media screen and (max-width: 420px) {
+        margin-right: 0px;
     }
 }
 
@@ -127,6 +149,12 @@ body {
         color: $green;
         background-color: #2ebe6b;
     }
+
+
+    @media screen and (max-width: 420px) {
+        width: 90%;
+        margin-top: 10px;
+    }
 }
 
 .random-recipe-section__container {
@@ -144,12 +172,24 @@ body {
     color: $dark-green;
     text-align: center;
 
+    @media screen and (max-width: 1200px) {
+        height: fit-content;
+        overflow-y: initial;
+    }
+
 }
 
 .random-recipe-section__little-container {
     height: 300px;
     width: auto;
     margin: 20px 40px;
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        height: auto;
+
+        margin: 10px auto;
+    }
 }
 
 .random-recipe-section__link {
@@ -171,12 +211,35 @@ body {
 .random-recipe-section__img {
     width: auto;
     height: 80%;
+
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .img-amount-container {
     position: absolute;
     top: 240px;
     left: 70%;
+
+    @media screen and (max-width: 1024px) {
+        position: initial;
+
+        display: flex;
+        justify-content: center;
+
+        margin-right: 35px;
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 420px) {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin-right: 0px;
+    }
 }
 
 .img-amount-label,
@@ -184,6 +247,13 @@ body {
     font-family: $text-font;
     font-size: 16px;
     color: $text-color;
+
+}
+
+.img-amount-label {
+    @media screen and (max-width: 420px) {
+        margin-bottom: 10px;
+    }
 }
 
 .random-recipe-section__subtitle {
