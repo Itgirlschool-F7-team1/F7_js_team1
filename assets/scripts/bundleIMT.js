@@ -5,7 +5,6 @@ require('moment/locale/ru.js');
 const Chart = require('chart.js');
 const datepicker = require('js-datepicker')
 
-console.dir(document.getElementById('dateSelection_IMT'))
 
 console.log('hi');
 
@@ -13,20 +12,15 @@ console.log('hi');
 // дата
 //может, не использовать datepicker?
 //непонятный формат
-// let incomeDate = datepicker(document.getElementById("dateSelection"), {
+
+// let now = moment();
+// document.querySelector('#dateSelection_IMT').value = now.format("DD.MM.YYYY");
+
+// let incomeDate = datepicker(document.getElementById("dateSelection_IMT"), {
 //     startDay: 1,
 //     customDays: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
 //     customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
 // });
-
-let now = moment();
-document.querySelector('#dateSelection_IMT').value = now.format("DD.MM.YYYY");
-
-let incomeDate = datepicker(document.getElementById("dateSelection_IMT"), {
-    startDay: 1,
-    customDays: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-});
 
 
 
@@ -187,11 +181,7 @@ btn_historyIMT.addEventListener('click', getArrayChartDateIMT);
 btn_historyIMT.addEventListener('click', getArrayChartIMT);
 
 
-btn_historyIMT.addEventListener('click', function () {
-    console.log(arrDate_IMT)
-    console.log(arrIMT)
-
-});
+btn_historyIMT.addEventListener('click',chart_historyIMT_Update);
 
 // создаем функцию по сохранению данных
 function saveInfoIMT() {
@@ -257,92 +247,7 @@ let colorsHistoryIMT = ['#b1a28d'];
 
 let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
 
-
-// const labels2 = labelsHistoryIMT;
-
-// const data2 = {
-//   labels: labels2,
-//   datasets: [{
-//     label: 'Динамика Вашего Индекса массы тела',
-//     data: dataHistoryIMT,
-//     fill: false,
-//     borderColor: '#eb4b51',
-//     tension: 0.1,
-//     pointBackgroundColor: colorsHistoryIMT,
-//     pointRadius: 3,
-//     pointStyle: 'star',
-//     borderWidth: 1,
-
-//   }],
-// options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true // назначили оси Y начинать отсчет с нуля
-//       }
-//     }
-//   }
-// }
-
-// const config = {
-//     type: 'line',
-//     data: data2,
-//   };
-// var myChart2 = new Chart(
-//     document.getElementById('myChart_historyIMT'),
-//     config
-//   );
-
-
-// // от Зои
-// function stepsChartUpdate() {
-//     let labelsMotionDiary = getArrayChartDate();
-//     let dataMotionDiary = getArrayChartSteps();
-//     let colorsMotionDiary = ['#B1A28D'];
-//     chartMotionDiary.data.datasets = [{
-//         labels: labelsMotionDiary,
-//         label: 'Количество шагов',
-//         borderWidth: 2,
-//         fill: true,
-//         backgroundColor: '#BF9999',
-//         borderColor: '#fff',
-//         data: dataMotionDiary,
-//         pointRadius: 6,
-//         pointBackgroundColor: colorsMotionDiary
-//     }];
-//     chartMotionDiary.update();
-// }
-
-
-// const labels2 = labelsHistoryIMT;
-
-// const data2 = {
-//     labels: labels2,
-//     datasets: [{
-//         label: 'Динамика Вашего Индекса массы тела',
-//         data: dataHistoryIMT,
-//         fill: false,
-//         borderColor: '#eb4b51',
-//         tension: 0.1,
-//         pointBackgroundColor: colorsHistoryIMT,
-//         pointRadius: 3,
-//         pointStyle: 'star',
-//         borderWidth: 1,
-
-//     }],
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true // назначили оси Y начинать отсчет с нуля
-//             }
-//         }
-//     }
-// }
-
-// const config = {
-//     type: 'line',
-//     data: data2,
-//   };
-var myChart2 = new Chart(
+let chart_historyIMT = new Chart(
 document.getElementById('myChart_historyIMT'), {
     type: 'line',
     data: {
@@ -367,6 +272,43 @@ document.getElementById('myChart_historyIMT'), {
     }
 }
 );
+
+
+
+
+
+
+// // от Зои
+function chart_historyIMT_Update() {
+    let labelsHistoryIMT = getArrayChartDateIMT();
+    let dataHistoryIMT = getArrayChartIMT();
+    let colorsHistoryIMT = ['#b1a28d'];
+    chart_historyIMT.data = {
+        labels: labelsHistoryIMT,
+        datasets: [{
+            label: 'Динамика Вашего Индекса массы тела',
+            data: dataHistoryIMT,
+            fill: false,
+            borderColor: '#eb4b51',
+            tension: 0.1,
+            pointBackgroundColor: colorsHistoryIMT,
+            pointRadius: 3,
+            pointStyle: 'star',
+            borderWidth: 1
+        }],
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // назначили оси Y начинать отсчет с нуля
+                }
+            }
+        }
+    }
+
+
+    chart_historyIMT.update();
+}
+
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
 /*!
  * Chart.js v3.5.1
