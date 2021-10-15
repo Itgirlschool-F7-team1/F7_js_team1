@@ -746,12 +746,14 @@ body {
   max-width: 1200px;
   min-height: 70vh;
   margin: auto;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding: 15px;
   margin-top: 50px;
   font-family: 'Montserrat-Semibold', sans-serif;
   border-radius: 10px;
   background-color: #ffffff;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .btn_close_IMT {
@@ -822,14 +824,35 @@ body {
   font-size: 40px;
 }
 
+@media screen and (max-width: 578px) {
+  .title_IMT {
+    font-size: 30px;
+  }
+}
+
 .containerIMT {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 100px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  .containerIMT {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .calcIMT {
@@ -882,13 +905,23 @@ body {
   background: #eb4b51;
 }
 
+@media screen and (max-width: 960px) {
+  .calcIMT {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .show_valueIMT {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
 }
 
-.show_valueIMT .showIMT {
+.showIMT {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -896,6 +929,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .IMT__gradient {
@@ -1014,46 +1050,13 @@ body {
   font-size: 10px;
 }
 
-.contaiher_btn_historyIMT {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  border: 1px solid black;
-}
-
-.btn_historyIMT {
-  border: 0;
-  text-align: center;
-  padding: 7px 20px;
-  text-decoration: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border-radius: 15px;
-  font-family: 'Jost', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18.0097px;
-  line-height: 30px;
-  color: #FFFFFF;
-  background: #eb4b51;
-  cursor: pointer;
-}
-
-.btn_historyIMT:hover {
-  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
-          box-shadow: 0px 0px 5px 1px #eb4b51;
-}
-
-.btn_historyIMT:active {
-  background: #eb4b51;
-}
-
 .chart_historyIMT {
   width: 400px;
+}
+
+@media screen and (max-width: 578px) {
+  .chart_historyIMT {
+    width: 300px;
+  }
 }
 /*# sourceMappingURL=IMT.css.map */
