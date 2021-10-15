@@ -24,7 +24,7 @@
             <div class="calcIMT">
                 <div class="date_IMT">
                     <label for="dateSelection_IMT">Введите дату: </label>
-                    <input type="date" id="dateSelection_IMT" />
+                    <input type="text" id="dateSelection_IMT" />
                     <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
 
                 </div>
@@ -55,13 +55,15 @@
                 </div>
 
                 <div class="IMTinfo"></div>
+                <div class="contaiher_btn_historyIMT">
+                    <button class="btn_historyIMT" id="btn_historyIMT" type="button">Пересчитать динамику</button></div>
 
             </div>
-            <canvas id="myChart_historyIMT" width="200" height="150"></canvas>
+            <div class="chart_historyIMT">
+                <canvas id="myChart_historyIMT" width="200" height="150"></canvas></div>
         </div>
     </div>
 
-    <button class="btn_historyIMT" id="btn_historyIMT" type="button">Посмотреть динамику</button>
 
 
     <div class="lightbox" id="example1">
