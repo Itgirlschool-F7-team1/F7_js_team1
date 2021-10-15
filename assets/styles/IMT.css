@@ -826,6 +826,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 100px;
 }
 
@@ -840,9 +843,9 @@ body {
   gap: 20px;
 }
 
-.userHeight_IMT,
-.userWeight_IMT,
-.date_IMT {
+.calcIMT .userHeight_IMT,
+.calcIMT .userWeight_IMT,
+.calcIMT .date_IMT {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -852,7 +855,7 @@ body {
           flex-direction: column;
 }
 
-.btn_IMT {
+.calcIMT .btn_IMT {
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -870,12 +873,12 @@ body {
   cursor: pointer;
 }
 
-.btn_IMT:hover {
+.calcIMT .btn_IMT:hover {
   -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
           box-shadow: 0px 0px 5px 1px #eb4b51;
 }
 
-.btn_IMT:active {
+.calcIMT .btn_IMT:active {
   background: #eb4b51;
 }
 
@@ -925,12 +928,12 @@ body {
   color: #eb4b51;
 }
 
-.IMT_details_title {
+.IMT_details .IMT_details_title {
   font-size: 25px;
   font-weight: bold;
 }
 
-.IMT_details_text {
+.IMT_details .IMT_details_text {
   line-height: 150%;
 }
 
@@ -1009,5 +1012,48 @@ body {
 .errorMessage_IMT {
   color: red;
   font-size: 10px;
+}
+
+.contaiher_btn_historyIMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 1px solid black;
+}
+
+.btn_historyIMT {
+  border: 0;
+  text-align: center;
+  padding: 7px 20px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 15px;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18.0097px;
+  line-height: 30px;
+  color: #FFFFFF;
+  background: #eb4b51;
+  cursor: pointer;
+}
+
+.btn_historyIMT:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
+          box-shadow: 0px 0px 5px 1px #eb4b51;
+}
+
+.btn_historyIMT:active {
+  background: #eb4b51;
+}
+
+.chart_historyIMT {
+  width: 400px;
 }
 /*# sourceMappingURL=IMT.css.map */

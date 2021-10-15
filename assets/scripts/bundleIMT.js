@@ -19,13 +19,14 @@ console.log('hi');
 //     customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
 // });
 
-// let now = moment();
-// document.querySelector('#dateSelection').value = now.format("DD.MM.YYYY");
+let now = moment();
+document.querySelector('#dateSelection_IMT').value = now.format("DD.MM.YYYY");
 
-// localStorage.setItem(`dateSelection${index}`, incomeDate.dateSelected);
-
-// if (document.getElementById('userHeight').value === '')
-// {alert('1')}
+let incomeDate = datepicker(document.getElementById("dateSelection_IMT"), {
+    startDay: 1,
+    customDays: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+});
 
 
 
@@ -223,7 +224,9 @@ function getArrayChartDateIMT() {
     let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
     if (IMT_Array.length > null) {
         arrDate_IMT = IMT_Array.map(function (object) {
-            return object.IMT;
+            console.log(object.today)
+
+            return object.today;
         })
         return arrDate_IMT;
     }
@@ -234,81 +237,136 @@ function getArrayChartIMT() {
     let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
     if (IMT_Array.length > null) {
         arrIMT = IMT_Array.map(function (object) {
-            return object.today;
+            return object.IMT;
         })
         return arrIMT;
     }
 }
 
+// console.log()
 
-
-// let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
 
 // ctx_historyIMT.canvas.width = 300;
 // ctx_historyIMT.canvas.height = 250;
 
 
 
+let labelsHistoryIMT = getArrayChartDateIMT();
+let dataHistoryIMT = getArrayChartIMT();
+let colorsHistoryIMT = ['#b1a28d'];
+
+let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
 
 
-const labels2 = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+// const labels2 = labelsHistoryIMT;
 
-const data2 = {
-  labels: labels2,
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    fill: false,
-    borderColor: 'rgb(75, 192, 192)',
-    tension: 0.1
-  }]
-};
-const config = {
-    type: 'line',
-    data: data2,
-  };
-var myChart2 = new Chart(
-    document.getElementById('myChart_historyIMT'),
-    config
-  );
+// const data2 = {
+//   labels: labels2,
+//   datasets: [{
+//     label: 'Динамика Вашего Индекса массы тела',
+//     data: dataHistoryIMT,
+//     fill: false,
+//     borderColor: '#eb4b51',
+//     tension: 0.1,
+//     pointBackgroundColor: colorsHistoryIMT,
+//     pointRadius: 3,
+//     pointStyle: 'star',
+//     borderWidth: 1,
 
+//   }],
+// options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true // назначили оси Y начинать отсчет с нуля
+//       }
+//     }
+//   }
+// }
 
-
-// let myChart_historyIMT = new Chart(ctx_historyIMT, {
+// const config = {
 //     type: 'line',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: 'Динамика Вашего Индекса массы тела',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
+//     data: data2,
+//   };
+// var myChart2 = new Chart(
+//     document.getElementById('myChart_historyIMT'),
+//     config
+//   );
+
+
+// // от Зои
+// function stepsChartUpdate() {
+//     let labelsMotionDiary = getArrayChartDate();
+//     let dataMotionDiary = getArrayChartSteps();
+//     let colorsMotionDiary = ['#B1A28D'];
+//     chartMotionDiary.data.datasets = [{
+//         labels: labelsMotionDiary,
+//         label: 'Количество шагов',
+//         borderWidth: 2,
+//         fill: true,
+//         backgroundColor: '#BF9999',
+//         borderColor: '#fff',
+//         data: dataMotionDiary,
+//         pointRadius: 6,
+//         pointBackgroundColor: colorsMotionDiary
+//     }];
+//     chartMotionDiary.update();
+// }
+
+
+// const labels2 = labelsHistoryIMT;
+
+// const data2 = {
+//     labels: labels2,
+//     datasets: [{
+//         label: 'Динамика Вашего Индекса массы тела',
+//         data: dataHistoryIMT,
+//         fill: false,
+//         borderColor: '#eb4b51',
+//         tension: 0.1,
+//         pointBackgroundColor: colorsHistoryIMT,
+//         pointRadius: 3,
+//         pointStyle: 'star',
+//         borderWidth: 1,
+
+//     }],
 //     options: {
 //         scales: {
 //             y: {
-//                 beginAtZero: true
+//                 beginAtZero: true // назначили оси Y начинать отсчет с нуля
 //             }
 //         }
 //     }
-// });
+// }
 
+// const config = {
+//     type: 'line',
+//     data: data2,
+//   };
+var myChart2 = new Chart(
+document.getElementById('myChart_historyIMT'), {
+    type: 'line',
+    data: {
+    labels: labelsHistoryIMT,
+    datasets: [{
+        label: 'Динамика Вашего Индекса массы тела',
+        data: dataHistoryIMT,
+        fill: false,
+        borderColor: '#eb4b51',
+        tension: 0.1,
+        pointBackgroundColor: colorsHistoryIMT,
+        pointRadius: 3,
+        pointStyle: 'star',
+        borderWidth: 1
+    }]},
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true // назначили оси Y начинать отсчет с нуля
+            }
+        }
+    }
+}
+);
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
 /*!
  * Chart.js v3.5.1
