@@ -9,11 +9,17 @@
 </head>
 <body>
 <section class="content-container__random-recipe-section">
-<h3 class="random-recipe-section__title">Случайный рецепт</h3>
+    <div class="resipes__close-button-subtitle-container">
+        <h3 class="random-recipe-section__title">Случайный рецепт</h3>
+        <div class="cl-btn-7 enter-recipe__close-button" id="randomRecipeCloseButton"></div>
+    </div>
+
 <div class="random-recipe-section__input-container">
     <div class="random-recipe-section__search">
     <input type="text" class="random-recipe-section__input" id="randomRecipeSectionInput" placeholder="Enter a tag for search">
-    <div class="random-recipe-section__button">Найти</div></div>
+    <div class="random-recipe-section__button">Найти</div>
+    <img src="./assets/images/question.png" alt="Знак вопроса" class="random-recipe-section__question-img">
+</div>
     <div class="img-amount-container">
     <label for="img-amount" class="img-amount-label">Показывать по:</label>
     <select name="img-amount" id="img-amount" class="img-amount">
@@ -25,10 +31,18 @@
 </div>
 </div>
 <div class="random-recipe-section__container">
-
 </div>
-
-
+<div class="random-recipe-section__info-shadow hidden">
+<div class="random-recipe-section__info">
+    <div class="info__container">
+    <div class="cl-btn-7 enter-recipe__close-button info__close-button" id="randomRecipeInfoCloseButton"></div>
+    <h6 class="ihfo__subtitle">Поиск рецептов</h6>
+</div>
+    <p class="info__text">Пожалуйста используйте только английский язык. Например, "apple".</p>
+    <p class="info__text">Можно добавить несколько ингредиентов через запятую. Например, "apple,cinnamon".</p>
+    <p class="info__text">Для того чтобы начать поиск, нажмите кнопку "найти".</p>
+</div>
+</div>
 </section>
 
     <script src="./assets/scripts/randomRecipe.js"></script>

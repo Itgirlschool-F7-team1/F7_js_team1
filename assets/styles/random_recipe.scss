@@ -1,4 +1,5 @@
 @import 'fonts.scss';
+@import 'my_recipes.scss';
 
 
 
@@ -80,8 +81,14 @@ body {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 30px;
+    margin-left: 40%;
 
     color: $dark-green;
+
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        margin-left: 5%;
+    }
 }
 
 .random-recipe-section__input-container {
@@ -243,7 +250,8 @@ body {
 }
 
 .img-amount-label,
-.img-amount {
+.img-amount,
+.info__text {
     font-family: $text-font;
     font-size: 16px;
     color: $text-color;
@@ -256,7 +264,8 @@ body {
     }
 }
 
-.random-recipe-section__subtitle {
+.random-recipe-section__subtitle,
+.ihfo__subtitle {
     font-family: $title-font;
     font-weight: 600;
     font-size: 20px;
@@ -266,4 +275,61 @@ body {
     margin-bottom: 10px;
 
     color: $dark-green;
+}
+
+.random-recipe-section__question-img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+
+    cursor: pointer;
+
+    // &:hover {
+    //     box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.5);
+    // }
+}
+
+.ihfo__subtitle {
+    text-align: center;
+    margin-left: 35%;
+
+
+    @media screen and (max-width: 768px) {
+        margin-left: 5%;
+    }
+}
+
+.random-recipe-section__info {
+    max-width: 600px;
+    padding: 30px 20px;
+    background-color: white;
+    border: 1px solid $dark-green;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 40%;
+    left: 25%;
+
+    margin-right: 20px;
+
+    @media screen and (max-width: 768px) {
+        left: 5%;
+    }
+}
+
+.info__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.random-recipe-section__info-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(34, 60, 80, 0.43);
+
+    // transition: all 1s ease-out;
+    z-index: 2;
 }
