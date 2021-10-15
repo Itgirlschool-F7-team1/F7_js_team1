@@ -16,47 +16,47 @@ function calculateCalories(e) {
     
     
     if (age.value === '' || weight.value === '' || height.value === '' || 80 < age.value || age.value < 15) {
-    errorMessage('Проверьте, что введенные вами значения верны')
+    errorMessage('Проверьте, что введенные вами значения верны!')
     } else if(gender.id === 'male' && activity === "very-low_action") {
       totalCalories.value = Math.round(1.2 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'male' && activity === "low_action") {
       totalCalories.value = Math.round(1.375 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value))));
+      clearError()
     } else if (gender.id === 'male' && activity === "middle_action") {
       totalCalories.value = Math.round(1.55 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'male' && activity === "high_action") {
       totalCalories.value = Math.round(1.725 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'male' && activity === "very-high_action") {
       totalCalories.value = Math.round(1.9 * (66.5 + (13.75 * parseFloat(weight.value)) + (5.003 * parseFloat(height.value)) - (6.755 * parseFloat(age.value))))
     ;
+    clearError()
     } else if(gender.id === 'female' && activity === "very-low_action") {
       totalCalories.value = Math.round(1.2 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'female' && activity === "low_action") {
       totalCalories.value = Math.round(1.375 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'female' && activity === "middle_action") {
       totalCalories.value = Math.round(1.55 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value))));
+      clearError()
     } else if(gender.id === 'female' && activity === "high_action") {
       totalCalories.value = Math.round(1.725* (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height.value)) - (4.676 * parseFloat(age.value))));
+      clearError()
     } else {
       totalCalories.value = Math.round(1.9 * (655 + (9.563 * parseFloat(weight.value)) + (1.850 * parseFloat(height)) - (4.676 * parseFloat(age.value))));
+      clearError()
     } 
 
     document.getElementById('results').style.display = 'block';
 }
 
 function errorMessage(error) {
-    document.getElementById('results').style.display = 'none';
-
-    const errorDiv = document.createElement('div');
-    const card = document.querySelector('.card');
-    const heading = document.querySelector('.heading');
-    errorDiv.className = 'alert alert-danger';
-    errorDiv.appendChild(document.createTextNode(error));
-
-    card.insertBefore(errorDiv, heading);
-
-    setTimeout(clearError);
+document.getElementById('results').style.display = 'none';
+document.querySelector('.error').innerHTML = error
 }
-
 function clearError() {
-    document.querySelector('.alert').remove();
+  document.querySelector('.error').innerHTML = '';
 }
