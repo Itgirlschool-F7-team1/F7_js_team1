@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/calories_calc.css">
     <title>Калькулятор калорий</title>
 </head>
 <body>
+    <div class="calc_container">
 <h1 class="heading_calories-calc">Калькулятор калорий</h1>
+<div class="error"></div>
 <div class="container_calories-calc">
     <form id="calories-calc_form">
-            <div>
-            <legend>Пол</legend>
+            <div class="gender">
+            <legend>Пол:</legend>
             <div id="form-radio">
-                <div>
                 <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
                 <label class="custom-control-label" for="male">Мужчина</label>
-                </div>
-                <div>
                 <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
                 <label class="custom-control-label" for="female">Женщина</label>
-                </div>  
             </div>
             </div> 
                 <div class="container_calories-calc_height"> <label for="calories-calc_height">Рост:</label>
@@ -47,13 +46,39 @@
                 <input type="submit" value="Считать">
             </div>
         </form>
+    </div>
+    <aside>
         <div id="results">
-            <h3>Ваша суточная норма калорий</h3>
-            <div class="form-group">
-                <input type="number" class="calc-control" id="total-calories" disabled>
-            </div>
+            <h3>Ваша норма калорий:</h3>
+            <ul class="counter__result-list">
+                <li class="counter__result-item">
+                    <h4>
+                <input type="number" class="form-control" id="total-calories"> ккал
+            </h4>
+            <p>
+                поддержание веса
+            </p>
+            </li>
+            <li class="counter__result-item">
+                <h4>
+                    <input type="number" class="form-control" id="min-calories"> ккал
+                </h4>
+                <p>
+                снижение веса
+                </p>
+            </li>
+            <li class="counter__result-item">
+                <h4>
+                    <input type="number" class="form-control" id="max-calories"> ккал
+                </h4>
+                <p>
+                набор веса
+                </p>
+            </li>
+            </ul>
             </div>
         </div>
+    </aside>
 </div>
     </div> 
     <script src="./assets/scripts/calories.js"></script> 

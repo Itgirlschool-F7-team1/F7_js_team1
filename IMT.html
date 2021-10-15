@@ -7,44 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/IMT.css">
     <link rel="shortcut icon" href="./assets/images/icon1.png">
-    <title>Document</title>
+    <title>ИМТ</title>
 </head>
 
 <body>
     <div class="main_container_IMT">
-        <div class="btn_close">
-            <div class="cl-btn-7"></div>
+        <div class="btn_close_IMT">
+            <div class="cl-btn-7_IMT"></div>
             <!-- кнопка закрытия окна -->
         </div>
-        <h2 class="title">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
+        <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
 
 
         <div class="containerIMT">
 
             <div class="calcIMT">
+                <div class="date_IMT">
+                    <label for="dateSelection_IMT">Введите дату: </label>
+                    <input type="date" id="dateSelection_IMT" />
+                    <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
 
-                <label for="dateSelection">Введите дату: </label>
-                <!-- <input type="text" id="dateSelection" /> -->
-                <input type="date" id="dateSelection" />
+                </div>
+                <div class="userHeight_IMT">
+                    <label for="userHeight">Введите свой рост (см): </label>
+                    <input type="number" id="userHeight" max="220" min="100" />
+                    <div id="errorMessage_userHeight" class="errorMessage_IMT"></div>
+                </div>
 
-
-
-                <label for="userHeight">Введите свой рост (см): </label>
-                <input type="number" id="userHeight" max="220" min="100" />
-                <div id="errorMessage_userHeight" class="errorMessage"></div>
-
-
-                <label for="userWeight">Введите свой вес (кг): </label>
-                <input type="number" id="userWeight" max="200" min="30" />
-                <div id="errorMessage_userWeight" class="errorMessage"></div>
-
-                <button class="btn" type="button" class="btn">Рассчитать</button>
+                <div class="userWeight_IMT">
+                    <label for="userWeight">Введите свой вес (кг): </label>
+                    <input type="number" id="userWeight" max="200" min="30" />
+                    <div id="errorMessage_userWeight" class="errorMessage_IMT"></div>
+                </div>
+                <button class="btn_IMT" type="button">Рассчитать</button>
             </div>
-
-            <!-- <div class="IMT_pic">
-                <img src="assets/images/IMT3.jpeg">
-            </div> -->
-
 
             <div class="showIMT hidden">
                 <div class="show_valueIMT">
@@ -52,23 +48,23 @@
                     <div class="valueIMT" id="valueIMT">___</div>
                 </div>
                 <div class="chartIMT">
-                    <div class="chart__container">
+                    <div class="chart__container_IMT">
                         <canvas id="grafica" width="200" height="35"></canvas>
                         <div class="IMT__gradient"></div>
                     </div>
                 </div>
 
                 <div class="IMTinfo"></div>
+                <div class="contaiher_btn_historyIMT">
+                    <button class="btn_historyIMT" id="btn_historyIMT" type="button">Пересчитать динамику</button></div>
 
-                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
             </div>
+            <div class="chart_historyIMT">
+                <canvas id="myChart_historyIMT" width="200" height="150"></canvas></div>
         </div>
     </div>
 
 
-
-
-    <a class="IMT_details" href="#example1">&#10031;</a>
 
     <div class="lightbox" id="example1">
         <figure>
@@ -91,7 +87,6 @@
         </figure>
     </div>
 
-    <div class="fff">3</div>
 
     <script src="assets/scripts/bundleIMT.js"></script>
 </body>
