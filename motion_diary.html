@@ -26,11 +26,17 @@
             <div class="section-datasets">
                 <p>
                     <label for="date-md" class="section-datasets__text">Дата</label>
-                    <input type="date" class="section-datasets__input_one" name="daterange" id="localdate" />
+                    <input type="date" title="Введите, пожалуйста, дату" class="section-datasets__input_one"
+                        name="daterange" id="localdate" />
+
+                    <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
                 </p>
                 <p class="section_steps">
                     <label for="s_t" class="section-datasets__text">Количество шагов </label>
-                    <input type="number" class="section-datasets__input_second" name="s_t" id="steps_today" />
+                    <input type="number" title="Введите, пожалуйста, количество шагов" placeholder="10000"
+                        class="section-datasets__input_second" name="s_t" id="steps_today" />
+
+                    <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
                 </p>
 
                 <p>

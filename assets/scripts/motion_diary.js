@@ -25,12 +25,24 @@ if (localStorage.getItem('enteredSteps') === null) {
 let btnMotionDiary = document.getElementById('btn_md');
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
-// btnMotionDiary.addEventListener('click', stepsChartUpdate);
+btnMotionDiary.addEventListener('click', stepsChartUpdate);
 
 // создаем функцию по сохранению данных
 function saveInfoSteps() {
-    const steps = document.getElementById('steps_today').value;
     const stepsToday = document.getElementById('localdate').value;
+    const steps = document.getElementById('steps_today').value;
+    
+
+    // вывод ошибок
+
+    if (stepsToday === '') {
+        document.getElementById('errorMessage_dateMd').innerHTML = 'Error! Введите, пожалуйста, дату.';
+    }
+    if (steps === '') {
+        document.getElementById('errorMessage_stepsMd').innerHTML = 'Error! Введите, пожалуйста, число.';
+    }
+
+   
 
     // условие, при котором создается новый объект и пушатся доп.данные
     if (steps && stepsToday) {
@@ -51,13 +63,15 @@ function saveInfoSteps() {
         // запись  в localStorage ключа и строки
         localStorage.setItem('enteredSteps', arrayForSave)
 
+        // очищаем 
+        document.getElementById('steps_today').value = '';
+        document.getElementById('localdate').value = '';
+        
         console.log(stepsArray)
         console.log(localStorage.getItem('enteredSteps'))
 
     }
-    //     else {
-    //          создать див для ошибки и вывести, что не заполнено
-    // }
+
 }
 
 
@@ -151,62 +165,20 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
 
 
 
-// //тут  не работает, вопрос к datasets
-
-
-// function stepsChartUpdate() {
-
-//     let labelsMotionDiary = getArrayChartDate();
-//     let dataMotionDiary = getArrayChartSteps();
-//     let colorsMotionDiary = ['#b1a28d'];
-
-//     myChartMotionDiary.data.datasets = [{
-//         labels: getArrayChartDate(),
-//         label: 'Количество шагов',
-//         borderWidth: 2,
-//         fill: true,
-//         backgroundColor: '#bf9999',
-//         borderColor: '#fff',
-//         data: getArrayChartSteps(),
-//         pointRadius: 6,
-//         pointBackgroundColor: colorsMotionDiary
-
-//     }];
-//     myChartMotionDiary.update();
-// }
-
-
-
-
-
-
-
-
-
-
-// график
-
-
-
-
-
-
-// let btnMotionDiary = document.getElementById('btn_md');
-// btnMotionDiary.addEventListener('click', saveInfoStep);
-// btnMotionDiary.addEventListener('click', stepsChartUpdate);
-
-
-
-// function saveInfo() {
-//     let stepsToday = document.getElementById('localdate').value;
-//     // console.log(stepsToday);
-//     let steps = document.getElementById('steps_today').value;
-//     // console.log(steps);
-
-
-//     arrDate.push(stepsToday);
-//     localStorage.setItem('stepsToday', JSON.stringify(arrDate));
-//     // console.log(arrDate);
-//     arrSteps.push(steps);
-//     localStorage.setItem('steps', JSON.stringify(arrSteps));
-//     // console.log(arrSteps);
+function stepsChartUpdate() {
+    let labelsMotionDiary = getArrayChartDate();
+    let dataMotionDiary = getArrayChartSteps();
+    let colorsMotionDiary = ['#B1A28D'];
+    chartMotionDiary.data.datasets = [{
+        labels: labelsMotionDiary,
+        label: 'Количество шагов',
+        borderWidth: 2,
+        fill: true,
+        backgroundColor: '#BF9999',
+        borderColor: '#fff',
+        data: dataMotionDiary,
+        pointRadius: 6,
+        pointBackgroundColor: colorsMotionDiary
+    }];
+    chartMotionDiary.update();
+}
