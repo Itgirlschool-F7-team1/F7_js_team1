@@ -125,16 +125,16 @@ function showRecipes(Array) {
 }
 document.addEventListener("DOMContentLoaded", function () {
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    showRecipes(recipes)
+    showRecipes(recipes);
 });
 document.getElementById('enterRecipeCloseButton').addEventListener('click', function () {
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    showRecipes(recipes)
+    showRecipes(recipes);
 });
 
 document.querySelector('.tags__list').addEventListener('click', function () {
     const recipes = filterRecipes(event);
-    showRecipes(recipes)
+    showRecipes(recipes);
 const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
 if(!enterRecipeForm.classList.contains('hidden')){
     enterRecipeForm.classList.add('hidden');
@@ -143,7 +143,12 @@ if(!enterRecipeForm.classList.contains('hidden')){
 });
 document.querySelector('.tags__list_alternative').addEventListener('click', function () {
     const recipes = filterRecipes(event);
-    showRecipes(recipes)
+    showRecipes(recipes);
+    const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
+    if(!enterRecipeForm.classList.contains('hidden')){
+        enterRecipeForm.classList.add('hidden');
+        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
+    }
 });
 
 
@@ -164,6 +169,7 @@ function showFullCard(event) {
             for (let i = 0; i < recipes.length; i++) {
                 if (cardArrayItem.id === recipes[i].id) {
                     arrayToShow.push(recipes[i]);
+                    break;
                 } else {
                     continue;
                 }
