@@ -3,8 +3,8 @@
 // переменные с используемыми цветами
 
 $pink: #f8eae8;
-$green: #d6e7da;
 $back: #bf9999;
+$font: #6d6552;
 
 // используемые шрифты
 $fz1:'Montserrat-Semibold',
@@ -26,7 +26,7 @@ sans-serif;
     padding-left: 3%;
     padding-right: 3%;
     margin-top: 100px;
-    border: 1px solid black;
+
     font-family: $fz1;
     border-radius: 10px;
     background-color: #fff;
@@ -44,10 +44,14 @@ sans-serif;
 
     }
 
+
     .errorMessage_dateMd,
     .errorMessage_stepsMd {
+        text-align: center;
+        padding-top: 5px;
         color: red;
         font-size: 10px;
+
     }
 
     .cl-btn-7-md {
@@ -99,18 +103,20 @@ sans-serif;
 
     // стили заголовка
     .title-md {
+        color: $font;
         text-align: center;
         margin-bottom: 40px;
-        gap:5px; 
-        .motionDiary__recommendation{
-height: 30px;
+        gap: 5px;
+
+        .motionDiary__recommendation {
+            height: 30px;
         }
     }
 
     .section-datasets {
         display: flex;
         justify-content: space-between;
-        // gap: 10px;
+
     }
 
     .section-datasets__box {
@@ -132,11 +138,13 @@ height: 30px;
 
     .section-datasets__text {
         margin-bottom: 10px;
+        color: $font;
     }
 
     .section-datasets__input_one,
     .section-datasets__input_second {
 
+        color: $font;
         height: 30px;
         width: 200px;
         border: 1px solid #eedac9;
@@ -146,7 +154,7 @@ height: 30px;
         text-align: center;
 
         &:hover {
-            box-shadow: 0px 0px 5px 1px $back;
+            box-shadow: 0px 0px 5px 1px $font;
         }
     }
 
@@ -157,7 +165,8 @@ height: 30px;
         margin: 0;
     }
 
-    .section-datasets__btn {
+    .section-datasets__btn,
+    .section-datasets__btnMean {
 
         height: 35px;
         width: 200px;
@@ -169,7 +178,7 @@ height: 30px;
         cursor: pointer;
 
         &:hover {
-            box-shadow: 0px 0px 5px 1px $back;
+            box-shadow: 0px 0px 3px 1px $font;
         }
 
         &:active {
@@ -177,14 +186,15 @@ height: 30px;
         }
     }
 
-    // успехи пользователя.блок мотивации
-    #personalRecords_box {
-        // border: 1px solid #fff;
-        padding: 5px;
-        color: $back;
+    // успехи пользователя.блок мотивации и среднее значение
+    #personalRecords_box,
+    .personalRecords_mean {
+
+        color: $font;
         font-size: 15px;
         text-align: center;
         width: 200px;
     }
+
 
 }

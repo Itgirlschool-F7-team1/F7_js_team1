@@ -19,7 +19,8 @@
         </div>
         <!-- заголовок -->
         <p>
-            <h2 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба" class="motionDiary__recommendation"></h2>
+            <h2 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
+                    class="motionDiary__recommendation"></a></h2>
         </p>
         <section>
             <!-- секция ввода данных -->
@@ -37,18 +38,19 @@
                             class="section-datasets__input_second" name="s_t" id="steps_today" />
 
                         <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
-                        
+
                     </div>
 
                     <div class="section-datasets__buttonSaveMd">
                         <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
                     </div>
+                    <div id="personalRecords_box"></div>
                     <!-- среднее -->
-                    <!-- <p>
-                    <button type="button" class="section-datasets__sum" id="btn_sum">Среднее значение</button>
-                    <div  id="personalRecords_sum"></div>
-                </p> -->
-                <div id="personalRecords_box"></div>
+                    <div class="section-datasets__buttonMean">
+                        <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее значение</button>
+                        <div id="personalRecords_mean"></div>
+                    </div>
+
 
                 </div>
                 <!-- график -->
@@ -59,10 +61,8 @@
             </div>
 
         </section>
-
-
-
     </main>
+
     <script src="./assets/scripts/bundle_motion_d.js"></script>
 
 </body>
