@@ -17,24 +17,25 @@
         <div class="main_close_a_window">
             <div class="cl-btn-7-md"></div>
         </div>
-        <!-- заголовок -->
-        <p>
-            <h2 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
-                    class="motionDiary__recommendation"></a></h2>
-        </p>
         <section>
+
+            <!-- заголовок -->
+            <div>
+                <h1 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
+                        class="motionDiary__recommendation"></h1>
+            </div>
             <!-- секция ввода данных -->
             <div class="section-datasets">
                 <div class="section-datasets__box">
                     <div class="section-datasets__dateToday">
-                        <label for="date-md" class="section-datasets__text">Дата</label>
+                        <label for="localdate" class="section-datasets__text">Дата</label>
                         <input type="date" title="Введите, пожалуйста, дату" class="section-datasets__input_one"
                             name="daterange" id="localdate" />
                         <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
                     </div>
                     <div class="section-datasets__stepsToday">
-                        <label for="s_t" class="section-datasets__text">Количество шагов </label>
-                        <input type="number" title="Введите, пожалуйста, количество шагов" placeholder="10000"
+                        <label for="steps_today" class="section-datasets__text">Количество шагов </label>
+                        <input type="number" title="Введите, пожалуйста, количество шагов"
                             class="section-datasets__input_second" name="s_t" id="steps_today" />
 
                         <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>

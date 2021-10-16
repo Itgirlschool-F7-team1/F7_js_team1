@@ -160,8 +160,8 @@ let colorsMotionDiary = ['#b1a28d'];
 
 let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
 
-myChartMotionDiary.canvas.width = 900;
-myChartMotionDiary.canvas.height = 350;
+// myChartMotionDiary.canvas.width = 900;
+// myChartMotionDiary.canvas.height = 350;
 
 let chartMotionDiary = new Chart(myChartMotionDiary, {
     type: 'line',
@@ -204,14 +204,13 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
 
 })
 
-
-
 function stepsChartUpdate() {
     let labelsMotionDiary = getArrayChartDate();
     let dataMotionDiary = getArrayChartSteps();
     let colorsMotionDiary = ['#B1A28D'];
+    chartMotionDiary.data.labels = labelsMotionDiary;
     chartMotionDiary.data.datasets = [{
-        labels: labelsMotionDiary,
+        // labels: labelsMotionDiary,
         label: 'Количество шагов',
         borderWidth: 2,
         fill: true,
@@ -223,6 +222,7 @@ function stepsChartUpdate() {
     }];
     chartMotionDiary.update();
 }
+
 
 },{"chart.js":2}],2:[function(require,module,exports){
 /*!
