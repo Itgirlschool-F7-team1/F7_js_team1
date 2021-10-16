@@ -12,7 +12,6 @@ sans-serif;
 $fz2:'Rubik-Regular',
 sans-serif;
 
-
 .body-md {
     background-color: $pink;
 }
@@ -43,6 +42,12 @@ sans-serif;
         margin-left: auto;
 
 
+    }
+
+    .errorMessage_dateMd,
+    .errorMessage_stepsMd {
+        color: red;
+        font-size: 10px;
     }
 
     .cl-btn-7-md {
@@ -92,35 +97,48 @@ sans-serif;
         color: #fff;
     }
 
-
     // стили заголовка
     .title-md {
         text-align: center;
         margin-bottom: 40px;
+        gap:5px; 
+        .motionDiary__recommendation{
+height: 30px;
+        }
     }
 
-    // позиционирование контейнера с набором данных
     .section-datasets {
         display: flex;
-        // text-align: start;
+        justify-content: space-between;
+        // gap: 10px;
+    }
+
+    .section-datasets__box {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding-right: 50px;
+        border-right: 1px dashed $back;
+
+    }
+
+    .section-datasets__dateToday,
+    .section-datasets__stepsToday {
+        display: flex;
+        flex-direction: column;
     }
 
     .section-datasets__text {
-        display: flex;
-        padding-left: 15px;
+        margin-bottom: 10px;
     }
-
-    .section-datasets__input_second {
-        width: 169px;
-    }
-
-
 
     .section-datasets__input_one,
     .section-datasets__input_second {
 
-        margin: 13px;
         height: 30px;
+        width: 200px;
         border: 1px solid #eedac9;
         border-radius: 5px;
         background-color: #f8eae871;
@@ -140,10 +158,9 @@ sans-serif;
     }
 
     .section-datasets__btn {
-        margin-top: 29px;
-        margin-left: 18px;
+
         height: 35px;
-        width: 169px;
+        width: 200px;
         border: 1px solid #eedac9;
         border-radius: 5px;
         background-color: #bf9999;
@@ -160,12 +177,14 @@ sans-serif;
         }
     }
 
+    // успехи пользователя.блок мотивации
+    #personalRecords_box {
+        // border: 1px solid #fff;
+        padding: 5px;
+        color: $back;
+        font-size: 15px;
+        text-align: center;
+        width: 200px;
+    }
 
 }
-.chart-md{
-   
-    margin: 10px 20px 40px 20px;
-    // font: $fz2;
-}
-
-// всплывающая подсказка

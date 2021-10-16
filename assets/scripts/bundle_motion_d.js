@@ -25,9 +25,11 @@ if (localStorage.getItem('enteredSteps') === null) {
 // создаем переменную с кнопкой, вешаем события по клику
 let btnMotionDiary = document.getElementById('btn_md');
 
+let btnSum = document.getElementById('btn_sum');
+
 btnMotionDiary.addEventListener('click', saveInfoSteps);
 btnMotionDiary.addEventListener('click', stepsChartUpdate);
-// btnMotionDiary.addEventListener('click', personalRecords);
+// btnSum.addEventListener('click', personalRecords);
 
 
 
@@ -110,11 +112,9 @@ function saveInfoSteps() {
         console.log(localStorage.getItem('enteredSteps'))
 
     }
+  
 
 }
-
-
-
 
 // функция для записи в график даты(разделяем объект на две части для построения графика)
 
@@ -160,7 +160,7 @@ let colorsMotionDiary = ['#b1a28d'];
 
 let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
 
-myChartMotionDiary.canvas.width = 1200;
+myChartMotionDiary.canvas.width = 900;
 myChartMotionDiary.canvas.height = 350;
 
 let chartMotionDiary = new Chart(myChartMotionDiary, {
@@ -223,6 +223,7 @@ function stepsChartUpdate() {
     }];
     chartMotionDiary.update();
 }
+
 },{"chart.js":2}],2:[function(require,module,exports){
 /*!
  * Chart.js v3.5.1

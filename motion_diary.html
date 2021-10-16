@@ -19,37 +19,43 @@
         </div>
         <!-- заголовок -->
         <p>
-            <h2 class="title-md">Дневник движения</h2>
+            <h2 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба" class="motionDiary__recommendation"></h2>
         </p>
         <section>
             <!-- секция ввода данных -->
             <div class="section-datasets">
-                <p>
-                    <label for="date-md" class="section-datasets__text">Дата</label>
-                    <input type="date" title="Введите, пожалуйста, дату" class="section-datasets__input_one"
-                        name="daterange" id="localdate" />
+                <div class="section-datasets__box">
+                    <div class="section-datasets__dateToday">
+                        <label for="date-md" class="section-datasets__text">Дата</label>
+                        <input type="date" title="Введите, пожалуйста, дату" class="section-datasets__input_one"
+                            name="daterange" id="localdate" />
+                        <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
+                    </div>
+                    <div class="section-datasets__stepsToday">
+                        <label for="s_t" class="section-datasets__text">Количество шагов </label>
+                        <input type="number" title="Введите, пожалуйста, количество шагов" placeholder="10000"
+                            class="section-datasets__input_second" name="s_t" id="steps_today" />
 
-                    <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
-                </p>
-                <p class="section_steps">
-                    <label for="s_t" class="section-datasets__text">Количество шагов </label>
-                    <input type="number" title="Введите, пожалуйста, количество шагов" placeholder="10000"
-                        class="section-datasets__input_second" name="s_t" id="steps_today" />
+                        <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
+                        
+                    </div>
 
-                    <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
-                    <div  id="personalRecords_box"></div>
-                </p>
-                
-                <p>
-                    <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
-                </p>
-                
+                    <div class="section-datasets__buttonSaveMd">
+                        <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
+                    </div>
+                    <!-- среднее -->
+                    <!-- <p>
+                    <button type="button" class="section-datasets__sum" id="btn_sum">Среднее значение</button>
+                    <div  id="personalRecords_sum"></div>
+                </p> -->
+                <div id="personalRecords_box"></div>
 
-            </div>
-            <!-- график -->
+                </div>
+                <!-- график -->
 
-            <div class="chart-md">
-                <canvas id="myChartMotionDiary"></canvas>
+                <div class="chart-md">
+                    <canvas id="myChartMotionDiary"></canvas>
+                </div>
             </div>
 
         </section>

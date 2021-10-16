@@ -399,6 +399,12 @@ template {
   margin-left: auto;
 }
 
+.main-md .errorMessage_dateMd,
+.main-md .errorMessage_stepsMd {
+  color: red;
+  font-size: 10px;
+}
+
 .main-md .cl-btn-7-md {
   width: 40px;
   height: 40px;
@@ -454,29 +460,54 @@ template {
 .main-md .title-md {
   text-align: center;
   margin-bottom: 40px;
+  gap: 5px;
+}
+
+.main-md .title-md .motionDiary__recommendation {
+  height: 30px;
 }
 
 .main-md .section-datasets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.main-md .section-datasets__text {
+.main-md .section-datasets__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding-right: 50px;
+  border-right: 1px dashed #bf9999;
 }
 
-.main-md .section-datasets__input_second {
-  width: 169px;
+.main-md .section-datasets__dateToday,
+.main-md .section-datasets__stepsToday {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-md .section-datasets__text {
+  margin-bottom: 10px;
 }
 
 .main-md .section-datasets__input_one,
 .main-md .section-datasets__input_second {
-  margin: 13px;
   height: 30px;
+  width: 200px;
   border: 1px solid #eedac9;
   border-radius: 5px;
   background-color: #f8eae871;
@@ -496,10 +527,8 @@ template {
 }
 
 .main-md .section-datasets__btn {
-  margin-top: 29px;
-  margin-left: 18px;
   height: 35px;
-  width: 169px;
+  width: 200px;
   border: 1px solid #eedac9;
   border-radius: 5px;
   background-color: #bf9999;
@@ -517,7 +546,11 @@ template {
   background: #bf9999;
 }
 
-.chart-md {
-  margin: 10px 20px 40px 20px;
+.main-md #personalRecords_box {
+  padding: 5px;
+  color: #bf9999;
+  font-size: 15px;
+  text-align: center;
+  width: 200px;
 }
 /*# sourceMappingURL=motion_diary.css.map */
