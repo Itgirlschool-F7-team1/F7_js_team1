@@ -1,0 +1,236 @@
+@import 'normalize.scss';
+@import 'fonts.scss';
+
+$pink: #f8eae8;
+$green: #d6e7da;
+$dark-pink: #eb4b51;
+
+// используемые шрифты
+
+body {
+    background-color: $pink;
+}
+
+.heading_calories-calc {
+    text-align: center;
+    font-family: 'Montserrat-Semibold', sans-serif;
+}
+
+//основной большой блок
+.calc_container {
+    max-width: 1000px;
+    width: 700px;
+    height: 200px;
+    border-radius: 20px;
+    min-height: 60vh;
+    margin: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: 'Rubik-Regular', sans-serif;
+}
+
+.calc_close_a_window {
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    width: 100px;
+    margin-left: auto;
+}
+
+.cl-btn-7-calories {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.cl-btn-7-calories:before {
+    content: '+';
+    color: $dark-pink;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    font-size: 50px;
+    line-height: 1;
+    top: -5px;
+    left: 6px;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+}
+
+.cl-btn-7-calories:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: $dark-pink;
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+    transform: scale(0.01);
+}
+
+.cl-btn-7-calories:hover:after {
+    transform: scale(1);
+}
+
+.cl-btn-7-calories:hover:before {
+    transform: scale(0.8) rotate(45deg);
+    color: #fff;
+}
+
+.container_calories-calc {
+    display: flex;
+    width: 1270px;
+}
+
+//.calories_right {
+
+
+
+
+.container_calories-calc_height,
+.container_calories-calc_weight,
+.container_calories-calc_age,
+.container_calories-calc_action {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 150px;
+
+    label {
+        font-family: 'Montserrat-Semibold', sans-serif;
+        font-size: 15px;
+    }
+}
+
+.calc_radio {
+    .gender {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    legend {
+        font-family: 'Montserrat-Semibold', sans-serif;
+        font-size: 15px;
+    }
+}
+
+.container_calories-calc_action {
+    width: 400px;
+}
+
+.calc_radio {
+    padding-top: 10px;
+}
+
+
+.calories_button {
+    border: 0;
+    text-align: center;
+    padding: 1px 20px;
+    text-decoration: none;
+    box-shadow: none;
+    border-radius: 7px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 30px;
+    color: #FFFFFF;
+    background: $dark-pink;
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 5px 1px $dark-pink;
+    }
+
+    &:active {
+        background: $dark-pink;
+    }
+}
+
+.error {
+    color: $dark-pink;
+    margin: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+// чтобы инпуты стали розовые
+input[type=radio] {
+    /* hide original inputs */
+    visibility: hidden;
+    position: absolute;
+}
+
+input[type=radio]+label {
+    cursor: pointer;
+}
+
+input[type=radio]+label:before {
+    height: 16px;
+    margin-right: 4px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    transition: 0.3s;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: inset 0 -3px 6px #e4e4e4;
+    transition: 0.3s;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+/* DEFAULT */
+input[type=radio]+label:before {
+    border-radius: 50%;
+    width: 16px;
+}
+
+/* CHECKED */
+input[type=radio]:checked+label:before {
+    box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 3px #eb4b51;
+}
+
+.counter_result-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 5px;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+h4 {
+    margin: 00px;
+    margin-bottom: 2px;
+
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    color: var(--color-gray-dark);
+}

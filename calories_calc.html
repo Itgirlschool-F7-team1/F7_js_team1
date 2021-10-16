@@ -8,27 +8,37 @@
     <title>Калькулятор калорий</title>
 </head>
 <body>
-    <div class="calc_container">
+    <section class="calc_container">
+        <div class="calc_close_a_window">
+        <div class="cl-btn-7-calories"></div>
+    </div>
 <h1 class="heading_calories-calc">Калькулятор калорий</h1>
 <div class="error"></div>
 <div class="container_calories-calc">
     <form id="calories-calc_form">
-            <div class="gender">
-            <legend>Пол:</legend>
-            <div id="form-radio">
+        <div class="calc_radio" id="form-radio">
+                <div class="gender">
+                <legend for class="calories_gender">Пол:</legend>
+            </div>
                 <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
                 <label class="custom-control-label" for="male">Мужчина</label>
                 <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
                 <label class="custom-control-label" for="female">Женщина</label>
             </div>
-            </div> 
-                <div class="container_calories-calc_height"> <label for="calories-calc_height">Рост:</label>
-            <input type="number" id="calc_height" placeholder="см"/> </div>
-            <div class="container_calories-calc_weight"> <label for="calories-calc_weihgt">Текущий вес:</label>
-            <input type="number" id="calc_weight" placeholder="кг"/>
+            
+                <div class="container_calories-calc_height"> 
+                <label for="calories-calc_height">Рост:</label>
+            <input type="number" id="calc_height" placeholder="см" max="200" min="150"/>
         </div>
-                <div class="container_calories-calc_age"><label for="calories-calc_age">Возраст:</label>
-            <input type="number" id="calc_age"/></div>
+
+            <div class="container_calories-calc_weight"> 
+            <label for="calories-calc_weihgt">Текущий вес:</label>
+            <input type="number" id="calc_weight" placeholder="кг" max="200" min="45"/>
+        </div>
+
+                <div class="container_calories-calc_age">
+                <label for="calories-calc_age">Возраст:</label>
+            <input type="number" id="calc_age" max="80" min="15"/></div>
             
             <div class="container_calories-calc_action"><label for="calories-calc_action">Двигательная активность:</label>
             <select class=custom-select id="list">
@@ -37,50 +47,54 @@
                 <option value="middle_action">Средняя (3-5 тренировок в неделю)</option>
                 <option value="high_action">Высокая (интенсивные нагузки, 5-6 р в неделю)</option>
                 <option value="very-high_action">Очень высокая (физическая работа, тяжелые тренировки 6-7 р в неделю)</option>
-            </select></div>
+            </select>
+        </div>
             <!--<div class="container_calories-calc_dh"><label for="calories-calc_desired-height">Желаемый вес:</label>
                 <input type="number" id="calc_desired-height"/></div>
             <div class="container_calories-calc_dd"><label for="calories-calc_desired-date">К какой дате:</label> 
             <input class="" type="text" name="" value="31.12.2021"></div>-->
             <div class="form-group">
-                <input type="submit" value="Считать">
+                <input class="calories_button" type="submit" value="Считать">
             </div>
         </form>
-    </div>
-    <aside>
-        <div id="results">
+
+    <aside class="calories_right">
+        <div class="calories_result" id="results">
             <h3>Ваша норма калорий:</h3>
-            <ul class="counter__result-list">
-                <li class="counter__result-item">
+            <ul class="counter_result-list">
+                <li class="counter_result-item">
+                    <p>
+                        поддержание веса:
+                    </p>
                     <h4>
                 <input type="number" class="form-control" id="total-calories"> ккал
             </h4>
-            <p>
-                поддержание веса
-            </p>
+            
             </li>
-            <li class="counter__result-item">
+            <li class="counter_result-item">
+                <p>
+                снижение веса:
+                </p>
                 <h4>
                     <input type="number" class="form-control" id="min-calories"> ккал
                 </h4>
-                <p>
-                снижение веса
-                </p>
+                
             </li>
             <li class="counter__result-item">
+                <p>
+                    набор веса:
+                    </p>
+                
                 <h4>
                     <input type="number" class="form-control" id="max-calories"> ккал
                 </h4>
-                <p>
-                набор веса
-                </p>
             </li>
             </ul>
-            </div>
+            
         </div>
     </aside>
 </div>
-    </div> 
+</section> 
     <script src="./assets/scripts/calories.js"></script> 
 </body>
 </html>
