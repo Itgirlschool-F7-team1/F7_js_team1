@@ -13,7 +13,9 @@ function calculateCalories(e) {
     const height = document.getElementById('calc_height');
     const activity = document.getElementById('list').value;
     const totalCalories = document.getElementById('total-calories');
-    
+    const minCalories = document.getElementById('min-calories');
+    const maxCalories = document.getElementById('max-calories');
+  
     
     if (age.value === '' || weight.value === '' || height.value === '' || 80 < age.value || age.value < 15) {
     errorMessage('Проверьте, что введенные вами значения верны!')
@@ -50,6 +52,15 @@ function calculateCalories(e) {
       clearError()
     } 
 
+      
+    if(totalCalories.value === '' || totalCalories.value >'0'){
+     maxCalories.value = Math.round(totalCalories.value * 1.15);
+  }  
+
+    if(totalCalories.value === '' || totalCalories.value >'0'){
+      minCalories.value = Math.round(totalCalories.value * 0.85);
+  }  
+  
     document.getElementById('results').style.display = 'block';
 }
 
