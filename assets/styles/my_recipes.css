@@ -97,9 +97,6 @@ body {
   border-radius: 20px;
   min-height: 70vh;
   height: 70vh;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -408,12 +405,21 @@ body {
 
 .recipe-section__enter-recipe {
   width: 80%;
-  max-height: 100%;
+  min-height: 70vh;
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 1024px) {
   .recipe-section__enter-recipe {
     width: 95%;
+    overflow-y: initial;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
   }
 }
 
@@ -424,6 +430,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 93%;
 }
 
 @media screen and (max-width: 480px) {
@@ -434,6 +441,7 @@ body {
 
 .enter-recipe__form {
   margin-top: 30px;
+  width: calc(100% - 10px);
 }
 
 .enter-recipe__button {
@@ -504,6 +512,12 @@ body {
   width: 200px;
 }
 
+@media screen and (max-width: 768px) {
+  .enter-recipe__selection {
+    margin-left: 20px;
+  }
+}
+
 .enter-recipe__name {
   margin-left: 58px;
   width: 400px;
@@ -511,7 +525,7 @@ body {
 
 @media screen and (max-width: 890px) {
   .enter-recipe__name {
-    width: 95%;
+    width: 93%;
     margin-left: 20px;
   }
 }
@@ -552,7 +566,7 @@ body {
 
 @media screen and (max-width: 830px) {
   .enter-recipe__fileform {
-    width: 92%;
+    width: 94%;
     margin-left: 20px;
   }
 }
@@ -650,7 +664,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 100%;
+  width: calc(100% - 10px);
   margin-top: 20px;
 }
 
@@ -661,7 +675,7 @@ body {
 @media screen and (max-width: 1200px) {
   .enter-recipe__ingredients-container {
     width: 100%;
-    margin-left: 10px;
+    margin-left: 5px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -677,27 +691,27 @@ body {
 
 .enter-recipe__ingredients {
   margin-left: 14px;
-  width: 70%;
+  width: 68%;
   height: 80px;
   margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1200px) {
   .enter-recipe__ingredients {
-    width: 95%;
+    width: 93%;
     margin-left: 15px;
   }
 }
 
 .enter-recipe__text {
   margin-left: 30px;
-  width: 95%;
+  width: 93%;
   height: 120px;
 }
 
 @media screen and (max-width: 1200px) {
   .enter-recipe__text {
-    margin-left: 25px;
+    margin-left: 20px;
   }
 }
 
