@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles/normalize.css">
     <link rel="stylesheet" href="./assets/styles/my_recipes.css">
-    <link rel="shortcut icon" href="./assets/images/icon1.png">
+    <link rel="shortcut icon" href="./assets/images/icon1.png" type="img/png">
 </head>
 
 <body>
@@ -29,11 +29,11 @@
             <div class="recipe-section__tags_alternative">
                 <div class="item">
                     <button class="menu-trigger" id="recipeMenu01">
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
-                  </div>
+                </div>
                 <ul class="tags__list_alternative hidden">
                     <li class="tags__item" id="soupAlt">Супы</li>
                     <li class="tags__item" id="meatFishAlt">Мясо/рыба</li>
@@ -47,9 +47,9 @@
         </aside>
         <div class="recipe-section__recipes">
             <div class="resipes__close-button-subtitle-container">
-            <h3 class="recipes__title">Мои рецепты</h3>
-            <div class="cl-btn-7 enter-recipe__close-button" id="recipeCloseButton"></div>
-        </div>
+                <h3 class="recipes__title">Мои рецепты</h3>
+                <div class="cl-btn-7 enter-recipe__close-button" id="recipeCloseButton"></div>
+            </div>
             <h4 class="recipes__subtitle"></h4>
 
             <div class="recipe-section__cards"></div>
@@ -58,12 +58,12 @@
         <div class="recipe-section__enter-recipe hidden">
             <div class="enter-recipe__header-container">
                 <h3 class="recipes__title">Новый рецепт</h3>
-                <div class="cl-btn-7 enter-recipe__close-button" id="enterRecipeCloseButton"></div>
+                <div class="cl-btn-7 enter-recipe__close-button close-button_green" id="enterRecipeCloseButton"></div>
             </div>
             <div class="enter-recipe__form">
                 <label for="recipeCategory" class="enter-recipe__label">Выберите категорию</label>
                 <select name="recipeCategory" id="recipeCategory" class="enter-recipe__selection enter-recipe__input">
-                    <option value="" selected hidden  class="enter-recipe__categorie">Выберите категорию</option>
+                    <option value="" selected hidden class="enter-recipe__categorie">Выберите категорию</option>
                     <option value="soup" class="enter-recipe__categorie">Супы</option>
                     <option value="meatFish" class="enter-recipe__categorie">Мясо/рыба</option>
                     <option value="garnish" class="enter-recipe__categorie">Гарниры</option>

@@ -92,8 +92,6 @@ body {
 
 .content-container__recipe-section {
   background-color: white;
-  max-width: 1200px;
-  margin: 150px auto 20px;
   border-radius: 20px;
   min-height: 70vh;
   height: 70vh;
@@ -319,7 +317,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 80%;
+  height: 85%;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

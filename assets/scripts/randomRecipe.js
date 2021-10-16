@@ -1,5 +1,5 @@
+//загрузка случайного рецепта и поиск рецептов
 function showCardsRandomRecipe() {
-
     let recipeSearchTag = document.querySelector(".random-recipe-section__input").value;
     let recipeImgAmount = document.querySelector("#img-amount").value;
     if (recipeSearchTag != "") {
@@ -25,10 +25,10 @@ function showCardsRandomRecipe() {
                                     }
 
                                     document.querySelector(".random-recipe-section__container").innerHTML += `<div class="random-recipe-section__little-container">
-                      <h4 href="${card.title}" class="random-recipe-section__subtitle">${card.title}</h4>
-                      <img src="${card.image}" alt="${i+1} картинка" class="random-recipe-section__img"><br/>
-                      <a href="${recipeUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
-                      </div>`;
+                    <h4 href="${card.title}" class="random-recipe-section__subtitle">${card.title}</h4>
+                    <img src="${card.image}" alt="${i+1} картинка" class="random-recipe-section__img"><br/>
+                    <a href="${recipeUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
+                    </div>`;
 
                                 } catch (error) {
                                     console.log(error);
@@ -73,10 +73,10 @@ function showCardsRandomRecipe() {
                     // console.log(randomRecipe.recipes[0]);
 
                     document.querySelector(".random-recipe-section__container").innerHTML += `<div class="random-recipe-section__little-container">
-                      <h4 href="${randomRecipe.recipes[0].title}" class="random-recipe-section__subtitle">${randomRecipe.recipes[0].title}</h4>
-                      <img src="${randomRecipe.recipes[0].image}" alt="картинка" class="random-recipe-section__img"><br/>
-                      <a href="${randomRecipe.recipes[0].sourceUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
-                      </div>`;
+                    <h4 href="${randomRecipe.recipes[0].title}" class="random-recipe-section__subtitle">${randomRecipe.recipes[0].title}</h4>
+                    <img src="${randomRecipe.recipes[0].image}" alt="картинка" class="random-recipe-section__img"><br/>
+                    <a href="${randomRecipe.recipes[0].sourceUrl}" class="random-recipe-section__link">Ссылка на рецепт</a>
+                    </div>`;
 
                     // if (randomRecipe.length === 0) {
                     //     throw new ReferenceError("Попробуйте изменить запрос: такой тег не найден. Поиск доступен только на английском языке.");
@@ -100,11 +100,11 @@ document.querySelector(".random-recipe-section__button").addEventListener("click
 // document.addEventListener("DOMContentLoaded", showCardsRandomRecipe);//Нужно повесить на нажатие кнопки
 
 
-
-document.querySelector('.random-recipe-section__question-img').addEventListener('click', function(){
+//открытие и закрытие окошка с подсказками
+document.querySelector('.random-recipe-section__question-img').addEventListener('click', function () {
     document.querySelector('.random-recipe-section__info-shadow').classList.remove('hidden');
 })
 
-document.getElementById('randomRecipeInfoCloseButton').addEventListener('click', function(){
+document.getElementById('randomRecipeInfoCloseButton').addEventListener('click', function () {
     document.querySelector('.random-recipe-section__info-shadow').classList.add('hidden');
 })

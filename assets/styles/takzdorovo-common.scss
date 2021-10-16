@@ -1,5 +1,7 @@
 @import 'normalize.scss';
 @import 'fonts.scss';
+@import 'my_recipes.scss';
+@import 'random_recipe.scss';
 
 $pink: #f8eae8;
 $green: #d6e7da;
@@ -184,5 +186,9 @@ $dark-green: #219653;
     min-height: 70vh;
     background-color: white;
     border-radius: 20px;
-    padding: 15px;
+    // padding: 15px;
+}
+
+.content-container__content {
+    width: 100%;
 }
