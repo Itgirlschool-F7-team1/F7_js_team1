@@ -6,27 +6,6 @@ $pink: #f8e9e7;
 $dark-pink: #eb4b51;
 $white: #ffffff;
 
-// @media screen and (max-width: 578px) {
-//   margin-top: 15px;
-// }
-
-// @media screen and (max-width: 768px) {
-//   max-height: 100%;
-//   width: auto;
-// }
-
-// @media screen and (max-width: 1024px) {
-//   max-height: 100%;
-//   width: auto;
-// }
-
-// @media screen and (max-width: 480px) {
-//   max-height: 100%;
-//   width: auto;
-// }
-
-
-
 
 
 body {
@@ -111,23 +90,29 @@ body {
   @media screen and (max-width: 578px) {
     font-size: 30px;
   }
-
 }
 
 .containerIMT {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  // justify-content: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 10px;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1025px) {
     flex-direction: column;
     align-items: center;
-
+    gap: 50px;
   }
+}
 
+.calcIMT_and_showIMT {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+  }
 }
 
 .calcIMT {
@@ -298,7 +283,13 @@ body {
 .chart_historyIMT {
   width: 400px;
 
+  @media screen and (max-width: 1025px) {
+    width: 500px;
+  }
+
   @media screen and (max-width: 578px) {
     width: 300px;
   }
+
+
 }

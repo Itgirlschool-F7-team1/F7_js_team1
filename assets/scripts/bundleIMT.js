@@ -47,7 +47,12 @@ function calculateIMT() {
     if (userHeight === '') {
         document.querySelector('.valueIMT').innerHTML = '?';
         document.getElementById('errorMessage_userHeight').innerHTML = 'Поле не заполнено. Введите Ваш рост.';
+    } else {
+        // очищаем текст ошибок
+        document.getElementById('errorMessage_userHeight').innerHTML = ''
     }
+
+
     if (userWeight === '') {
         document.querySelector('.valueIMT').innerHTML = '?';
         document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.'

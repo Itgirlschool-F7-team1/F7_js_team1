@@ -21,39 +21,41 @@
 
         <div class="containerIMT">
 
-            <div class="calcIMT">
-                <div class="date_IMT">
-                    <label for="dateSelection_IMT">Введите дату: </label>
-                    <input type="date" id="dateSelection_IMT" />
-                    <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
+            <div class="calcIMT_and_showIMT">
+                <div class="calcIMT">
+                    <div class="date_IMT">
+                        <label for="dateSelection_IMT">Введите дату: </label>
+                        <input type="date" id="dateSelection_IMT" />
+                        <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
 
-                </div>
-                <div class="userHeight_IMT">
-                    <label for="userHeight">Введите свой рост (см): </label>
-                    <input type="number" id="userHeight" max="220" min="100" />
-                    <div id="errorMessage_userHeight" class="errorMessage_IMT"></div>
-                </div>
-
-                <div class="userWeight_IMT">
-                    <label for="userWeight">Введите свой вес (кг): </label>
-                    <input type="number" id="userWeight" max="200" min="30" />
-                    <div id="errorMessage_userWeight" class="errorMessage_IMT"></div>
-                </div>
-                <button class="btn_IMT" type="button">Рассчитать</button>
-            </div>
-
-            <div class="showIMT">
-                <div class="show_valueIMT">
-                    <label for="valueIMT">Ваш ИМТ:&nbsp;&nbsp;</label>
-                    <div class="valueIMT" id="valueIMT">___</div>
-                </div>
-                <div class="chartIMT">
-                    <div class="chart__container_IMT">
-                        <canvas id="grafica" width="200" height="35"></canvas>
-                        <div class="IMT__gradient"></div>
                     </div>
+                    <div class="userHeight_IMT">
+                        <label for="userHeight">Введите свой рост (см): </label>
+                        <input type="number" id="userHeight" max="220" min="100" />
+                        <div id="errorMessage_userHeight" class="errorMessage_IMT"></div>
+                    </div>
+
+                    <div class="userWeight_IMT">
+                        <label for="userWeight">Введите свой вес (кг): </label>
+                        <input type="number" id="userWeight" max="200" min="30" />
+                        <div id="errorMessage_userWeight" class="errorMessage_IMT"></div>
+                    </div>
+                    <button class="btn_IMT" type="button">Рассчитать</button>
                 </div>
-                <div class="IMTinfo"></div>
+
+                <div class="showIMT">
+                    <div class="show_valueIMT">
+                        <label for="valueIMT">Ваш ИМТ:&nbsp;&nbsp;</label>
+                        <div class="valueIMT" id="valueIMT">___</div>
+                    </div>
+                    <div class="chartIMT">
+                        <div class="chart__container_IMT">
+                            <canvas id="grafica" width="200" height="35"></canvas>
+                            <div class="IMT__gradient"></div>
+                        </div>
+                    </div>
+                    <div class="IMTinfo"></div>
+                </div>
             </div>
             <div class="chart_historyIMT">
                 <canvas id="myChart_historyIMT" width="200" height="150"></canvas></div>
