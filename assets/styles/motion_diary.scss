@@ -3,15 +3,14 @@
 // переменные с используемыми цветами
 
 $pink: #f8eae8;
-$green: #d6e7da;
 $back: #bf9999;
+$font: #6d6552;
 
 // используемые шрифты
 $fz1:'Montserrat-Semibold',
 sans-serif;
 $fz2:'Rubik-Regular',
 sans-serif;
-
 
 .body-md {
     background-color: $pink;
@@ -27,7 +26,7 @@ sans-serif;
     padding-left: 3%;
     padding-right: 3%;
     margin-top: 100px;
-    border: 1px solid black;
+
     font-family: $fz1;
     border-radius: 10px;
     background-color: #fff;
@@ -42,6 +41,16 @@ sans-serif;
         width: 100px;
         margin-left: auto;
 
+
+    }
+
+
+    .errorMessage_dateMd,
+    .errorMessage_stepsMd {
+        text-align: center;
+        padding-top: 5px;
+        color: red;
+        font-size: 10px;
 
     }
 
@@ -92,35 +101,52 @@ sans-serif;
         color: #fff;
     }
 
-
     // стили заголовка
     .title-md {
+        color: $font;
         text-align: center;
         margin-bottom: 40px;
+        gap: 5px;
+
+        .motionDiary__recommendation {
+            height: 30px;
+        }
     }
 
-    // позиционирование контейнера с набором данных
     .section-datasets {
         display: flex;
-        // text-align: start;
+        justify-content: space-between;
+
+    }
+
+    .section-datasets__box {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding-right: 50px;
+        border-right: 1px dashed $back;
+
+    }
+
+    .section-datasets__dateToday,
+    .section-datasets__stepsToday {
+        display: flex;
+        flex-direction: column;
     }
 
     .section-datasets__text {
-        display: flex;
-        padding-left: 15px;
+        margin-bottom: 10px;
+        color: $font;
     }
-
-    .section-datasets__input_second {
-        width: 169px;
-    }
-
-
 
     .section-datasets__input_one,
     .section-datasets__input_second {
 
-        margin: 13px;
+        color: $font;
         height: 30px;
+        width: 200px;
         border: 1px solid #eedac9;
         border-radius: 5px;
         background-color: #f8eae871;
@@ -128,7 +154,7 @@ sans-serif;
         text-align: center;
 
         &:hover {
-            box-shadow: 0px 0px 5px 1px $back;
+            box-shadow: 0px 0px 5px 1px $font;
         }
     }
 
@@ -139,19 +165,20 @@ sans-serif;
         margin: 0;
     }
 
-    .section-datasets__btn {
-        margin-top: 29px;
-        margin-left: 18px;
+    .section-datasets__btn,
+    .section-datasets__btnMean {
+
         height: 35px;
-        width: 169px;
+        width: 200px;
         border: 1px solid #eedac9;
         border-radius: 5px;
-        background-color: #f8eae88e;
+        background-color: #bf9999;
         outline: none;
+        color: #fff;
         cursor: pointer;
 
         &:hover {
-            box-shadow: 0px 0px 5px 1px $back;
+            box-shadow: 0px 0px 3px 1px $font;
         }
 
         &:active {
@@ -159,8 +186,15 @@ sans-serif;
         }
     }
 
+    // успехи пользователя.блок мотивации и среднее значение
+    #personalRecords_box,
+    .personalRecords_mean {
 
-}
-.chart-md{
-    margin: 40px;
+        color: $font;
+        font-size: 15px;
+        text-align: center;
+        width: 200px;
+    }
+
+
 }

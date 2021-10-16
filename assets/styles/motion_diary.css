@@ -381,7 +381,6 @@ template {
   padding-left: 3%;
   padding-right: 3%;
   margin-top: 100px;
-  border: 1px solid black;
   font-family: "Montserrat-Semibold", sans-serif;
   border-radius: 10px;
   background-color: #fff;
@@ -397,6 +396,14 @@ template {
           justify-content: flex-end;
   width: 100px;
   margin-left: auto;
+}
+
+.main-md .errorMessage_dateMd,
+.main-md .errorMessage_stepsMd {
+  text-align: center;
+  padding-top: 5px;
+  color: red;
+  font-size: 10px;
 }
 
 .main-md .cl-btn-7-md {
@@ -452,31 +459,59 @@ template {
 }
 
 .main-md .title-md {
+  color: #6d6552;
   text-align: center;
   margin-bottom: 40px;
+  gap: 5px;
+}
+
+.main-md .title-md .motionDiary__recommendation {
+  height: 30px;
 }
 
 .main-md .section-datasets {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.main-md .section-datasets__text {
+.main-md .section-datasets__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding-right: 50px;
+  border-right: 1px dashed #bf9999;
 }
 
-.main-md .section-datasets__input_second {
-  width: 169px;
+.main-md .section-datasets__dateToday,
+.main-md .section-datasets__stepsToday {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-md .section-datasets__text {
+  margin-bottom: 10px;
+  color: #6d6552;
 }
 
 .main-md .section-datasets__input_one,
 .main-md .section-datasets__input_second {
-  margin: 13px;
+  color: #6d6552;
   height: 30px;
+  width: 200px;
   border: 1px solid #eedac9;
   border-radius: 5px;
   background-color: #f8eae871;
@@ -486,8 +521,8 @@ template {
 
 .main-md .section-datasets__input_one:hover,
 .main-md .section-datasets__input_second:hover {
-  -webkit-box-shadow: 0px 0px 5px 1px #bf9999;
-          box-shadow: 0px 0px 5px 1px #bf9999;
+  -webkit-box-shadow: 0px 0px 5px 1px #6d6552;
+          box-shadow: 0px 0px 5px 1px #6d6552;
 }
 
 .main-md .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
@@ -495,28 +530,34 @@ template {
   margin: 0;
 }
 
-.main-md .section-datasets__btn {
-  margin-top: 29px;
-  margin-left: 18px;
+.main-md .section-datasets__btn,
+.main-md .section-datasets__btnMean {
   height: 35px;
-  width: 169px;
+  width: 200px;
   border: 1px solid #eedac9;
   border-radius: 5px;
-  background-color: #f8eae88e;
+  background-color: #bf9999;
   outline: none;
+  color: #fff;
   cursor: pointer;
 }
 
-.main-md .section-datasets__btn:hover {
-  -webkit-box-shadow: 0px 0px 5px 1px #bf9999;
-          box-shadow: 0px 0px 5px 1px #bf9999;
+.main-md .section-datasets__btn:hover,
+.main-md .section-datasets__btnMean:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px #6d6552;
+          box-shadow: 0px 0px 3px 1px #6d6552;
 }
 
-.main-md .section-datasets__btn:active {
+.main-md .section-datasets__btn:active,
+.main-md .section-datasets__btnMean:active {
   background: #bf9999;
 }
 
-.chart-md {
-  margin: 40px;
+.main-md #personalRecords_box,
+.main-md .personalRecords_mean {
+  color: #6d6552;
+  font-size: 15px;
+  text-align: center;
+  width: 200px;
 }
 /*# sourceMappingURL=motion_diary.css.map */
