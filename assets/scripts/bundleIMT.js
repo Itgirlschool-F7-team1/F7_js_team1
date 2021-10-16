@@ -30,6 +30,7 @@ let btn = document.querySelector('.btn_IMT');
 btn.addEventListener('click', calculateIMT);
 btn.addEventListener('click', chartUpdate);
 
+
 // функция расчета ИМТ
 function calculateIMT() {
 
@@ -108,7 +109,7 @@ const dataIMT = {
     pointRadius: 6,
 };
 
-let myChart = new Chart(grafica, {
+let myChart_IMT = new Chart(grafica, {
     type: 'line',
     data: {
         labels: tags,
@@ -117,7 +118,6 @@ let myChart = new Chart(grafica, {
         ]
     },
     options: {
-
         indexAxis: 'y',
         scales: {
             x: {
@@ -141,7 +141,7 @@ let myChart = new Chart(grafica, {
 function chartUpdate() {
     let IMT = document.querySelector('.valueIMT').innerHTML;
 
-    myChart.data.datasets = [{
+    myChart_IMT.data.datasets = [{
         label: "",
         data: [IMT, 50],
         backgroundColor: 'rgba(96, 125, 139, 1)',
@@ -149,12 +149,11 @@ function chartUpdate() {
         pointStyle: 'circle',
         pointRadius: 6,
     }];
-    myChart.update();
+    myChart_IMT.update();
 }
 
 
-
-// попытка засунуть все в localStorage
+//сохранение и вывод всех ИМТ в график динамики
 
 // создаем класс, который будет формировать объект
 class IMT {
@@ -163,7 +162,7 @@ class IMT {
         this.IMT = IMT;
     }
 }
-// создаем глобальные переменные с массивами
+// создаем глобальные переменные с массивами для вывода в график
 let arrDate_IMT = [];
 let arrIMT = [];
 // проверка localStorage, если пусто - создаем пустой массив
@@ -171,17 +170,13 @@ if (localStorage.getItem('enteredIMT') === null) {
     localStorage.setItem('enteredIMT', '[]');
 }
 
-// создаем переменную с кнопкой, вешаем события по клику
-let btn_historyIMT = document.getElementById('btn_historyIMT');
 
+// вешаем на кнопку функции по сохранению и выводу в график
+btn.addEventListener('click', saveInfoIMT);
+btn.addEventListener('click', getArrayChartDateIMT);
+btn.addEventListener('click', getArrayChartIMT);
+btn.addEventListener('click', chart_historyIMT_Update);
 
-btn_historyIMT.addEventListener('click', saveInfoIMT);
-//может, повесить на кнопку рассчитать??????????
-btn_historyIMT.addEventListener('click', getArrayChartDateIMT);
-btn_historyIMT.addEventListener('click', getArrayChartIMT);
-
-
-btn_historyIMT.addEventListener('click',chart_historyIMT_Update);
 
 // создаем функцию по сохранению данных
 function saveInfoIMT() {
@@ -202,7 +197,7 @@ function saveInfoIMT() {
         });
         // преобразуем полученные данные из объекта в строку
         let arrayForSaveIMT = JSON.stringify(IMT_Array);
-        // запись  в localStorage ключа и строки
+        // запись в localStorage ключа и строки
         localStorage.setItem('enteredIMT', arrayForSaveIMT);
     }
 }
@@ -222,6 +217,7 @@ function getArrayChartDateIMT() {
     }
 }
 
+//массив индексов
 function getArrayChartIMT() {
 
     let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
@@ -233,14 +229,7 @@ function getArrayChartIMT() {
     }
 }
 
-// console.log()
-
-
-// ctx_historyIMT.canvas.width = 300;
-// ctx_historyIMT.canvas.height = 250;
-
-
-
+//для вывода в шкалы графика
 let labelsHistoryIMT = getArrayChartDateIMT();
 let dataHistoryIMT = getArrayChartIMT();
 let colorsHistoryIMT = ['#b1a28d'];
@@ -273,12 +262,7 @@ document.getElementById('myChart_historyIMT'), {
 }
 );
 
-
-
-
-
-
-// // от Зои
+//фукнция автоматического обновления графика при вводе новых данных
 function chart_historyIMT_Update() {
     let labelsHistoryIMT = getArrayChartDateIMT();
     let dataHistoryIMT = getArrayChartIMT();
@@ -304,8 +288,6 @@ function chart_historyIMT_Update() {
             }
         }
     }
-
-
     chart_historyIMT.update();
 }
 

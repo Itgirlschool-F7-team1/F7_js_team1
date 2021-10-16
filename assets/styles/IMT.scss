@@ -9,6 +9,26 @@ $white: #ffffff;
 // @media screen and (max-width: 578px) {
 //   margin-top: 15px;
 // }
+
+// @media screen and (max-width: 768px) {
+//   max-height: 100%;
+//   width: auto;
+// }
+
+// @media screen and (max-width: 1024px) {
+//   max-height: 100%;
+//   width: auto;
+// }
+
+// @media screen and (max-width: 480px) {
+//   max-height: 100%;
+//   width: auto;
+// }
+
+
+
+
+
 body {
   background-color: $pink;
 }
@@ -17,12 +37,13 @@ body {
   max-width: 1200px;
   min-height: 70vh;
   margin: auto;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding: 15px;
+
   margin-top: 50px;
   font-family: 'Montserrat-Semibold', sans-serif;
   border-radius: 10px;
   background-color: $white;
+  max-height: fit-content;
 }
 
 //стили кнопки закрытия - начало
@@ -86,12 +107,26 @@ body {
   margin-top: 20px;
   margin-bottom: 40px;
   font-size: 40px;
+
+  @media screen and (max-width: 578px) {
+    font-size: 30px;
+  }
+
 }
 
 .containerIMT {
   display: flex;
-  justify-content: space-between;
-  gap: 100px;
+  flex-direction: row;
+  justify-content: space-around;
+  // justify-content: center;
+  gap: 40px;
+
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
 
 }
 
@@ -132,19 +167,29 @@ body {
       background: $dark-pink;
     }
   }
+
+  @media screen and (max-width: 960px) {
+    align-items: center;
+
+  }
+
+
 }
 
 .show_valueIMT {
   display: flex;
-
-  .showIMT {
-    display: flex;
-    flex-direction: column;
-    // width: 300px;
-  }
+  text-align: center;
 }
 
-// график
+.showIMT {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+// график-шкала
 .IMT__gradient {
   height: 6px;
   background: linear-gradient(90deg, #B5D4F1 0%, #81E6DB 37.77%, #E8D284 70.4%, #E2798E 100%);
@@ -166,12 +211,11 @@ body {
   font-style: italic;
 }
 
-//подсказка
+//подсказка по клику на весы (что такое ИМТ)
 .IMT_details {
   vertical-align: super;
   text-decoration: none;
   color: $dark-pink;
-
 
   .IMT_details_title {
     font-size: 25px;
@@ -243,47 +287,18 @@ body {
   cursor: default;
 }
 
+//стили сообщений об ошибке
 .errorMessage_IMT {
   color: red;
   font-size: 10px;
 }
 
-.contaiher_btn_historyIMT {
-  display: flex;
-  align-self: stretch;
-  flex-grow: 1;
-  border: 1px solid black;
-}
-
-.btn_historyIMT {
-
-  border: 0;
-  text-align: center;
-  padding: 7px 20px;
-  text-decoration: none;
-  box-shadow: none;
-  border-radius: 15px;
-  font-family: 'Jost',
-    sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18.0097px;
-  line-height: 30px;
-  color: #FFFFFF;
-  background: $dark-pink;
-
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0px 0px 5px 1px $dark-pink;
-  }
-
-  &:active {
-    background: $dark-pink;
-  }
-}
-
+//контейнер для графика динамики ИМТ
 
 .chart_historyIMT {
   width: 400px;
+
+  @media screen and (max-width: 578px) {
+    width: 300px;
+  }
 }
