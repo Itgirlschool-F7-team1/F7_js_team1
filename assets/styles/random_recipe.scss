@@ -1,8 +1,4 @@
 @import 'fonts.scss';
-@import 'my_recipes.scss';
-
-
-
 
 $title-font:'Montserrat-Semibold',
 sans-serif;
@@ -18,45 +14,17 @@ $pink: #f8eae8;
 $green: #d6e7da;
 $dark-pink: #eb4b51;
 $dark-green: #219653;
-*,
-html *
-
-/* override x.xhtml.ru style */
-    {
-    scrollbar-width: thin;
-    scrollbar-color: $pink $green;
-}
-
-*::-webkit-scrollbar,
-html *::-webkit-scrollbar {
-    height: 10px;
-    width: 9px;
-}
-
-*::-webkit-scrollbar-track,
-html *::-webkit-scrollbar-track {
-    background: $green;
-}
-
-*::-webkit-scrollbar-thumb,
-html *::-webkit-scrollbar-thumb {
-    background-color: $pink;
-}
-
-body {
-    background-color: $green;
-}
 
 .content-container__random-recipe-section {
     background-color: white;
 
     max-width: 1200px;
-    margin: 150px auto 20px;
+    // margin: 150px auto 20px;
     border-radius: 20px;
     min-height: 70vh;
     height: 70vh;
     max-height: fit-content;
-
+    width: 100%;
     // overflow-y: scroll;
 
     padding: 15px;
@@ -171,7 +139,7 @@ body {
 
     box-sizing: border-box;
     margin-top: 25px;
-    height: 70%;
+    height: 75%;
     overflow-y: scroll;
 
     font-family: $title-font;
@@ -228,7 +196,7 @@ body {
 
 .img-amount-container {
     position: absolute;
-    top: 240px;
+    top: 282px;
     left: 70%;
 
     @media screen and (max-width: 1024px) {
