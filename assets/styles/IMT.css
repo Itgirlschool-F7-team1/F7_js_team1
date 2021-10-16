@@ -838,12 +838,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  gap: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1025px) {
   .containerIMT {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -852,6 +853,27 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    gap: 50px;
+  }
+}
+
+.calcIMT_and_showIMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 40px;
+}
+
+@media screen and (max-width: 590px) {
+  .calcIMT_and_showIMT {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1052,6 +1074,12 @@ body {
 
 .chart_historyIMT {
   width: 400px;
+}
+
+@media screen and (max-width: 1025px) {
+  .chart_historyIMT {
+    width: 500px;
+  }
 }
 
 @media screen and (max-width: 578px) {
