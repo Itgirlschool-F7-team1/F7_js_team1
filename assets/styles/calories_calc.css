@@ -655,7 +655,6 @@ input[type=radio]:checked + label:before {
   width: 180px;
   border: 1px solid #eedac9;
   border-radius: 5px;
-  background-color: #f8eae871;
   outline: none;
   text-align: center;
   padding: 10px;
