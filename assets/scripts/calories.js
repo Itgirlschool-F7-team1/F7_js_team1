@@ -53,11 +53,11 @@ function calculateCalories(e) {
     } 
 
       
-    if(totalCalories.value === '' || totalCalories.value >'0'){
+    if(totalCalories.value === ''|| totalCalories.value >'0'){
      maxCalories.value = Math.round(totalCalories.value * 1.15);
   }  
 
-    if(totalCalories.value === '' || totalCalories.value >'0'){
+    if(totalCalories.value === ''|| totalCalories.value >'0'){
       minCalories.value = Math.round(totalCalories.value * 0.85);
   }  
   
