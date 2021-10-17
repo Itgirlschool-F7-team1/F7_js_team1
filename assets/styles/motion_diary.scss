@@ -33,7 +33,7 @@ sans-serif;
     background-color: #fff;
 
     @media screen and (max-width: 420px) {
-        padding-bottom:5px;
+        padding-bottom: 5px;
     }
 
 
@@ -237,18 +237,27 @@ sans-serif;
     }
 
     // успехи пользователя.блок мотивации и среднее значение
-    #personalRecords_box,
-    .personalRecords_mean {
-
+    #personalRecords_box {
         color: $font;
         font-size: 15px;
         text-align: center;
         width: 200px;
 
+
         @media screen and (max-width: 768px) {
             width: 300px;
         }
     }
+
+    #personalRecords_mean {
+
+        color: $font;
+        padding-top: 15px;
+        font-size: 30px;
+        text-align: left;
+        width: 200px;
+    }
+
 
     .chart-md {
         height: 50%;
@@ -265,7 +274,7 @@ sans-serif;
         }
 
         @media screen and (max-width: 420px) {
-            padding:20px;
+            padding: 20px;
         }
 
     }

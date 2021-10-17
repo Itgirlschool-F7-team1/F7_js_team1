@@ -30,7 +30,7 @@ let btnMeanMotionDiary = document.getElementById('btn_mean');
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
 btnMotionDiary.addEventListener('click', stepsChartUpdate);
-btnMeanMotionDiary.addEventListener('click',averageValueCalculation);
+btnMeanMotionDiary.addEventListener('click', averageValueCalculation);
 
 
 
@@ -41,9 +41,7 @@ function saveInfoSteps() {
     const steps = document.getElementById('steps_today').value;
 
 
-
-
-    //     // вывод ошибок
+    // вывод ошибок
 
     if (stepsToday === '') {
         document.getElementById('errorMessage_dateMd').innerHTML = 'Error! Введите, пожалуйста, дату.';
@@ -153,7 +151,7 @@ function getArrayChartSteps() {
 
 
 
-//     // график
+// график
 
 //  записываем в переменные функции, потому что не читает, если просто написать массивы
 
@@ -162,9 +160,6 @@ let dataMotionDiary = getArrayChartSteps();
 let colorsMotionDiary = ['#b1a28d'];
 
 let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
-
-// myChartMotionDiary.canvas.width = 900;
-// myChartMotionDiary.canvas.height = 350;
 
 let chartMotionDiary = new Chart(myChartMotionDiary, {
     type: 'line',
@@ -207,13 +202,13 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
 
 })
 
+// обновление графика
 function stepsChartUpdate() {
     let labelsMotionDiary = getArrayChartDate();
     let dataMotionDiary = getArrayChartSteps();
     let colorsMotionDiary = ['#B1A28D'];
     chartMotionDiary.data.labels = labelsMotionDiary;
     chartMotionDiary.data.datasets = [{
-        // labels: labelsMotionDiary,
         label: 'Количество шагов',
         borderWidth: 2,
         fill: true,
@@ -226,14 +221,16 @@ function stepsChartUpdate() {
     chartMotionDiary.update();
 }
 
-function averageValueCalculation(){
+function averageValueCalculation() {
+   
+    let arrStepsAll = getArrayChartSteps();
+    let sum = 0;
+    let count = arrStepsAll.length;
 
+    for (i = 0; i < count; i++)
+        sum += +arrStepsAll[i];
+
+    let averageValue = sum / count;
+    document.getElementById('personalRecords_mean').innerHTML  = Math.round(averageValue);
+    
 }
-
-
-
-let data = [1,1,3,5,5]; // Массив чисел
-// Среднее - это сумма значений элементов, деленная на их количество
-let total = 0;
-for(let і = 0; і < data.length; і++) total += data[i];
-let mean = total/data.length; // Среднее значение равно З

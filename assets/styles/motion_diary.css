@@ -616,8 +616,7 @@ template {
   }
 }
 
-.main-md #personalRecords_box,
-.main-md .personalRecords_mean {
+.main-md #personalRecords_box {
   color: #6d6552;
   font-size: 15px;
   text-align: center;
@@ -625,10 +624,17 @@ template {
 }
 
 @media screen and (max-width: 768px) {
-  .main-md #personalRecords_box,
-  .main-md .personalRecords_mean {
+  .main-md #personalRecords_box {
     width: 300px;
   }
+}
+
+.main-md #personalRecords_mean {
+  color: #6d6552;
+  padding-top: 15px;
+  font-size: 30px;
+  text-align: left;
+  width: 200px;
 }
 
 .main-md .chart-md {
