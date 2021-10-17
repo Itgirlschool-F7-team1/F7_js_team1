@@ -24,10 +24,13 @@ if (localStorage.getItem('enteredSteps') === null) {
 // создаем переменную с кнопкой, вешаем события по клику
 let btnMotionDiary = document.getElementById('btn_md');
 
+// кнопка для рассчета среднего значения
+let btnMeanMotionDiary = document.getElementById('btn_mean');
 
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
 btnMotionDiary.addEventListener('click', stepsChartUpdate);
+btnMeanMotionDiary.addEventListener('click',averageValueCalculation);
 
 
 
@@ -63,7 +66,7 @@ function saveInfoSteps() {
     } else if (steps > 250 && steps <= 1500) {
         document.getElementById('personalRecords_box').innerHTML = 'Нет победителя сильнее того, кто сумел победить самого себя';
     } else if (steps > 1500 && steps <= 3000) {
-        document.getElementById('personalRecords_box').innerHTML = 'Дороги выложены, делай шаг увереннее,<br>ведь двери все распахнуты для тех,<br> кто чист намерениями.';
+        document.getElementById('personalRecords_box').innerHTML = 'Дороги выложены, делай шаг увереннее, ведь двери все распахнуты для тех,кто чист намерениями.';
     } else if (steps > 3000 && steps <= 8000) {
         document.getElementById('personalRecords_box').innerHTML = 'Время всегда на шаг опережает нас — но мысли наши опережают время!';
     } else if (steps > 8000 && steps <= 13000) {
@@ -222,3 +225,15 @@ function stepsChartUpdate() {
     }];
     chartMotionDiary.update();
 }
+
+function averageValueCalculation(){
+
+}
+
+
+
+let data = [1,1,3,5,5]; // Массив чисел
+// Среднее - это сумма значений элементов, деленная на их количество
+let total = 0;
+for(let і = 0; і < data.length; і++) total += data[i];
+let mean = total/data.length; // Среднее значение равно З
