@@ -25,11 +25,14 @@ if (localStorage.getItem('enteredSteps') === null) {
 // создаем переменную с кнопкой, вешаем события по клику
 let btnMotionDiary = document.getElementById('btn_md');
 
-let btnSum = document.getElementById('btn_sum');
+// кнопка для рассчета среднего значения
+let btnMeanMotionDiary = document.getElementById('btn_mean');
+
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
 btnMotionDiary.addEventListener('click', stepsChartUpdate);
-// btnSum.addEventListener('click', personalRecords);
+btnMeanMotionDiary.addEventListener('click', averageValueCalculation);
+
 
 
 
@@ -39,19 +42,18 @@ function saveInfoSteps() {
     const steps = document.getElementById('steps_today').value;
 
 
-
-
     // вывод ошибок
 
     if (stepsToday === '') {
         document.getElementById('errorMessage_dateMd').innerHTML = 'Error! Введите, пожалуйста, дату.';
+    } else {
+        document.getElementById('errorMessage_dateMd').innerHTML = ''
     }
     if (steps === '') {
         document.getElementById('errorMessage_stepsMd').innerHTML = 'Error! Введите, пожалуйста, число.';
     } else {
-        // очистка полей ошибки
-        document.getElementById('errorMessage_dateMd').innerHTML = ''
         document.getElementById('errorMessage_stepsMd').innerHTML = ''
+
     }
 
     // поддержка и мотивация пользователя
@@ -62,23 +64,23 @@ function saveInfoSteps() {
         document.getElementById('personalRecords_box').innerHTML = 'Для победы необходимо мужество сделать первый шаг.';
     } else if (steps > 250 && steps <= 1500) {
         document.getElementById('personalRecords_box').innerHTML = 'Нет победителя сильнее того, кто сумел победить самого себя';
-    }else if (steps > 1500 && steps<= 3000 ){
-        document.getElementById('personalRecords_box').innerHTML = 'Дороги выложены, делай шаг увереннее,<br>ведь двери все распахнуты для тех,<br> кто чист намерениями.';
-    }else if (steps > 3000 && steps<= 8000 ){
+    } else if (steps > 1500 && steps <= 3000) {
+        document.getElementById('personalRecords_box').innerHTML = 'Дороги выложены, делай шаг увереннее, ведь двери все распахнуты для тех,кто чист намерениями.';
+    } else if (steps > 3000 && steps <= 8000) {
         document.getElementById('personalRecords_box').innerHTML = 'Время всегда на шаг опережает нас — но мысли наши опережают время!';
-    }else if (steps > 8000 && steps<= 13000 ){
+    } else if (steps > 8000 && steps <= 13000) {
         document.getElementById('personalRecords_box').innerHTML = 'Иди, куда влечет тебя свободный ум.';
-    }else if (steps > 13000 && steps<= 17000 ){
+    } else if (steps > 13000 && steps <= 17000) {
         document.getElementById('personalRecords_box').innerHTML = 'Истина - в середине.';
-    }else if (steps > 17000 && steps<= 22000 ){
+    } else if (steps > 17000 && steps <= 22000) {
         document.getElementById('personalRecords_box').innerHTML = '...если получится, я сделаю следующий шаг, а потом посмотрю, куда меня это заведёт.';
-    }else if (steps > 22000 && steps<= 26000 ){
+    } else if (steps > 22000 && steps <= 26000) {
         document.getElementById('personalRecords_box').innerHTML = 'Мы знаем, кто мы есть, но не знаем, кем мы можем быть.';
-    }else if (steps > 26000 && steps<= 30000 ){
+    } else if (steps > 26000 && steps <= 30000) {
         document.getElementById('personalRecords_box').innerHTML = 'О, не лети так Жизнь!<br>…Слегка замедли шаг…<br>Мне важен каждый миг и маленький пустяк.';
-    }else if (steps > 30000 && steps<= 35000 ){
+    } else if (steps > 30000 && steps <= 35000) {
         document.getElementById('personalRecords_box').innerHTML = 'Nunquam retrorsum, semper ingrediendum.';
-    }else if (steps > 35000 && steps<= 40000 ){
+    } else if (steps > 35000 && steps <= 40000) {
         document.getElementById('personalRecords_box').innerHTML = 'Приятны завершенные труды.';
     }
 
@@ -112,7 +114,7 @@ function saveInfoSteps() {
         console.log(localStorage.getItem('enteredSteps'))
 
     }
-  
+
 
 }
 
@@ -150,7 +152,7 @@ function getArrayChartSteps() {
 
 
 
-//     // график
+// график
 
 //  записываем в переменные функции, потому что не читает, если просто написать массивы
 
@@ -159,9 +161,6 @@ let dataMotionDiary = getArrayChartSteps();
 let colorsMotionDiary = ['#b1a28d'];
 
 let myChartMotionDiary = document.getElementById("myChartMotionDiary").getContext('2d');
-
-// myChartMotionDiary.canvas.width = 900;
-// myChartMotionDiary.canvas.height = 350;
 
 let chartMotionDiary = new Chart(myChartMotionDiary, {
     type: 'line',
@@ -204,13 +203,13 @@ let chartMotionDiary = new Chart(myChartMotionDiary, {
 
 })
 
+// обновление графика
 function stepsChartUpdate() {
     let labelsMotionDiary = getArrayChartDate();
     let dataMotionDiary = getArrayChartSteps();
     let colorsMotionDiary = ['#B1A28D'];
     chartMotionDiary.data.labels = labelsMotionDiary;
     chartMotionDiary.data.datasets = [{
-        // labels: labelsMotionDiary,
         label: 'Количество шагов',
         borderWidth: 2,
         fill: true,
@@ -223,6 +222,19 @@ function stepsChartUpdate() {
     chartMotionDiary.update();
 }
 
+function averageValueCalculation() {
+   
+    let arrStepsAll = getArrayChartSteps();
+    let sum = 0;
+    let count = arrStepsAll.length;
+
+    for (i = 0; i < count; i++)
+        sum += +arrStepsAll[i];
+
+    let averageValue = sum / count;
+    document.getElementById('personalRecords_mean').innerHTML  = Math.round(averageValue);
+    
+}
 
 },{"chart.js":2}],2:[function(require,module,exports){
 /*!

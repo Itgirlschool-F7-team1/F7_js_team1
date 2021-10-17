@@ -26,10 +26,16 @@ sans-serif;
     padding-left: 3%;
     padding-right: 3%;
     margin-top: 70px;
+    padding-bottom: 30px;
 
     font-family: $fz1;
     border-radius: 10px;
     background-color: #fff;
+
+    @media screen and (max-width: 420px) {
+        padding-bottom: 5px;
+    }
+
 
 
     // стили кнопки
@@ -104,7 +110,7 @@ sans-serif;
     // стили заголовка
     .title-md {
         color: $font;
-        font: $fz1;
+        font-family: $fz1;
         font-size: 40px;
         text-align: center;
         margin-bottom: 40px;
@@ -231,18 +237,27 @@ sans-serif;
     }
 
     // успехи пользователя.блок мотивации и среднее значение
-    #personalRecords_box,
-    .personalRecords_mean {
-
+    #personalRecords_box {
         color: $font;
         font-size: 15px;
         text-align: center;
         width: 200px;
 
+
         @media screen and (max-width: 768px) {
-            text-align: center;
+            width: 300px;
         }
     }
+
+    #personalRecords_mean {
+
+        color: $font;
+        padding-top: 15px;
+        font-size: 30px;
+        text-align: left;
+        width: 200px;
+    }
+
 
     .chart-md {
         height: 50%;
@@ -259,8 +274,7 @@ sans-serif;
         }
 
         @media screen and (max-width: 420px) {
-            padding-top: 20px;
-            padding-bottom: 30px;
+            padding: 20px;
         }
 
     }

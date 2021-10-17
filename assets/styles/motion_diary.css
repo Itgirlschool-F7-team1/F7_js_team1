@@ -381,9 +381,16 @@ template {
   padding-left: 3%;
   padding-right: 3%;
   margin-top: 70px;
+  padding-bottom: 30px;
   font-family: "Montserrat-Semibold", sans-serif;
   border-radius: 10px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 420px) {
+  .main-md {
+    padding-bottom: 5px;
+  }
 }
 
 .main-md .main_close_a_window {
@@ -460,7 +467,7 @@ template {
 
 .main-md .title-md {
   color: #6d6552;
-  font: "Montserrat-Semibold", sans-serif;
+  font-family: "Montserrat-Semibold", sans-serif;
   font-size: 40px;
   text-align: center;
   margin-bottom: 40px;
@@ -609,8 +616,7 @@ template {
   }
 }
 
-.main-md #personalRecords_box,
-.main-md .personalRecords_mean {
+.main-md #personalRecords_box {
   color: #6d6552;
   font-size: 15px;
   text-align: center;
@@ -618,10 +624,17 @@ template {
 }
 
 @media screen and (max-width: 768px) {
-  .main-md #personalRecords_box,
-  .main-md .personalRecords_mean {
-    text-align: center;
+  .main-md #personalRecords_box {
+    width: 300px;
   }
+}
+
+.main-md #personalRecords_mean {
+  color: #6d6552;
+  padding-top: 15px;
+  font-size: 30px;
+  text-align: left;
+  width: 200px;
 }
 
 .main-md .chart-md {
@@ -644,8 +657,7 @@ template {
 
 @media screen and (max-width: 420px) {
   .main-md .chart-md {
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding: 20px;
   }
 }
 /*# sourceMappingURL=motion_diary.css.map */

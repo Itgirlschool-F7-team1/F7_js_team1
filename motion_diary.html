@@ -29,19 +29,16 @@
                 <div class="section-datasets__box">
                     <div class="section-datasets__dateToday">
                         <label for="localdate" class="section-datasets__text">Дата</label>
-                        <input type="date" title="Введите, пожалуйста, дату" class="section-datasets__input_one"
-                            name="daterange" id="localdate" />
+                        <input type="date" required title="Введите, пожалуйста, дату"
+                            class="section-datasets__input_one" name="daterange" id="localdate" />
                         <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
                     </div>
                     <div class="section-datasets__stepsToday">
                         <label for="steps_today" class="section-datasets__text">Количество шагов </label>
                         <input type="number" title="Введите, пожалуйста, количество шагов"
                             class="section-datasets__input_second" name="s_t" id="steps_today" />
-
                         <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
-
                     </div>
-
                     <div class="section-datasets__buttonSaveMd">
                         <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
                     </div>
@@ -52,15 +49,12 @@
                         <div id="personalRecords_mean"></div>
                     </div>
 
-
                 </div>
                 <!-- график -->
-
                 <div class="chart-md">
                     <canvas id="myChartMotionDiary"></canvas>
                 </div>
             </div>
-
         </section>
     </main>
 
