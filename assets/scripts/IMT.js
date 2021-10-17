@@ -48,17 +48,26 @@ function calculateIMT() {
         document.getElementById('errorMessage_userHeight').innerHTML = 'Поле не заполнено. Введите Ваш рост.';
     } else {
         // очищаем текст ошибок
-        document.getElementById('errorMessage_userHeight').innerHTML = ''
+        document.getElementById('errorMessage_userHeight').innerHTML = '';
     }
 
 
     if (userWeight === '') {
         document.querySelector('.valueIMT').innerHTML = '?';
-        document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.'
+        document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.';
     } else {
         // очищаем текст ошибок
-        document.getElementById('errorMessage_userHeight').innerHTML = ''
-        document.getElementById('errorMessage_userWeight').innerHTML = ''
+        document.getElementById('errorMessage_userWeight').innerHTML = '';
+    }
+
+
+    // else {
+
+    if (userHeight, userWeight) {
+
+        // очищаем текст ошибок
+        document.getElementById('errorMessage_userHeight').innerHTML = '';
+        document.getElementById('errorMessage_userWeight').innerHTML = '';
 
         //если дата будет заполнена после - убираем текст ошибки
         if (userDate) {
@@ -241,29 +250,30 @@ let colorsHistoryIMT = ['#b1a28d'];
 let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
 
 let chart_historyIMT = new Chart(
-document.getElementById('myChart_historyIMT'), {
-    type: 'line',
-    data: {
-    labels: labelsHistoryIMT,
-    datasets: [{
-        label: 'Динамика Вашего Индекса массы тела',
-        data: dataHistoryIMT,
-        fill: false,
-        borderColor: '#eb4b51',
-        tension: 0.1,
-        pointBackgroundColor: colorsHistoryIMT,
-        pointRadius: 3,
-        pointStyle: 'star',
-        borderWidth: 1
-    }]},
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true // назначили оси Y начинать отсчет с нуля
+    document.getElementById('myChart_historyIMT'), {
+        type: 'line',
+        data: {
+            labels: labelsHistoryIMT,
+            datasets: [{
+                label: 'Динамика Вашего Индекса массы тела',
+                data: dataHistoryIMT,
+                fill: false,
+                borderColor: '#eb4b51',
+                tension: 0.1,
+                pointBackgroundColor: colorsHistoryIMT,
+                pointRadius: 3,
+                pointStyle: 'star',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // назначили оси Y начинать отсчет с нуля
+                }
             }
         }
     }
-}
 );
 
 //фукнция автоматического обновления графика при вводе новых данных
