@@ -26,10 +26,16 @@ sans-serif;
     padding-left: 3%;
     padding-right: 3%;
     margin-top: 70px;
+    padding-bottom: 30px;
 
     font-family: $fz1;
     border-radius: 10px;
     background-color: #fff;
+
+    @media screen and (max-width: 420px) {
+        padding-bottom:5px;
+    }
+
 
 
     // стили кнопки
@@ -240,7 +246,7 @@ sans-serif;
         width: 200px;
 
         @media screen and (max-width: 768px) {
-            text-align: center;
+            width: 300px;
         }
     }
 
@@ -259,8 +265,7 @@ sans-serif;
         }
 
         @media screen and (max-width: 420px) {
-            padding-top: 20px;
-            padding-bottom: 30px;
+            padding:20px;
         }
 
     }
