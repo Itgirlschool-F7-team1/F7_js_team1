@@ -14,29 +14,33 @@ body {
 .heading_calories-calc {
     text-align: center;
     font-family: 'Montserrat-Semibold', sans-serif;
+    margin-top: -30px;
+
+    @media screen and (max-width: 758px) {
+        margin-top: 0px;
+    }
+
+    @media screen and (max-width: 414px) {
+        margin-top: 0px;
+    }
 }
+
+
 
 //основной большой блок
 .calc_container {
     max-width: 1200px;
-    width: 700px;
-    height: 300px;
     border-radius: 20px;
-    min-height: 60vh;
-    margin: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-    margin-top: 100px;
+    min-height: 70vh;
+    padding-left: 10%;
+    padding-right: 10%;
     border: 1px solid black;
-    border-radius: 10px;
     background-color: #fff;
     font-family: 'Rubik-Regular', sans-serif;
-
-
-    @media screen and (max-width: 375px) {
-        width: 300px;
-        height: 800px;
-    }
+    width: 95%;
+    height: fit-content;
+    margin: auto;
+    box-sizing: border-box;
 }
 
 .calc_close_a_window {
@@ -99,12 +103,10 @@ body {
 
 .container_calories-calc {
     display: flex;
-    width: 1270px;
-
-    @media screen and (max-width: 375px) {
-        flex-direction: column;
-    }
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
 
 .container_calories-calc_height,
 .container_calories-calc_weight,
@@ -115,13 +117,14 @@ body {
     gap: 10px;
     margin-top: 10px;
     width: 150px;
-
-    @media screen and (max-width: 375px) {
-        margin-left: 40px;
-    }
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-size: 15px;
 }
 
-label {
+.calories_gender,
+.calories-calc_height,
+.calories-calc_weihgt,
+.calories-calc_age {
     font-family: 'Montserrat-Semibold', sans-serif;
     font-size: 15px;
 }
@@ -133,17 +136,13 @@ label {
 
 .calc_radio {
     padding-top: 10px;
-
-    @media screen and (max-width: 375px) {
-        margin-left: 40px;
-    }
 }
 
 
 .calories_button {
     border: 0;
     text-align: center;
-    padding: 1px 20px;
+    padding: 1px 30px;
     text-decoration: none;
     box-shadow: none;
     border-radius: 7px;
@@ -169,6 +168,7 @@ label {
     @media screen and (max-width: 375px) {
         margin-left: 40px;
     }
+
 }
 
 .error {
@@ -218,31 +218,75 @@ input[type=radio]:checked+label:before {
 .calc_height_input,
 .calc_weight_input,
 .calc_age_input,
-.form-control,
 .custom-select {
     color: $dark-pink;
-    height: 20px;
-    width: 150px;
+    height: 15px;
+    width: 180px;
     border: 1px solid #eedac9;
     border-radius: 5px;
     background-color: #f8eae871;
     outline: none;
     text-align: center;
+    padding: 10px;
 
 
     &:hover {
         box-shadow: 0px 0px 5px 1px $pink;
     }
-}
-
-.custom-select {
-    width: 350px;
 
     @media screen and (max-width: 375px) {
-        width: 180px;
+        padding: 0px;
+        height: 20px;
+        width: 150px;
+    }
+
+    @media screen and (max-width: 414px) {
+        padding: 0px;
+        height: 20px;
+        width: 150px;
     }
 }
 
+
+.form-control {
+    color: $dark-pink;
+    height: 15px;
+    width: 180px;
+    border: 1px solid #eedac9;
+    border-radius: 5px;
+    background-color: #f8eae871;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+
+    @media screen and (max-width: 375px) {
+        padding: 0px;
+        height: 20px;
+        width: 150px;
+    }
+
+    @media screen and (max-width: 414px) {
+        padding: 0px;
+        height: 20px;
+        width: 150px;
+    }
+}
+
+.custom-select {
+    width: 380px;
+    height: 40px;
+    padding: 10px;
+
+    @media screen and (max-width: 375px) {
+        width: 180px;
+        height: 15px;
+    }
+
+    @media screen and (max-width: 414px) {
+        width: 180px;
+        height: 15px;
+    }
+}
 
 .counter_result-list {
     display: flex;
@@ -256,20 +300,27 @@ input[type=radio]:checked+label:before {
     gap: 10px;
 
     @media screen and (max-width: 375px) {
-        margin-left: 30px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    @media screen and (max-width: 414px) {
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-left: 0px;
+        padding: 0px
+    }
+
+    @media screen and (max-width: 890px) {
+        margin-left: 0px;
+        padding: 0px
     }
 }
 
-h4 {
-    margin: 00px;
-    margin-bottom: 2px;
-
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 26px;
-}
-
-h3 {
+.heading_calories_result {
     text-align: center;
 
     @media screen and (max-width: 375px) {
@@ -278,7 +329,14 @@ h3 {
     }
 }
 
-p {
-    margin: 0;
-    color: var(--color-gray-dark);
+.heading_calories-result {
+    margin: 0px;
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.calories_calc-text {
+    margin: 0px;
 }
