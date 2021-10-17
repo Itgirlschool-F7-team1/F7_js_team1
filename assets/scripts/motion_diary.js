@@ -24,11 +24,11 @@ if (localStorage.getItem('enteredSteps') === null) {
 // создаем переменную с кнопкой, вешаем события по клику
 let btnMotionDiary = document.getElementById('btn_md');
 
-let btnSum = document.getElementById('btn_sum');
+
 
 btnMotionDiary.addEventListener('click', saveInfoSteps);
 btnMotionDiary.addEventListener('click', stepsChartUpdate);
-// btnSum.addEventListener('click', personalRecords);
+
 
 
 
@@ -40,17 +40,18 @@ function saveInfoSteps() {
 
 
 
-    // вывод ошибок
+    //     // вывод ошибок
 
     if (stepsToday === '') {
         document.getElementById('errorMessage_dateMd').innerHTML = 'Error! Введите, пожалуйста, дату.';
+    } else {
+        document.getElementById('errorMessage_dateMd').innerHTML = ''
     }
     if (steps === '') {
         document.getElementById('errorMessage_stepsMd').innerHTML = 'Error! Введите, пожалуйста, число.';
     } else {
-        // очистка полей ошибки
-        document.getElementById('errorMessage_dateMd').innerHTML = ''
         document.getElementById('errorMessage_stepsMd').innerHTML = ''
+
     }
 
     // поддержка и мотивация пользователя
@@ -61,23 +62,23 @@ function saveInfoSteps() {
         document.getElementById('personalRecords_box').innerHTML = 'Для победы необходимо мужество сделать первый шаг.';
     } else if (steps > 250 && steps <= 1500) {
         document.getElementById('personalRecords_box').innerHTML = 'Нет победителя сильнее того, кто сумел победить самого себя';
-    }else if (steps > 1500 && steps<= 3000 ){
+    } else if (steps > 1500 && steps <= 3000) {
         document.getElementById('personalRecords_box').innerHTML = 'Дороги выложены, делай шаг увереннее,<br>ведь двери все распахнуты для тех,<br> кто чист намерениями.';
-    }else if (steps > 3000 && steps<= 8000 ){
+    } else if (steps > 3000 && steps <= 8000) {
         document.getElementById('personalRecords_box').innerHTML = 'Время всегда на шаг опережает нас — но мысли наши опережают время!';
-    }else if (steps > 8000 && steps<= 13000 ){
+    } else if (steps > 8000 && steps <= 13000) {
         document.getElementById('personalRecords_box').innerHTML = 'Иди, куда влечет тебя свободный ум.';
-    }else if (steps > 13000 && steps<= 17000 ){
+    } else if (steps > 13000 && steps <= 17000) {
         document.getElementById('personalRecords_box').innerHTML = 'Истина - в середине.';
-    }else if (steps > 17000 && steps<= 22000 ){
+    } else if (steps > 17000 && steps <= 22000) {
         document.getElementById('personalRecords_box').innerHTML = '...если получится, я сделаю следующий шаг, а потом посмотрю, куда меня это заведёт.';
-    }else if (steps > 22000 && steps<= 26000 ){
+    } else if (steps > 22000 && steps <= 26000) {
         document.getElementById('personalRecords_box').innerHTML = 'Мы знаем, кто мы есть, но не знаем, кем мы можем быть.';
-    }else if (steps > 26000 && steps<= 30000 ){
+    } else if (steps > 26000 && steps <= 30000) {
         document.getElementById('personalRecords_box').innerHTML = 'О, не лети так Жизнь!<br>…Слегка замедли шаг…<br>Мне важен каждый миг и маленький пустяк.';
-    }else if (steps > 30000 && steps<= 35000 ){
+    } else if (steps > 30000 && steps <= 35000) {
         document.getElementById('personalRecords_box').innerHTML = 'Nunquam retrorsum, semper ingrediendum.';
-    }else if (steps > 35000 && steps<= 40000 ){
+    } else if (steps > 35000 && steps <= 40000) {
         document.getElementById('personalRecords_box').innerHTML = 'Приятны завершенные труды.';
     }
 
@@ -111,7 +112,7 @@ function saveInfoSteps() {
         console.log(localStorage.getItem('enteredSteps'))
 
     }
-  
+
 
 }
 
@@ -221,4 +222,3 @@ function stepsChartUpdate() {
     }];
     chartMotionDiary.update();
 }
-
