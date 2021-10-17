@@ -1087,4 +1087,36 @@ body {
     width: 300px;
   }
 }
+
+.enter_input:hover {
+  -webkit-box-shadow: 0px 0px 5px 2px #eb4b51;
+          box-shadow: 0px 0px 5px 2px #eb4b51;
+}
+
+.btn_clear_history_IMT {
+  border: 0;
+  text-align: center;
+  padding: 7px 30px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 15px;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  background: #eb4b51;
+  cursor: pointer;
+}
+
+.btn_clear_history_IMT:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
+          box-shadow: 0px 0px 5px 1px #eb4b51;
+}
+
+.btn_clear_history_IMT:active {
+  background: #eb4b51;
+}
 /*# sourceMappingURL=IMT.css.map */
