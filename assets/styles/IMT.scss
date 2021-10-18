@@ -1,16 +1,10 @@
-@import 'normalize.scss';
 @import 'fonts.scss';
-@import '../scripts/node_modules/js-datepicker/src/datepicker.scss';
+
 
 $pink: #f8e9e7;
 $dark-pink: #eb4b51;
 $white: #ffffff;
 
-
-
-body {
-  background-color: $pink;
-}
 
 .main_container_IMT {
   max-width: 1200px;
@@ -18,9 +12,9 @@ body {
   margin: auto;
   padding: 15px;
 
-  margin-top: 50px;
+  // margin-top: 50px;
   font-family: 'Montserrat-Semibold', sans-serif;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: $white;
   max-height: fit-content;
 }
@@ -29,7 +23,7 @@ body {
 .btn_close_IMT {
   display: flex;
   justify-content: flex-end;
-  padding-top: 30px;
+  // padding-top: 30px;
 }
 
 .cl-btn-7_IMT {
@@ -84,7 +78,7 @@ body {
 .title_IMT {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 40px;
 
   @media screen and (max-width: 578px) {
@@ -297,7 +291,7 @@ body {
 //наведение курсора на поле ввода
 .enter_input {
   &:hover {
-    box-shadow: 0px 0px 5px 2px #eb4b51;
+    box-shadow: 0px 0px 5px 2px #f57e82;
   }
 
 }
