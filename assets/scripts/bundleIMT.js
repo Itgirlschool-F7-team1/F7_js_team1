@@ -26,9 +26,9 @@ console.log('hi');
 
 // Кнопка Рассчитать
 
-let btn = document.querySelector('.btn_IMT');
-btn.addEventListener('click', calculateIMT);
-btn.addEventListener('click', chartUpdate);
+let btn_calc_IMT = document.querySelector('.btn_IMT');
+btn_calc_IMT.addEventListener('click', calculateIMT);
+btn_calc_IMT.addEventListener('click', chartUpdate);
 
 
 // функция расчета ИМТ
@@ -44,22 +44,36 @@ function calculateIMT() {
         document.getElementById('errorMessage_date_IMT').innerHTML = 'Поле не заполнено. Введите дату.';
     }
 
+//вывод ошибок про рост
     if (userHeight === '') {
         document.querySelector('.valueIMT').innerHTML = '?';
         document.getElementById('errorMessage_userHeight').innerHTML = 'Поле не заполнено. Введите Ваш рост.';
+    } else if (document.getElementById('userHeight').validity.rangeOverflow) {
+        document.getElementById('errorMessage_userHeight').innerHTML = 'Рост не может быть больше 220 см';
+    } else if (document.getElementById('userHeight').validity.rangeUnderflow) {
+        document.getElementById('errorMessage_userHeight').innerHTML = 'Рост не может быть меньше 100 см';
     } else {
-        // очищаем текст ошибок
-        document.getElementById('errorMessage_userHeight').innerHTML = ''
+        document.getElementById('errorMessage_userHeight').innerHTML = ''; 
+    }
+
+//вывод ошибок про вес
+    if (userWeight === '') {
+        document.querySelector('.valueIMT').innerHTML = '?';
+        document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.';
+    } else if (document.getElementById('userWeight').validity.rangeOverflow) {
+        document.getElementById('errorMessage_userWeight').innerHTML = 'Вес не может быть больше 200 кг';
+    } else if (document.getElementById('userWeight').validity.rangeUnderflow) {
+        document.getElementById('errorMessage_userWeight').innerHTML = 'Вес не может быть меньше 30 кг';
+    } else {
+        document.getElementById('errorMessage_userWeight').innerHTML = ''; 
     }
 
 
-    if (userWeight === '') {
-        document.querySelector('.valueIMT').innerHTML = '?';
-        document.getElementById('errorMessage_userWeight').innerHTML = 'Поле не заполнено. Введите Ваш вес.'
-    } else {
+    if ((100<userHeight && userHeight<220) && (30<userWeight && userWeight<200)) {
+
         // очищаем текст ошибок
-        document.getElementById('errorMessage_userHeight').innerHTML = ''
-        document.getElementById('errorMessage_userWeight').innerHTML = ''
+        document.getElementById('errorMessage_userHeight').innerHTML = '';
+        document.getElementById('errorMessage_userWeight').innerHTML = '';
 
         //если дата будет заполнена после - убираем текст ошибки
         if (userDate) {
@@ -177,10 +191,10 @@ if (localStorage.getItem('enteredIMT') === null) {
 
 
 // вешаем на кнопку функции по сохранению и выводу в график
-btn.addEventListener('click', saveInfoIMT);
-btn.addEventListener('click', getArrayChartDateIMT);
-btn.addEventListener('click', getArrayChartIMT);
-btn.addEventListener('click', chart_historyIMT_Update);
+btn_calc_IMT.addEventListener('click', saveInfoIMT);
+btn_calc_IMT.addEventListener('click', getArrayChartDateIMT);
+btn_calc_IMT.addEventListener('click', getArrayChartIMT);
+btn_calc_IMT.addEventListener('click', chart_historyIMT_Update);
 
 
 // создаем функцию по сохранению данных
@@ -242,29 +256,30 @@ let colorsHistoryIMT = ['#b1a28d'];
 let ctx_historyIMT = document.getElementById('myChart_historyIMT').getContext('2d');
 
 let chart_historyIMT = new Chart(
-document.getElementById('myChart_historyIMT'), {
-    type: 'line',
-    data: {
-    labels: labelsHistoryIMT,
-    datasets: [{
-        label: 'Динамика Вашего Индекса массы тела',
-        data: dataHistoryIMT,
-        fill: false,
-        borderColor: '#eb4b51',
-        tension: 0.1,
-        pointBackgroundColor: colorsHistoryIMT,
-        pointRadius: 3,
-        pointStyle: 'star',
-        borderWidth: 1
-    }]},
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true // назначили оси Y начинать отсчет с нуля
+    document.getElementById('myChart_historyIMT'), {
+        type: 'line',
+        data: {
+            labels: labelsHistoryIMT,
+            datasets: [{
+                label: 'Динамика Вашего Индекса массы тела',
+                data: dataHistoryIMT,
+                fill: false,
+                borderColor: '#eb4b51',
+                tension: 0.1,
+                pointBackgroundColor: colorsHistoryIMT,
+                pointRadius: 3,
+                pointStyle: 'star',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // назначили оси Y начинать отсчет с нуля
+                }
             }
         }
     }
-}
 );
 
 //фукнция автоматического обновления графика при вводе новых данных
@@ -294,6 +309,15 @@ function chart_historyIMT_Update() {
         }
     }
     chart_historyIMT.update();
+}
+
+//кнопка Очистить историю
+let btn_clear_history_IMT = document.querySelector('.btn_clear_history_IMT');
+
+btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
+
+function clearHistoryIMT() {
+    localStorage.removeItem('enteredIMT');
 }
 
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
