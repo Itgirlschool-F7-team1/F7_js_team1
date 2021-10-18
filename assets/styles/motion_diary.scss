@@ -1,4 +1,3 @@
-@import 'normalize.scss';
 @import 'fonts.scss';
 // переменные с используемыми цветами
 
@@ -12,11 +11,6 @@ sans-serif;
 $fz2:'Rubik-Regular',
 sans-serif;
 
-.body-md {
-    background-color: $pink;
-}
-
-
 .main-md {
 
     max-width: 1200px;
@@ -25,11 +19,11 @@ sans-serif;
     margin: auto;
     padding-left: 3%;
     padding-right: 3%;
-    margin-top: 70px;
+    // margin-top: 70px;
     padding-bottom: 30px;
 
     font-family: $fz1;
-    border-radius: 10px;
+    // border-radius: 10px;
     background-color: #fff;
 
     @media screen and (max-width: 420px) {
@@ -115,6 +109,7 @@ sans-serif;
         text-align: center;
         margin-bottom: 40px;
         gap: 5px;
+        margin-top: -20px;
 
         .motionDiary__recommendation {
             height: 40px;
@@ -128,7 +123,7 @@ sans-serif;
         @media screen and (max-width: 768px) {
             flex-direction: column;
             font-size: 30px;
-
+            margin-top: 0px;
         }
 
     }
@@ -145,9 +140,6 @@ sans-serif;
 
             // gap: 10px;
         }
-
-
-
     }
 
     .section-datasets__box {
@@ -164,6 +156,7 @@ sans-serif;
             padding-right: 0px;
             padding-bottom: 20px;
             align-content: center;
+            justify-content: center;
 
         }
 
@@ -178,6 +171,10 @@ sans-serif;
     .section-datasets__text {
         margin-bottom: 10px;
         color: $font;
+
+        @media screen and (max-width: 768px) {
+            margin-left: 10%;
+        }
     }
 
     .section-datasets__input_one,
@@ -199,6 +196,11 @@ sans-serif;
         @media screen and (max-width: 768px) {
             height: 40px;
             width: 300px;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 80%;
         }
     }
 
@@ -207,6 +209,13 @@ sans-serif;
     .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
+    }
+
+    .section-datasets__buttonSaveMd,
+    .section-datasets__buttonMean {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .section-datasets__btn,
@@ -232,8 +241,12 @@ sans-serif;
         @media screen and (max-width: 768px) {
             height: 40px;
             width: 300px;
+            margin: auto;
         }
 
+        @media screen and (max-width: 480px) {
+            width: 80%;
+        }
     }
 
     // успехи пользователя.блок мотивации и среднее значение
@@ -245,7 +258,7 @@ sans-serif;
 
 
         @media screen and (max-width: 768px) {
-            width: 300px;
+            width: 90%;
         }
     }
 

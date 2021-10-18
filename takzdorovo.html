@@ -38,7 +38,7 @@
                     <div class="button__img">
                         <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы" data-tabs-handler="BMI">
                     </div>
-                    <p class="button__text" data-tabs-handler="BMI">ИМТ и оптимальный вес</p>
+                    <p class="button__text" data-tabs-handler="BMI">Индекс массы тела</p>
                 </div>
                 <!-- <div class="left-column__button" data-tabs-handler="pressureDiary">
                     <div class="button__img">
@@ -77,7 +77,56 @@
         </div>
         
         <div class="main__content-container main__content-container-empty hidden">
-            <div class="content-container__content" data-tabs-field="motionDiary">Дневник движения</div>
+
+            <div class="content-container__content" data-tabs-field="motionDiary">
+                <div class="main-md">
+                    <!-- кнопка для закрытия страницы -->
+                    <div class="main_close_a_window">
+                        <div class="cl-btn-7-md close-button_pink"></div>
+                    </div>
+                    <section>
+            
+                        <!-- заголовок -->
+                        <div>
+                            <h1 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
+                                    class="motionDiary__recommendation"></h1>
+                        </div>
+                        <!-- секция ввода данных -->
+                        <div class="section-datasets">
+                            <div class="section-datasets__box">
+                                <div class="section-datasets__dateToday">
+                                    <label for="localdate" class="section-datasets__text">Дата</label>
+                                    <input type="date" required title="Введите, пожалуйста, дату"
+                                        class="section-datasets__input_one" name="daterange" id="localdate" />
+                                    <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
+                                </div>
+                                <div class="section-datasets__stepsToday">
+                                    <label for="steps_today" class="section-datasets__text">Количество шагов </label>
+                                    <input type="number" title="Введите, пожалуйста, количество шагов"
+                                        class="section-datasets__input_second" name="s_t" id="steps_today" />
+                                    <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
+                                </div>
+                                <div class="section-datasets__buttonSaveMd">
+                                    <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
+                                </div>
+                                <div id="personalRecords_box"></div>
+                                <!-- среднее -->
+                                <div class="section-datasets__buttonMean">
+                                    <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее значение</button>
+                                    <div id="personalRecords_mean"></div>
+                                </div>
+            
+                            </div>
+                            <!-- график -->
+                            <div class="chart-md">
+                                <canvas id="myChartMotionDiary"></canvas>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
             <div class="content-container__content" data-tabs-field="calorieСalculator">
                 <section class="calc_container">
                     <div class="calc_close_a_window">
@@ -162,7 +211,83 @@
             </div>
             </section>
             </div>
-            <div class="content-container__content" data-tabs-field="BMI">ИМТ и оптимальный вес</div>
+
+            <div class="content-container__content" data-tabs-field="BMI">
+                <section class="main_container_IMT">
+                    <div class="btn_close_IMT">
+                        <div class="cl-btn-7_IMT close-button_pink"></div>
+                        <!-- кнопка закрытия окна -->
+                    </div>
+                    <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
+            
+            
+                    <div class="containerIMT">
+            
+                        <div class="calcIMT_and_showIMT">
+                            <div class="calcIMT">
+                                <div class="date_IMT">
+                                    <label for="dateSelection_IMT">Введите дату: </label>
+                                    <input type="date" id="dateSelection_IMT" class="enter_input" />
+                                    <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
+            
+                                </div>
+                                <div class="userHeight_IMT">
+                                    <label for="userHeight">Введите свой рост (см): </label>
+                                    <input type="number" id="userHeight" max="220" min="100" class="enter_input" />
+                                    <div id="errorMessage_userHeight" class="errorMessage_IMT"></div>
+                                </div>
+            
+                                <div class="userWeight_IMT">
+                                    <label for="userWeight">Введите свой вес (кг): </label>
+                                    <input type="number" id="userWeight" max="200" min="30" class="enter_input" />
+                                    <div id="errorMessage_userWeight" class="errorMessage_IMT"></div>
+                                </div>
+                                <button class="btn_IMT" type="button">Рассчитать</button>
+                            </div>
+            
+                            <div class="showIMT">
+                                <div class="show_valueIMT">
+                                    <div for="valueIMT_label">Ваш ИМТ:&nbsp;&nbsp;</div>
+                                    <div class="valueIMT" id="valueIMT">___</div>
+                                </div>
+                                <div class="chartIMT">
+                                    <div class="chart__container_IMT">
+                                        <canvas id="grafica" width="200" height="35"></canvas>
+                                        <div class="IMT__gradient"></div>
+                                    </div>
+                                </div>
+                                <div class="IMTinfo"></div>
+                                <button class="btn_clear_history_IMT" type="button">Полностью очистить историю</button>
+                            </div>
+                        </div>
+                        <div class="chart_historyIMT">
+                            <canvas id="myChart_historyIMT" width="200" height="150"></canvas></div>
+                    </div>
+                </section>
+
+                <div class="lightbox" id="example1">
+                    <figure>
+                        <a href="#" class="close"></a>
+                        <figcaption class="IMT_details_text"><span class="IMT_details_title">Индекс массы тела</span> (англ. BMI -
+                            body mass index) величина,
+                            позволяющая оценить степень
+                            соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса
+                            недостаточной, нормальной или избыточной.<br>
+                            16 и менее ► Выраженный дефицит массы тела;<br>
+                            16 – 18,5 Недостаточная масса тела (дефицит);<br>
+                            18,5 – 25 ► Норма;<br>
+                            25 – 30 ► Избыточная масса тела (состояние, предшествующее ожирению);<br>
+                            30 – 35 ► Ожирение 1-й степени;<br>
+                            35 – 40 ► Ожирение 2-й степени;<br>
+                            40 и более ► Ожирение 3-й степени.
+            
+            
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
             <!-- <div class="content-container__content" data-tabs-field="pressureDiary">Дневник давления</div> -->
             <div class="content-container__content" data-tabs-field="myRecipes">
                 <section class="content-container__recipe-section">
@@ -296,6 +421,8 @@
     </main>
 
     <script src="./assets/scripts/takzdorovo-common.js"></script>
+    <script src="./assets/scripts/bundleIMT.js"></script>
+    <script src="./assets/scripts/bundle_motion_d.js"></script>
 </body>
 
 </html>

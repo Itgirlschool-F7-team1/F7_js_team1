@@ -53,21 +53,25 @@ function calculateCalories(e) {
     } 
 
       
-    if(totalCalories.value === ''|| totalCalories.value >'0'){
+    if(totalCalories.value > 0){
      maxCalories.value = Math.round(totalCalories.value * 1.15);
-  }  
-
-    if(totalCalories.value === ''|| totalCalories.value >'0'){
-      minCalories.value = Math.round(totalCalories.value * 0.85);
+     minCalories.value = Math.round(totalCalories.value * 0.85);
   }  
   
     document.getElementById('results').style.display = 'block';
 }
 
 function errorMessage(error) {
+  const totalCalories = document.getElementById('total-calories');
+  const minCalories = document.getElementById('min-calories');
+  const maxCalories = document.getElementById('max-calories');
+
 document.getElementById('results').style.display = 'none';
-document.querySelector('.error').innerHTML = error
+document.querySelector('.calc-error').innerHTML = error
+totalCalories.value = "";
+maxCalories.value = "";
+minCalories.value = "";
 }
 function clearError() {
-  document.querySelector('.error').innerHTML = '';
+  document.querySelector('.calc-error').innerHTML = '';
 }
