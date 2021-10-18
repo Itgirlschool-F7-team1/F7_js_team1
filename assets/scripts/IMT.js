@@ -314,7 +314,29 @@ function chart_historyIMT_Update() {
 let btn_clear_history_IMT = document.querySelector('.btn_clear_history_IMT');
 
 btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
+btn_clear_history_IMT.addEventListener('click', clear_chart_historyIMT);
 
 function clearHistoryIMT() {
     localStorage.removeItem('enteredIMT');
 }
+
+function clear_chart_historyIMT(){
+    let labelsHistoryIMT = [];
+    let dataHistoryIMT = [];
+    let colorsHistoryIMT = ['#B1A28D'];
+    chart_historyIMT.data = {
+        labels: labelsHistoryIMT,
+        datasets: [{
+            label: 'Динамика Вашего Индекса массы тела',
+            data: dataHistoryIMT,
+            fill: false,
+            borderColor: '#EB4B51',
+            tension: 0.1,
+            pointBackgroundColor: colorsHistoryIMT,
+            pointRadius: 3,
+            pointStyle: 'star',
+            borderWidth: 1
+        }],
+    }
+    chart_historyIMT.update();
+  }
