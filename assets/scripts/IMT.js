@@ -316,5 +316,5 @@ let btn_clear_history_IMT = document.querySelector('.btn_clear_history_IMT');
 btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
 
 function clearHistoryIMT() {
-    localStorage.clear();
+    localStorage.removeItem('enteredIMT');
 }

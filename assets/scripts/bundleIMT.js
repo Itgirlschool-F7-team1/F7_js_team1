@@ -30,13 +30,6 @@ let btn_calc_IMT = document.querySelector('.btn_IMT');
 btn_calc_IMT.addEventListener('click', calculateIMT);
 btn_calc_IMT.addEventListener('click', chartUpdate);
 
-let btn_clear_history_IMT = document.querySelector('.btn_clear_history_IMT');
-
-btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
-
-function clearHistoryIMT() {
-    localStorage.clear();
-}
 
 // функция расчета ИМТ
 function calculateIMT() {
@@ -317,6 +310,16 @@ function chart_historyIMT_Update() {
     }
     chart_historyIMT.update();
 }
+
+//кнопка Очистить историю
+let btn_clear_history_IMT = document.querySelector('.btn_clear_history_IMT');
+
+btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
+
+function clearHistoryIMT() {
+    localStorage.removeItem('enteredIMT');
+}
+
 },{"chart.js":2,"js-datepicker":3,"moment":5,"moment/locale/ru.js":4}],2:[function(require,module,exports){
 /*!
  * Chart.js v3.5.1
