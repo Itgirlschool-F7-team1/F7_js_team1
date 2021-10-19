@@ -5,7 +5,7 @@ $pink: #f8e9e7;
 $dark-pink: #eb4b51;
 $white: #ffffff;
 
-$mobile: px;
+$mobile: 376px;
 $tablet: 578px;
 $laptop: 1025px;
 
@@ -130,45 +130,38 @@ $laptop: 1025px;
   }
 }
 
-.userHeight {
-  @media screen and (max-width: $mobile) {
-    height: 50px;
+.btn_IMT {
+  border: 0;
+  text-align: center;
+  padding: 7px 41px;
+  text-decoration: none;
+  box-shadow: none;
+  border-radius: 15px;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18.0097px;
+  line-height: 30px;
+  color: $white;
+  background: $dark-pink;
 
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 1px $dark-pink;
   }
 
-
-  .btn_IMT {
-    border: 0;
-    text-align: center;
-    padding: 7px 41px;
-    text-decoration: none;
-    box-shadow: none;
-    border-radius: 15px;
-    font-family: 'Jost', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18.0097px;
-    line-height: 30px;
-    color: #f3dbdb;
+  &:active {
     background: $dark-pink;
-
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0px 0px 5px 1px $dark-pink;
-    }
-
-    &:active {
-      background: $dark-pink;
-    }
   }
-
-  // @media screen and (max-width: 960px) {
-  //   align-items: center;
-  // }
-
-
 }
+
+// @media screen and (max-width: 960px) {
+//   align-items: center;
+// }
+
+
+
 
 .show_valueIMT {
   display: flex;
@@ -200,17 +193,17 @@ $laptop: 1025px;
   margin-top: 20px;
   margin-bottom: 50px;
 
-  @media screen and (max-width: $mobile) {
-    width: 200px;
-  }
+  // @media screen and (max-width: $mobile) {
+  //   width: 200px;
+  // }
 
 }
 
 #grafica {
   @media screen and (max-width: $mobile) {
     width: 200px;
+    height: 85px;
   }
-
 }
 
 

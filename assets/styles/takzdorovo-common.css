@@ -2238,13 +2238,7 @@ input[type=radio]:checked + label:before {
   }
 }
 
-@media screen and (max-width: px) {
-  .userHeight {
-    height: 50px;
-  }
-}
-
-.userHeight .btn_IMT {
+.btn_IMT {
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -2257,17 +2251,17 @@ input[type=radio]:checked + label:before {
   font-weight: 600;
   font-size: 18.0097px;
   line-height: 30px;
-  color: #f3dbdb;
+  color: #ffffff;
   background: #eb4b51;
   cursor: pointer;
 }
 
-.userHeight .btn_IMT:hover {
+.btn_IMT:hover {
   -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
           box-shadow: 0px 0px 5px 1px #eb4b51;
 }
 
-.userHeight .btn_IMT:active {
+.btn_IMT:active {
   background: #eb4b51;
 }
 
@@ -2310,15 +2304,10 @@ input[type=radio]:checked + label:before {
   margin-bottom: 50px;
 }
 
-@media screen and (max-width: px) {
-  .chart__container_IMT {
-    width: 200px;
-  }
-}
-
-@media screen and (max-width: px) {
+@media screen and (max-width: 376px) {
   #grafica {
     width: 200px;
+    height: 85px;
   }
 }
 
@@ -2434,7 +2423,7 @@ input[type=radio]:checked + label:before {
   }
 }
 
-@media screen and (max-width: px) {
+@media screen and (max-width: 376px) {
   .chart_historyIMT {
     width: 200px;
   }
