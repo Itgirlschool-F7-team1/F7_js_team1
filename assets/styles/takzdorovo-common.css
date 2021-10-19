@@ -398,14 +398,6 @@ template {
   font-style: normal;
 }
 
-.hidden {
-  display: none;
-}
-
-body {
-  background-color: #d6e7da;
-}
-
 .enter-recipe__close-button,
 .recipe-card__close-button {
   width: 40px;
@@ -884,6 +876,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .enter-recipe__selection {
+    width: 95%;
     margin-left: 20px;
   }
 }
@@ -1312,6 +1305,8 @@ html *::-webkit-scrollbar-thumb {
   max-height: fit-content;
   width: 100%;
   padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1415,6 +1410,8 @@ html *::-webkit-scrollbar-thumb {
 @media screen and (max-width: 420px) {
   .random-recipe-section__input {
     margin-right: 0px;
+    width: calc(90% - 20px);
+    margin-left: -20px;
   }
 }
 
@@ -1451,7 +1448,7 @@ html *::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 420px) {
   .random-recipe-section__button {
-    width: 90%;
+    width: calc(90% - 20px);
     margin-top: 10px;
   }
 }
@@ -1542,6 +1539,9 @@ html *::-webkit-scrollbar-thumb {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-right: 35px;
     margin-top: 20px;
   }
@@ -1555,6 +1555,7 @@ html *::-webkit-scrollbar-thumb {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin-right: 0px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1564,12 +1565,6 @@ html *::-webkit-scrollbar-thumb {
   font-family: "Rubik-Regular", sans-serif;
   font-size: 16px;
   color: #636363;
-}
-
-@media screen and (max-width: 420px) {
-  .img-amount-label {
-    margin-bottom: 10px;
-  }
 }
 
 .random-recipe-section__subtitle,

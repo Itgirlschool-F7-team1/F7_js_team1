@@ -26,14 +26,6 @@
   font-style: normal;
 }
 
-.hidden {
-  display: none;
-}
-
-body {
-  background-color: #d6e7da;
-}
-
 .enter-recipe__close-button,
 .recipe-card__close-button {
   width: 40px;
@@ -512,6 +504,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .enter-recipe__selection {
+    width: 95%;
     margin-left: 20px;
   }
 }
