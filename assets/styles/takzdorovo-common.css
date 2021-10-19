@@ -1299,7 +1299,7 @@ html *::-webkit-scrollbar-thumb {
   max-width: 1200px;
   border-radius: 20px;
   min-height: 70vh;
-  height: 70vh;
+  height: 72vh;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -2989,6 +2989,18 @@ input[type=radio]:checked + label:before {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+}
+
+.main__content-container_pink,
+.main__content-container_green {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .main__content-container_pink,
+  .main__content-container_green {
+    margin-top: 10px;
   }
 }
 
