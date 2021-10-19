@@ -5,6 +5,9 @@ $pink: #f8e9e7;
 $dark-pink: #eb4b51;
 $white: #ffffff;
 
+$mobile: px;
+$tablet: 578px;
+$laptop: 1025px;
 
 .main_container_IMT {
   max-width: 1200px;
@@ -81,7 +84,7 @@ $white: #ffffff;
   margin-bottom: 50px;
   font-size: 40px;
 
-  @media screen and (max-width: 578px) {
+  @media screen and (max-width: $tablet) {
     font-size: 30px;
   }
 }
@@ -92,7 +95,7 @@ $white: #ffffff;
   justify-content: center;
   gap: 10px;
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: $laptop) {
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -120,7 +123,19 @@ $white: #ffffff;
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+    }
   }
+}
+
+.userHeight {
+  @media screen and (max-width: $mobile) {
+    height: 50px;
+
+  }
+
 
   .btn_IMT {
     border: 0;
@@ -134,7 +149,7 @@ $white: #ffffff;
     font-weight: 600;
     font-size: 18.0097px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #f3dbdb;
     background: $dark-pink;
 
     cursor: pointer;
@@ -148,10 +163,9 @@ $white: #ffffff;
     }
   }
 
-  @media screen and (max-width: 960px) {
-    align-items: center;
-
-  }
+  // @media screen and (max-width: 960px) {
+  //   align-items: center;
+  // }
 
 
 }
@@ -185,7 +199,20 @@ $white: #ffffff;
   height: 55px;
   margin-top: 20px;
   margin-bottom: 50px;
+
+  @media screen and (max-width: $mobile) {
+    width: 200px;
+  }
+
 }
+
+#grafica {
+  @media screen and (max-width: $mobile) {
+    width: 200px;
+  }
+
+}
+
 
 .IMTinfo {
   font-style: italic;
@@ -278,12 +305,16 @@ $white: #ffffff;
 .chart_historyIMT {
   width: 400px;
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: $laptop) {
     width: 500px;
   }
 
-  @media screen and (max-width: 578px) {
+  @media screen and (max-width: $tablet) {
     width: 300px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 200px;
   }
 
 

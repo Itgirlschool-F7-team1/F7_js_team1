@@ -1628,7 +1628,7 @@ html *::-webkit-scrollbar-thumb {
 }
 
 .random-recipe-section__info-shadow {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -2230,7 +2230,21 @@ input[type=radio]:checked + label:before {
   width: 100%;
 }
 
-.calcIMT .btn_IMT {
+@media screen and (max-width: 960px) {
+  .calcIMT .userHeight_IMT,
+  .calcIMT .userWeight_IMT,
+  .calcIMT .date_IMT {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: px) {
+  .userHeight {
+    height: 50px;
+  }
+}
+
+.userHeight .btn_IMT {
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -2243,26 +2257,18 @@ input[type=radio]:checked + label:before {
   font-weight: 600;
   font-size: 18.0097px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: #f3dbdb;
   background: #eb4b51;
   cursor: pointer;
 }
 
-.calcIMT .btn_IMT:hover {
+.userHeight .btn_IMT:hover {
   -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
           box-shadow: 0px 0px 5px 1px #eb4b51;
 }
 
-.calcIMT .btn_IMT:active {
+.userHeight .btn_IMT:active {
   background: #eb4b51;
-}
-
-@media screen and (max-width: 960px) {
-  .calcIMT {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
 }
 
 .show_valueIMT {
@@ -2302,6 +2308,18 @@ input[type=radio]:checked + label:before {
   height: 55px;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: px) {
+  .chart__container_IMT {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: px) {
+  #grafica {
+    width: 200px;
+  }
 }
 
 .IMTinfo {
@@ -2413,6 +2431,12 @@ input[type=radio]:checked + label:before {
 @media screen and (max-width: 578px) {
   .chart_historyIMT {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: px) {
+  .chart_historyIMT {
+    width: 200px;
   }
 }
 
@@ -2900,6 +2924,7 @@ input[type=radio]:checked + label:before {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 768px) {
