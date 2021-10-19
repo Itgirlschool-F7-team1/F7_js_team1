@@ -4,6 +4,7 @@ function changeScreen(event) {
     const commonContentContainers = document.querySelectorAll(".main__content-container");
     const target = event.target;
 
+    if (target === document.getElementById("activityButton") || target === document.getElementById("foodButton")){
     commonContentContainers.forEach((contentItem) => {
         contentItem.classList.add('hidden');
     })
@@ -27,6 +28,7 @@ function changeScreen(event) {
         document.getElementById("foodButton").style.cssText = `color: #219653;`;
         document.getElementById("activityButton").style.cssText = `color: black;`;
     }
+}
 }
 
 document.querySelector(".header__buttons").addEventListener("click", changeScreen);
