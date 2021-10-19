@@ -39,6 +39,8 @@ document.querySelectorAll(".content-container__left-column").forEach((contentCon
 
     contentContainer.addEventListener('click', (event)=>{
         const target = event.target;
+        // console.log(target);
+        if (target.classList.contains('left-column__button') || target.classList.contains('button__text') || target.classList.contains('button__image')){
         const commonContentContainers = document.querySelectorAll(".main__content-container");
         commonContentContainers.forEach((contentItem) => {
             contentItem.classList.add('hidden');
@@ -52,8 +54,9 @@ document.querySelectorAll(".content-container__left-column").forEach((contentCon
             } else{
                 content.classList.add('hidden');
             }
-        })
         
+        })
+    }
     })
 })
 
