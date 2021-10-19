@@ -2303,9 +2303,7 @@ input[type=radio]:checked + label:before {
 
 .chart__container_IMT {
   width: 280px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 55px;
   margin-top: 20px;
   margin-bottom: 50px;
 }

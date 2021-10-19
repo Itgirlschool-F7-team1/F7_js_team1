@@ -1,3 +1,13 @@
+class Recipe {
+    constructor(category, recipeName, photoUrl, ingredients, description, id) {
+        this.category = category;
+        this.recipeName = recipeName;
+        this.photoUrl = photoUrl;
+        this.ingredients = ingredients;
+        this.description = description;
+        this.id = id;
+    }
+}
 
 // Функции для стилизации инпута для загрузки фотографии
 document.querySelector(".enter-recipe__fileform").addEventListener("click", clickInput = () => {
@@ -118,6 +128,12 @@ document.addEventListener("DOMContentLoaded", function () {
     showRecipes(recipes);
 });
 document.getElementById('enterRecipeCloseButton').addEventListener('click', function () {
+    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
+    document.querySelector('.recipes__subtitle').innerHTML = "";
+    showRecipes(recipes);
+});
+
+document.getElementById('myRecipesBtn').addEventListener('click', function () {
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
     document.querySelector('.recipes__subtitle').innerHTML = "";
     showRecipes(recipes);
