@@ -97,7 +97,7 @@ function showCardsRandomRecipe() {
 }
 
 document.querySelector(".random-recipe-section__button").addEventListener("click", showCardsRandomRecipe);
-// document.addEventListener("DOMContentLoaded", showCardsRandomRecipe);//Нужно повесить на нажатие кнопки
+document.getElementById('randomRecipeBtn').addEventListener("click", showCardsRandomRecipe);
 
 
 //открытие и закрытие окошка с подсказками

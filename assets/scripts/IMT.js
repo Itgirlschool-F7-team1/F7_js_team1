@@ -1,11 +1,11 @@
-const moment = require('moment');
-require('moment/locale/ru.js');
+// const moment = require('moment');
+// require('moment/locale/ru.js');
 
-const Chart = require('chart.js');
-const datepicker = require('js-datepicker')
+// const Chart = require('chart.js');
+// const datepicker = require('js-datepicker')
 
 
-console.log('hi');
+// console.log('hi');
 
 
 // дата
@@ -22,6 +22,16 @@ console.log('hi');
 // });
 
 
+// создаем класс, который будет формировать объект
+class IMT {
+    constructor(today, IMT) {
+        this.today = today;
+        this.IMT = IMT;
+    }
+}
+// создаем глобальные переменные с массивами для вывода в график
+let arrDate_IMT = [];
+let arrIMT = [];
 
 // Кнопка Рассчитать
 
@@ -173,16 +183,6 @@ function chartUpdate() {
 
 //сохранение и вывод всех ИМТ в график динамики
 
-// создаем класс, который будет формировать объект
-class IMT {
-    constructor(today, IMT) {
-        this.today = today;
-        this.IMT = IMT;
-    }
-}
-// создаем глобальные переменные с массивами для вывода в график
-let arrDate_IMT = [];
-let arrIMT = [];
 // проверка localStorage, если пусто - создаем пустой массив
 if (localStorage.getItem('enteredIMT') === null) {
     localStorage.setItem('enteredIMT', '[]');

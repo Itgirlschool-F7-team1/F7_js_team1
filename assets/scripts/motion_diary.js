@@ -2,7 +2,7 @@
 // const moment = require('moment');
 // require('moment/locale/ru.js');
 
-const Chart = require('chart.js');
+// const Chart = require('chart.js');
 
 // создаем класс, который будет формировать объект
 class CounterS {
