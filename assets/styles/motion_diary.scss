@@ -173,7 +173,8 @@ sans-serif;
         color: $font;
 
         @media screen and (max-width: 768px) {
-            margin-left: 10%;
+            // margin-left: 10%;
+            text-align: center;
         }
     }
 
@@ -251,6 +252,7 @@ sans-serif;
 
     // успехи пользователя.блок мотивации и среднее значение
     #personalRecords_box {
+       
         color: $font;
         font-size: 15px;
         text-align: center;
@@ -259,7 +261,9 @@ sans-serif;
 
         @media screen and (max-width: 768px) {
             width: 90%;
+            margin: auto;
         }
+       
     }
 
     #personalRecords_mean {

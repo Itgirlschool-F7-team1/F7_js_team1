@@ -184,7 +184,7 @@
 
 @media screen and (max-width: 768px) {
   .main-md .section-datasets__text {
-    margin-left: 10%;
+    text-align: center;
   }
 }
 
@@ -290,6 +290,7 @@
 @media screen and (max-width: 768px) {
   .main-md #personalRecords_box {
     width: 90%;
+    margin: auto;
   }
 }
 
