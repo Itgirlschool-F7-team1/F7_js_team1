@@ -1503,6 +1503,18 @@ html *::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  .img-amount-container {
+    left: 65%;
+  }
+}
+
+@media screen and (min-width: 2150px) {
+  .img-amount-container {
+    left: 60%;
+  }
+}
+
 .img-amount-label,
 .img-amount,
 .info__text {
