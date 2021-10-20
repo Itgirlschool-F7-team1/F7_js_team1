@@ -260,7 +260,7 @@ let chart_historyIMT = new Chart(
         data: {
             labels: labelsHistoryIMT,
             datasets: [{
-                label: 'Динамика Вашего Индекса массы тела',
+                label: 'Динамика Вашего ИМТ',
                 data: dataHistoryIMT,
                 fill: false,
                 borderColor: '#eb4b51',
@@ -289,7 +289,7 @@ function chart_historyIMT_Update() {
     chart_historyIMT.data = {
         labels: labelsHistoryIMT,
         datasets: [{
-            label: 'Динамика Вашего Индекса массы тела',
+            label: 'Динамика Вашего ИМТ',
             data: dataHistoryIMT,
             fill: false,
             borderColor: '#eb4b51',

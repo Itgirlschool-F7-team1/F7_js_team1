@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/takzdorovo-common.css">
-    <link rel="shortcut icon" href="./assets/images/icon1.png" type="img/png">
+    <link rel="shortcut icon" href="./assets/images/icon1red.png" type="img/png">
     <title>Так здорово</title>
 </head>
 
@@ -24,19 +24,22 @@
             <div class="content-container__left-column">
                 <div class="left-column__button" data-tabs-handler="motionDiary">
                     <div class="button__img">
-                        <img src="./assets/images/workout.svg" alt="Дневник" data-tabs-handler="motionDiary"  class="button__image">
+                        <img src="./assets/images/workout.svg" alt="Дневник" data-tabs-handler="motionDiary"
+                            class="button__image">
                     </div>
                     <p class="button__text" data-tabs-handler="motionDiary">Дневник движения</p>
                 </div>
                 <div class="left-column__button" data-tabs-handler="calorieСalculator">
                     <div class="button__img">
-                        <img src="./assets/images/calorie-calculator.svg" alt="Калькулятор" data-tabs-handler="calorieСalculator" class="button__image">
+                        <img src="./assets/images/calorie-calculator.svg" alt="Калькулятор"
+                            data-tabs-handler="calorieСalculator" class="button__image">
                     </div>
                     <p class="button__text" data-tabs-handler="calorieСalculator">Калькулятор калорий</p>
                 </div>
                 <div class="left-column__button" data-tabs-handler="BMI">
                     <div class="button__img">
-                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы" data-tabs-handler="BMI" class="button__image">
+                        <img src="./assets/images/BMI-optimal-weight.svg" alt="Весы" data-tabs-handler="BMI"
+                            class="button__image">
                     </div>
                     <p class="button__text" data-tabs-handler="BMI">Индекс массы тела</p>
                 </div>
@@ -55,15 +58,17 @@
         </div>
         <div class="main__content-container main__content-container_green hidden">
             <div class="content-container__left-column">
-                <div class="left-column__button" data-tabs-handler="myRecipes"   id="myRecipesBtn" >
+                <div class="left-column__button" data-tabs-handler="myRecipes" id="myRecipesBtn">
                     <div class="button__img">
-                        <img src="./assets/images/recipes.svg" alt="Сборник рецептов" data-tabs-handler="myRecipes" class="button__image">
+                        <img src="./assets/images/recipes.svg" alt="Сборник рецептов" data-tabs-handler="myRecipes"
+                            class="button__image">
                     </div>
                     <p class="button__text" data-tabs-handler="myRecipes">Мои рецепты</p>
                 </div>
-                <div class="left-column__button"  id="randomRecipeBtn" data-tabs-handler="randomRecipe">
+                <div class="left-column__button" id="randomRecipeBtn" data-tabs-handler="randomRecipe">
                     <div class="button__img">
-                        <img src="./assets/images/menu.svg" alt="Блюдо под крышкой" data-tabs-handler="randomRecipe" class="button__image">
+                        <img src="./assets/images/menu.svg" alt="Блюдо под крышкой" data-tabs-handler="randomRecipe"
+                            class="button__image">
                     </div>
                     <p class="button__text" data-tabs-handler="randomRecipe">Случайный рецепт</p>
                 </div>
@@ -75,7 +80,7 @@
             </div>
 
         </div>
-        
+
         <div class="main__content-container main__content-container-empty hidden">
 
             <div class="content-container__content" data-tabs-field="motionDiary">
@@ -85,7 +90,7 @@
                         <div class="cl-btn-7-md close-button_pink"></div>
                     </div>
                     <section>
-            
+
                         <!-- заголовок -->
                         <div>
                             <h1 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
@@ -112,10 +117,11 @@
                                 <div id="personalRecords_box"></div>
                                 <!-- среднее -->
                                 <div class="section-datasets__buttonMean">
-                                    <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее значение</button>
+                                    <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее
+                                        значение</button>
                                     <div id="personalRecords_mean"></div>
                                 </div>
-            
+
                             </div>
                             <!-- график -->
                             <div class="chart-md">
@@ -130,86 +136,98 @@
             <div class="content-container__content" data-tabs-field="calorieСalculator">
                 <section class="calc_container">
                     <div class="calc_close_a_window">
-                    <div class="cl-btn-7-calories close-button_pink"></div>
-                </div>
-            <h2 class="heading_calories-calc">Калькулятор калорий</h2>
-            <div class="calc-error"></div>
-            <div class="container_calories-calc">
-                <form id="calories-calc_form" class="calories-calc_form">
-                    <div class="calc_radio" id="form-radio">
-                            <div class="gender">
-                            <label class="calories_gender">Пол:</label>
-                        </div>
-                            <input type="radio" id="male" name="customRadioInline1" class="custom-control-input" checked="checked">
-                            <label class="custom-control-label" for="male">Мужчина</label>
-                            <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="female">Женщина</label>
-                        </div>
-                        
-                            <div class="container_calories-calc_height"> 
-                            <label class="calories-calc_height">Рост:</label>
-                        <input type="number" id="calc_height" placeholder="см" max="200" min="150" class="calc_height_input"/>
+                        <div class="cl-btn-7-calories close-button_pink"></div>
                     </div>
-            
-                        <div class="container_calories-calc_weight"> 
-                        <label class="calories-calc_weihgt">Текущий вес:</label>
-                        <input type="number" id="calc_weight" placeholder="кг" max="200" min="45" class="calc_weight_input"/>
-                    </div>
-            
+                    <h2 class="heading_calories-calc">Калькулятор калорий</h2>
+                    <div class="calc-error"></div>
+                    <div class="container_calories-calc">
+                        <form id="calories-calc_form" class="calories-calc_form">
+                            <div class="calc_radio" id="form-radio">
+                                <div class="gender">
+                                    <label class="calories_gender">Пол:</label>
+                                </div>
+                                <input type="radio" id="male" name="customRadioInline1" class="custom-control-input"
+                                    checked="checked">
+                                <label class="custom-control-label" for="male">Мужчина</label>
+                                <input type="radio" id="female" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="female">Женщина</label>
+                            </div>
+
+                            <div class="container_calories-calc_height">
+                                <label class="calories-calc_height">Рост:</label>
+                                <input type="number" id="calc_height" placeholder="см" max="200" min="150"
+                                    class="calc_height_input" />
+                            </div>
+
+                            <div class="container_calories-calc_weight">
+                                <label class="calories-calc_weihgt">Текущий вес:</label>
+                                <input type="number" id="calc_weight" placeholder="кг" max="200" min="45"
+                                    class="calc_weight_input" />
+                            </div>
+
                             <div class="container_calories-calc_age">
-                            <label class="calories-calc_age">Возраст:</label>
-                        <input type="number" id="calc_age" max="80" min="15" class="calc_age_input"/></div>
-                        
-                        <div class="container_calories-calc_action"><label class="calories-calc_action">Двигательная активность:</label>
-                        <select class=custom-select id="list">
-                            <option value="very-low_action" class="calc-option">Очень низкая (сидячий образ жизни)</option>
-                            <option value="low_action" class="calc-option">Низкая (легкие физ. нагрузки 1-3 р в неделю)</option>
-                            <option value="middle_action" class="calc-option">Средняя (3-5 тренировок в неделю)</option>
-                            <option value="high_action" class="calc-option">Высокая (интенсивные нагузки, 5-6 р в неделю)</option>
-                            <option value="very-high_action" class="calc-option">Очень высокая (физическая работа, тяжелые тренировки 6-7 р в неделю)</option>
-                        </select>
+                                <label class="calories-calc_age">Возраст:</label>
+                                <input type="number" id="calc_age" max="80" min="15" class="calc_age_input" /></div>
+
+                            <div class="container_calories-calc_action"><label class="calories-calc_action">Двигательная
+                                    активность:</label>
+                                <select class=custom-select id="list">
+                                    <option value="very-low_action" class="calc-option">Очень низкая (сидячий образ
+                                        жизни)</option>
+                                    <option value="low_action" class="calc-option">Низкая (легкие физ. нагрузки 1-3 р в
+                                        неделю)</option>
+                                    <option value="middle_action" class="calc-option">Средняя (3-5 тренировок в неделю)
+                                    </option>
+                                    <option value="high_action" class="calc-option">Высокая (интенсивные нагузки, 5-6 р
+                                        в неделю)</option>
+                                    <option value="very-high_action" class="calc-option">Очень высокая (физическая
+                                        работа, тяжелые тренировки 6-7 р в неделю)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="calories_button" type="submit" value="Считать">
+                            </div>
+                        </form>
+
+                        <aside class="calories_right">
+                            <div class="calories_result" id="results">
+                                <h3 class="heading_calories_result">Ваша норма калорий:</h3>
+                                <ul class="counter_result-list">
+                                    <li class="counter_result-item">
+                                        <p class="calories_calc-text">
+                                            поддержание веса:
+                                        </p>
+                                        <h4 class="heading_calories-result">
+                                            <input type="number" class="form-control" id="total-calories"
+                                                readonly="readonly"> ккал
+                                        </h4>
+
+                                    </li>
+                                    <li class="counter_result-item">
+                                        <p class="calories_calc-text">
+                                            снижение веса:
+                                        </p>
+                                        <h4 class="heading_calories-result">
+                                            <input type="number" class="form-control" id="min-calories"
+                                                readonly="readonly"> ккал
+                                        </h4>
+
+                                    </li>
+                                    <li class="counter_result-item">
+                                        <p class="calories_calc-text">
+                                            набор веса:
+                                        </p>
+                                        <h4 class="heading_calories-result">
+                                            <input type="number" class="form-control" id="max-calories"
+                                                readonly="readonly"> ккал
+                                        </h4>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </aside>
                     </div>
-                        <div class="form-group">
-                            <input class="calories_button" type="submit" value="Считать">
-                        </div>
-                    </form>
-            
-                <aside class="calories_right">
-                    <div class="calories_result" id="results">
-                        <h3 class="heading_calories_result">Ваша норма калорий:</h3>
-                        <ul class="counter_result-list">
-                            <li class="counter_result-item">
-                                <p class="calories_calc-text">
-                                    поддержание веса:
-                                </p>
-                                <h4 class="heading_calories-result">
-                            <input type="number" class="form-control" id="total-calories" readonly="readonly"> ккал
-                        </h4>
-                        
-                        </li>
-                        <li class="counter_result-item">
-                            <p class="calories_calc-text">
-                            снижение веса:
-                            </p>
-                            <h4 class="heading_calories-result">
-                                <input type="number" class="form-control" id="min-calories" readonly="readonly"> ккал
-                            </h4>
-                            
-                        </li>
-                        <li class="counter_result-item">
-                            <p class="calories_calc-text">
-                                набор веса:
-                                </p>
-                            <h4 class="heading_calories-result">
-                                <input type="number" class="form-control" id="max-calories" readonly="readonly"> ккал
-                            </h4>
-                        </li>
-                        </ul>
-                        
-                    </div>
-                </aside>
-            </div>
-            </section>
+                </section>
             </div>
 
             <div class="content-container__content" data-tabs-field="BMI">
@@ -218,33 +236,34 @@
                         <div class="cl-btn-7_IMT close-button_pink"></div>
                         <!-- кнопка закрытия окна -->
                     </div>
-                    <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
-            
-            
+                    <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details"
+                                href="#example1">&#9878;</a></span></h2>
+
+
                     <div class="containerIMT">
-            
+
                         <div class="calcIMT_and_showIMT">
                             <div class="calcIMT">
                                 <div class="date_IMT">
-                                    <label for="dateSelection_IMT">Введите дату: </label>
-                                    <input type="date" id="dateSelection_IMT" class="enter_input" />
+                                    <label for="dateSelection_IMT" class="label_IMT">Введите дату: </label>
+                                    <input type="date" id="dateSelection_IMT" class="enter_input_IMT" />
                                     <div id="errorMessage_date_IMT" class="errorMessage_IMT"></div>
-            
+
                                 </div>
                                 <div class="userHeight_IMT">
-                                    <label for="userHeight">Введите свой рост (см): </label>
-                                    <input type="number" id="userHeight" max="220" min="100" class="enter_input" />
+                                    <label for="userHeight" class="label_IMT">Введите свой рост (см): </label>
+                                    <input type="number" id="userHeight" max="220" min="100" class="enter_input_IMT" />
                                     <div id="errorMessage_userHeight" class="errorMessage_IMT"></div>
                                 </div>
-            
+
                                 <div class="userWeight_IMT">
-                                    <label for="userWeight">Введите свой вес (кг): </label>
-                                    <input type="number" id="userWeight" max="200" min="30" class="enter_input" />
+                                    <label for="userWeight" class="label_IMT">Введите свой вес (кг): </label>
+                                    <input type="number" id="userWeight" max="200" min="30" class="enter_input_IMT" />
                                     <div id="errorMessage_userWeight" class="errorMessage_IMT"></div>
                                 </div>
                                 <button class="btn_IMT" type="button">Рассчитать</button>
                             </div>
-            
+
                             <div class="showIMT">
                                 <div class="show_valueIMT">
                                     <div class="valueIMT_label">Ваш ИМТ:&nbsp;&nbsp;</div>
@@ -268,7 +287,8 @@
                 <div class="lightbox" id="example1">
                     <figure>
                         <a href="#" class="close"></a>
-                        <figcaption class="IMT_details_text"><span class="IMT_details_title">Индекс массы тела</span> (англ. BMI -
+                        <figcaption class="IMT_details_text"><span class="IMT_details_title">Индекс массы тела</span>
+                            (англ. BMI -
                             body mass index) величина,
                             позволяющая оценить степень
                             соответствия массы человека и его роста и тем самым косвенно судить о том, является ли масса
@@ -280,8 +300,8 @@
                             30 – 35 ► Ожирение 1-й степени;<br>
                             35 – 40 ► Ожирение 2-й степени;<br>
                             40 и более ► Ожирение 3-й степени.
-            
-            
+
+
                         </figcaption>
                     </figure>
                 </div>
@@ -321,18 +341,19 @@
                                 <li class="tags__item" id="conservationAlt">Консервация</li>
                             </ul>
                         </div>
-            
+
                     </aside>
                     <div class="recipe-section__recipes">
                         <div class="resipes__close-button-subtitle-container">
                             <h3 class="recipes__title">Мои рецепты</h3>
-                            <div class="cl-btn-7 enter-recipe__close-button close-button_green" id="recipeCloseButton"></div>
+                            <div class="cl-btn-7 enter-recipe__close-button close-button_green" id="recipeCloseButton">
+                            </div>
                         </div>
                         <h4 class="recipes__subtitle"></h4>
-            
+
                         <div class="recipe-section__cards"></div>
                     </div>
-            
+
                     <div class="recipe-section__enter-recipe hidden">
                         <div class="enter-recipe__header-container">
                             <h3 class="recipes__title">Новый рецепт</h3>
@@ -340,8 +361,10 @@
                         </div>
                         <div class="enter-recipe__form">
                             <label for="recipeCategory" class="enter-recipe__label">Выберите категорию</label>
-                            <select name="recipeCategory" id="recipeCategory" class="enter-recipe__selection enter-recipe__input">
-                                <option value="" selected hidden class="enter-recipe__categorie">Выберите категорию</option>
+                            <select name="recipeCategory" id="recipeCategory"
+                                class="enter-recipe__selection enter-recipe__input">
+                                <option value="" selected hidden class="enter-recipe__categorie">Выберите категорию
+                                </option>
                                 <option value="soup" class="enter-recipe__categorie">Супы</option>
                                 <option value="meatFish" class="enter-recipe__categorie">Мясо/рыба</option>
                                 <option value="garnish" class="enter-recipe__categorie">Гарниры</option>
@@ -351,8 +374,9 @@
                             </select>
                             <br />
                             <label for="recipeName" class="enter-recipe__label">Введите название</label>
-            
-                            <input type="text" name="recipeName" id="recipeName" class="enter-recipe__name enter-recipe__input">
+
+                            <input type="text" name="recipeName" id="recipeName"
+                                class="enter-recipe__name enter-recipe__input">
                             <br />
                             <div class="enter-recipe__photo-container">
                                 <label for="recipePhoto" class="enter-recipe__label">Добавьте фото</label>
@@ -365,14 +389,15 @@
                             </div>
                             <div class="enter-recipe__ingredients-container">
                                 <label for="recipeIngredients" class="enter-recipe__label">Добавьте ингредиенты</label>
-            
+
                                 <textarea name="recipeIngredients" id="recipeIngredients"
                                     class="enter-recipe__ingredients enter-recipe__input"></textarea>
                             </div>
                             <label for="recipeText" class="enter-recipe__label">Добавьте описание</label>
                             <br />
-                            <textarea name="recipeText" id="recipeText" class="enter-recipe__text enter-recipe__input"></textarea>
-            
+                            <textarea name="recipeText" id="recipeText"
+                                class="enter-recipe__text enter-recipe__input"></textarea>
+
                             <div class="enter-recipe__button" id="enterRecipeSaveButton">Сохранить</div>
                             <div class="enter-recipe__error"></div>
                         </div>
@@ -383,38 +408,43 @@
                 <section class="content-container__random-recipe-section">
                     <div class="resipes__close-button-subtitle-container">
                         <h3 class="random-recipe-section__title">Случайный рецепт</h3>
-                        <div class="cl-btn-7 enter-recipe__close-button close-button_green" id="randomRecipeCloseButton"></div>
+                        <div class="cl-btn-7 enter-recipe__close-button close-button_green"
+                            id="randomRecipeCloseButton"></div>
                     </div>
-                
-                <div class="random-recipe-section__input-container">
-                    <div class="random-recipe-section__search">
-                    <input type="text" class="random-recipe-section__input" id="randomRecipeSectionInput" placeholder="Enter a tag for search">
-                    <div class="random-recipe-section__button">Найти</div>
-                    <img src="./assets/images/question.png" alt="Знак вопроса" class="random-recipe-section__question-img">
-                </div>
-                    <div class="img-amount-container">
-                    <label for="img-amount" class="img-amount-label">Показывать по:</label>
-                    <select name="img-amount" id="img-amount" class="img-amount">
-                        <option value="5" class="amount-value" selected>5 рецептов</option>
-                        <option value="10" class="amount-value">10 рецептов</option>
-                        <option value="20" class="amount-value">20 рецептов</option>
-                        <option value="25" class="amount-value">50 рецептов</option>
-                    </select>
-                </div>
-                </div>
-                <div class="random-recipe-section__container">
-                </div>
-                <div class="random-recipe-section__info-shadow hidden">
-                <div class="random-recipe-section__info">
-                    <div class="info__container">
-                    <div class="cl-btn-7 enter-recipe__close-button info__close-button" id="randomRecipeInfoCloseButton"></div>
-                    <h6 class="ihfo__subtitle">Поиск рецептов</h6>
-                </div>
-                    <p class="info__text">Пожалуйста, используйте только английский язык. Например, "apple".</p>
-                    <p class="info__text">Можно добавить несколько ингредиентов через запятую. Например, "apple,cinnamon".</p>
-                    <p class="info__text">Для того чтобы начать поиск, нажмите кнопку "найти".</p>
-                </div>
-                </div>
+
+                    <div class="random-recipe-section__input-container">
+                        <div class="random-recipe-section__search">
+                            <input type="text" class="random-recipe-section__input" id="randomRecipeSectionInput"
+                                placeholder="Enter a tag for search">
+                            <div class="random-recipe-section__button">Найти</div>
+                            <img src="./assets/images/question.png" alt="Знак вопроса"
+                                class="random-recipe-section__question-img">
+                        </div>
+                        <div class="img-amount-container">
+                            <label for="img-amount" class="img-amount-label">Показывать по:</label>
+                            <select name="img-amount" id="img-amount" class="img-amount">
+                                <option value="5" class="amount-value" selected>5 рецептов</option>
+                                <option value="10" class="amount-value">10 рецептов</option>
+                                <option value="20" class="amount-value">20 рецептов</option>
+                                <option value="25" class="amount-value">50 рецептов</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="random-recipe-section__container">
+                    </div>
+                    <div class="random-recipe-section__info-shadow hidden">
+                        <div class="random-recipe-section__info">
+                            <div class="info__container">
+                                <div class="cl-btn-7 enter-recipe__close-button info__close-button"
+                                    id="randomRecipeInfoCloseButton"></div>
+                                <h6 class="ihfo__subtitle">Поиск рецептов</h6>
+                            </div>
+                            <p class="info__text">Пожалуйста, используйте только английский язык. Например, "apple".</p>
+                            <p class="info__text">Можно добавить несколько ингредиентов через запятую. Например,
+                                "apple,cinnamon".</p>
+                            <p class="info__text">Для того чтобы начать поиск, нажмите кнопку "найти".</p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
