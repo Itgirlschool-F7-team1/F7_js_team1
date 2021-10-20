@@ -286,7 +286,7 @@ $laptop: 1025px;
 //контейнер для графика динамики ИМТ
 
 .chart_historyIMT {
-  width: 95%;
+  width: 400px;
 
   @media screen and (max-width: $mobile) {
     width: 90%;
@@ -307,10 +307,6 @@ $laptop: 1025px;
   }
 }
 
-// .label_IMT {
-
-//   text-align: center;
-// }
 
 .btn_clear_history_IMT {
   margin-top: 30px;

@@ -335,7 +335,7 @@
 }
 
 .chart_historyIMT {
-  width: 95%;
+  width: 400px;
 }
 
 @media screen and (max-width: 376px) {
