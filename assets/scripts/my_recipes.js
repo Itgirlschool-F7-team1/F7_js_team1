@@ -28,6 +28,9 @@ function getName() {
     uploaded.innerHTML = filename;
 }
 
+document.querySelector('.enter-recipe__photo').onchange = function(){
+    getName(this.value); 
+}
 
 //открытие и закрытие формы для добавления рецепта
 document.getElementById('asideAddButton').addEventListener('click', () => {

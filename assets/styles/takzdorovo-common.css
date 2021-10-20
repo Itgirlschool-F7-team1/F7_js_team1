@@ -370,34 +370,6 @@ template {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Semibold';
-  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .enter-recipe__close-button,
 .recipe-card__close-button {
   width: 40px;
@@ -1266,34 +1238,6 @@ html *::-webkit-scrollbar-thumb {
   }
 }
 
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Semibold';
-  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .content-container__random-recipe-section {
   background-color: white;
   max-width: 1200px;
@@ -1635,34 +1579,6 @@ html *::-webkit-scrollbar-thumb {
   height: 100vh;
   background-color: rgba(34, 60, 80, 0.43);
   z-index: 2;
-}
-
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Semibold';
-  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .heading_calories-calc {
@@ -2043,34 +1959,6 @@ input[type=radio]:checked + label:before {
   height: -moz-fit-content;
   height: fit-content;
   font-size: 10px;
-}
-
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Semibold';
-  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .main_container_IMT {
@@ -2460,34 +2348,6 @@ input[type=radio]:checked + label:before {
 
 .btn_clear_history_IMT:active {
   background: #eb4b51;
-}
-
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat-Semibold';
-  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: url("../fonts/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .main-md {
