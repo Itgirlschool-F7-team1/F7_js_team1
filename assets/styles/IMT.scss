@@ -155,6 +155,11 @@ $laptop: 1025px;
   &:active {
     background: $dark-pink;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: auto;
+  }
+
 }
 
 
@@ -334,4 +339,10 @@ $laptop: 1025px;
     background: $dark-pink;
   }
 
+}
+
+@media screen and (max-width: $mobile) {
+  .label_IMT {
+    text-align: center;
+  }
 }

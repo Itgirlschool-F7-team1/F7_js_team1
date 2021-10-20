@@ -2154,6 +2154,12 @@ input[type=radio]:checked + label:before {
   background: #eb4b51;
 }
 
+@media screen and (max-width: 768px) {
+  .btn_IMT {
+    margin: auto;
+  }
+}
+
 .show_valueIMT {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2347,6 +2353,12 @@ input[type=radio]:checked + label:before {
   background: #eb4b51;
 }
 
+@media screen and (max-width: 376px) {
+  .label_IMT {
+    text-align: center;
+  }
+}
+
 .main-md {
   max-width: 1200px;
   border-radius: 20px;
@@ -2533,7 +2545,7 @@ input[type=radio]:checked + label:before {
 
 @media screen and (max-width: 768px) {
   .main-md .section-datasets__text {
-    margin-left: 10%;
+    text-align: center;
   }
 }
 
