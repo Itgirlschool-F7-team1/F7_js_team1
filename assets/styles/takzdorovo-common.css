@@ -843,7 +843,7 @@ template {
 .enter-recipe__selection {
   margin-left: 30px;
   height: 30px;
-  width: 200px;
+  width: 408px;
 }
 
 @media screen and (max-width: 768px) {
@@ -2127,6 +2127,7 @@ input[type=radio]:checked + label:before {
 }
 
 .btn_IMT {
+  width: 90%;
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -2299,25 +2300,21 @@ input[type=radio]:checked + label:before {
   width: 400px;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 376px) {
   .chart_historyIMT {
-    width: 500px;
-  }
-}
-
-@media screen and (max-width: 578px) {
-  .chart_historyIMT {
-    width: 300px;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 376px) {
-  .chart_historyIMT {
-    width: 200px;
+  .enter_input_IMT {
+    width: 90%;
+    margin: auto;
+    height: 30px;
   }
 }
 
-.enter_input:hover {
+.enter_input_IMT:hover {
   -webkit-box-shadow: 0px 0px 5px 2px #f57e82;
           box-shadow: 0px 0px 5px 2px #f57e82;
 }

@@ -131,6 +131,7 @@ $laptop: 1025px;
 }
 
 .btn_IMT {
+  width: 90%;
   border: 0;
   text-align: center;
   padding: 7px 41px;
@@ -155,12 +156,6 @@ $laptop: 1025px;
     background: $dark-pink;
   }
 }
-
-// @media screen and (max-width: 960px) {
-//   align-items: center;
-// }
-
-
 
 
 .show_valueIMT {
@@ -192,11 +187,6 @@ $laptop: 1025px;
   height: 55px;
   margin-top: 20px;
   margin-bottom: 50px;
-
-  // @media screen and (max-width: $mobile) {
-  //   width: 200px;
-  // }
-
 }
 
 #grafica {
@@ -298,28 +288,25 @@ $laptop: 1025px;
 .chart_historyIMT {
   width: 400px;
 
-  @media screen and (max-width: $laptop) {
-    width: 500px;
-  }
-
-  @media screen and (max-width: $tablet) {
-    width: 300px;
-  }
-
   @media screen and (max-width: $mobile) {
-    width: 200px;
+    width: 90%;
   }
-
-
 }
 
-//наведение курсора на поле ввода
-.enter_input {
+.enter_input_IMT {
+
+  @media screen and (max-width: $mobile) {
+    width: 90%;
+    margin: auto;
+    height: 30px;
+  }
+
+  //наведение курсора на поле ввода
   &:hover {
     box-shadow: 0px 0px 5px 2px #f57e82;
   }
-
 }
+
 
 .btn_clear_history_IMT {
   margin-top: 30px;
