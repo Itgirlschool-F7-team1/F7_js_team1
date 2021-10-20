@@ -220,6 +220,14 @@ $dark-green: #219653;
         margin-right: 0px;
         margin-bottom: 10px;
     }
+
+    @media screen and (min-width: 1600px) {
+        left: 65%;
+    }
+
+    @media screen and (min-width: 2150px) {
+        left: 60%;
+    }
 }
 
 .img-amount-label,
