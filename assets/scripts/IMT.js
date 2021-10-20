@@ -227,7 +227,7 @@ function getArrayChartDateIMT() {
     let IMT_Array = JSON.parse(localStorage.getItem('enteredIMT'));
     if (IMT_Array.length > null) {
         arrDate_IMT = IMT_Array.map(function (object) {
-            console.log(object.today)
+            // console.log(object.today)
 
             return object.today;
         })
