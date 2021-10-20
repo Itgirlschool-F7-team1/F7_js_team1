@@ -165,6 +165,8 @@
 }
 
 .btn_IMT {
+  margin: auto;
+  margin-top: 10px;
   width: 90%;
   border: 0;
   text-align: center;
