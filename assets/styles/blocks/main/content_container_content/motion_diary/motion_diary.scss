@@ -22,7 +22,6 @@ sans-serif;
     // margin-top: 70px;
     padding-bottom: 30px;
 
-    font-family: $fz1;
     // border-radius: 10px;
     background-color: #fff;
 
@@ -54,50 +53,17 @@ sans-serif;
 
     }
 
-    .cl-btn-7-md {
-
-        width: 40px;
-        height: 40px;
-        border-radius: 40px;
-        position: relative;
-        z-index: 1;
-        margin: 20px auto;
-        cursor: pointer;
-    }
-
     .cl-btn-7-md:before {
         content: '+';
         color: #eedac9;
-        position: absolute;
-        z-index: 2;
-        transform: rotate(45deg);
-        font-size: 50px;
-        line-height: 1;
-        top: -5px;
-        left: 6px;
-        transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
     }
 
     .cl-btn-7-md:after {
         content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
         background: $back;
-        z-index: 1;
-        transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
-        transform: scale(0.01);
-    }
-
-    .cl-btn-7-md:hover:after {
-        transform: scale(1);
     }
 
     .cl-btn-7-md:hover:before {
-        transform: scale(0.8) rotate(45deg);
         color: #fff;
     }
 
@@ -133,6 +99,7 @@ sans-serif;
         justify-content: space-around;
         margin-bottom: 40px;
 
+        font-family: $fz1;
 
         @media screen and (max-width: 768px) {
             flex-direction: column;
@@ -252,7 +219,7 @@ sans-serif;
 
     // успехи пользователя.блок мотивации и среднее значение
     #personalRecords_box {
-       
+
         color: $font;
         font-size: 15px;
         text-align: center;
@@ -263,7 +230,7 @@ sans-serif;
             width: 90%;
             margin: auto;
         }
-       
+
     }
 
     #personalRecords_mean {
