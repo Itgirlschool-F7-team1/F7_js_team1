@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="shortcut icon" href="./assets/images/icon1red.png" type="img/png">
+
+    <link rel="stylesheet" href="./assets/styles/blocks/main/content_container_content/calories_calc/calories_calc.css">
+    <link rel="stylesheet" href="./assets/styles/blocks/main/content_container_content/IMT/IMT.css">
+    <link rel="stylesheet" href="./assets/styles/blocks/main/content_container_content/motion_diary/motion_diary.css">
     <title>Так здорово</title>
 </head>
 
@@ -85,60 +89,62 @@
 
             <div class="content-container__content" data-tabs-field="motionDiary">
                 <div class="main-md">
-                    <!-- кнопка для закрытия страницы -->
-                    <div class="main_close_a_window">
-                        <div class="cl-btn-7 cl-btn-7-md close-button_pink"></div>
-                    </div>
-                    <div>
 
+                    <div class="motion-diary__title-container">
                         <!-- заголовок -->
-                        <div>
-                            <h1 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
-                                    class="motionDiary__recommendation"></h1>
-                        </div>
-                        <!-- секция ввода данных -->
-                        <div class="section-datasets">
-                            <div class="section-datasets__box">
-                                <div class="section-datasets__dateToday">
-                                    <label for="localdate" class="section-datasets__text">Дата</label>
-                                    <input type="date" required title="Введите, пожалуйста, дату"
-                                        class="section-datasets__input_one" name="daterange" id="localdate" />
-                                    <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
-                                </div>
-                                <div class="section-datasets__stepsToday">
-                                    <label for="steps_today" class="section-datasets__text">Количество шагов </label>
-                                    <input type="number" title="Введите, пожалуйста, количество шагов"
-                                        class="section-datasets__input_second" name="s_t" id="steps_today" />
-                                    <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
-                                </div>
-                                <div class="section-datasets__buttonSaveMd">
-                                    <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
-                                </div>
-                                <div id="personalRecords_box"></div>
-                                <!-- среднее -->
-                                <div class="section-datasets__buttonMean">
-                                    <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее
-                                        значение</button>
-                                    <div id="personalRecords_mean"></div>
-                                </div>
 
+                        <h2 class="title-md">Дневник движения <img src="./assets/images/gogog.png" alt="Ходьба"
+                                class="motionDiary__recommendation"></h2>
+                        <!-- кнопка для закрытия страницы -->
+                        <div class="main_close_a_window">
+                            <div class="cl-btn-7 cl-btn-7-md close-button_pink"></div>
+                        </div>
+                    </div>
+                    <!-- секция ввода данных -->
+                    <div class="section-datasets">
+                        <div class="section-datasets__box">
+                            <div class="section-datasets__dateToday">
+                                <label for="localdate" class="section-datasets__text">Дата</label>
+                                <input type="date" required title="Введите, пожалуйста, дату"
+                                    class="section-datasets__input_one" name="daterange" id="localdate" />
+                                <div id="errorMessage_dateMd" class="errorMessage_dateMd"></div>
                             </div>
-                            <!-- график -->
-                            <div class="chart-md">
-                                <canvas id="myChartMotionDiary"></canvas>
+                            <div class="section-datasets__stepsToday">
+                                <label for="steps_today" class="section-datasets__text">Количество шагов </label>
+                                <input type="number" title="Введите, пожалуйста, количество шагов"
+                                    class="section-datasets__input_second" name="s_t" id="steps_today" />
+                                <div id="errorMessage_stepsMd" class="errorMessage_stepsMd"></div>
                             </div>
+                            <div class="section-datasets__buttonSaveMd">
+                                <button type="button" class="section-datasets__btn" id="btn_md">Сохранить</button>
+                            </div>
+                            <div id="personalRecords_box"></div>
+                            <!-- среднее -->
+                            <div class="section-datasets__buttonMean">
+                                <button type="button" class="section-datasets__btnMean" id="btn_mean">Среднее
+                                    значение</button>
+                                <div id="personalRecords_mean"></div>
+                            </div>
+
+                        </div>
+                        <!-- график -->
+                        <div class="chart-md">
+                            <canvas id="myChartMotionDiary"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- </div> -->
 
 
             <div class="content-container__content" data-tabs-field="calorieСalculator">
                 <div class="calc_container">
-                    <div class="calc_close_a_window">
-                        <div class="cl-btn-7 cl-btn-7-calories close-button_pink"></div>
+                    <div class="calc__title-container">
+                        <h2 class="heading_calories-calc">Калькулятор калорий</h2>
+                        <div class="calc_close_a_window">
+                            <div class="cl-btn-7 cl-btn-7-calories close-button_pink"></div>
+                        </div>
                     </div>
-                    <h2 class="heading_calories-calc">Калькулятор калорий</h2>
                     <div class="calc-error"></div>
                     <div class="container_calories-calc">
                         <form id="calories-calc_form" class="calories-calc_form">
@@ -232,14 +238,13 @@
 
             <div class="content-container__content" data-tabs-field="BMI">
                 <div class="main_container_IMT">
-                    <div class="btn_close_IMT">
-                        <div class="cl-btn-7 cl-btn-7_IMT close-button_pink"></div>
+                    <div class="IMT__title-container">
+                        <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details" href="#example1">&#9878;</a></span></h2>
                         <!-- кнопка закрытия окна -->
+                        <div class="btn_close_IMT">
+                            <div class="cl-btn-7 cl-btn-7_IMT close-button_pink"></div>
+                        </div>
                     </div>
-                    <h2 class="title_IMT">Индекс массы тела <span><a class="IMT_details"
-                                href="#example1">&#9878;</a></span></h2>
-
-
                     <div class="containerIMT">
 
                         <div class="calcIMT_and_showIMT">
@@ -451,6 +456,9 @@
     </main>
 
     <script src="./assets/scripts/bundle_common.js"></script>
+    <script src="./assets/scripts/bundle_motion_d.js"></script>
+    <script src="./assets/scripts/bundleIMT.js"></script>
+    <script src="./assets/scripts/calories.js"></script>
 </body>
 
 </html>
