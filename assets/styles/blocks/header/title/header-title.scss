@@ -1,0 +1,12 @@
+.header__title {
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 40px;
+
+    @media screen and (max-width: 578px) {
+        margin-top: 15px;
+    }
+}

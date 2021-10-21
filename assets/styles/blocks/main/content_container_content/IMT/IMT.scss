@@ -16,7 +16,6 @@ $laptop: 1025px;
   padding: 15px;
 
   // margin-top: 50px;
-  font-family: 'Montserrat-Semibold', sans-serif;
   border-radius: 20px;
   background-color: $white;
   max-height: fit-content;
@@ -30,55 +29,24 @@ $laptop: 1025px;
 }
 
 .cl-btn-7_IMT {
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
-  position: relative;
-  z-index: 1;
-  // margin: 20px auto;
-  cursor: pointer;
+  margin-left: 90%;
 }
 
 .cl-btn-7_IMT:before {
   content: '+';
   color: $dark-pink;
-  position: absolute;
-  z-index: 2;
-  transform: rotate(45deg);
-  font-size: 50px;
-  line-height: 1;
-  top: -5px;
-  left: 6px;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
 }
 
 .cl-btn-7_IMT:after {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
   background: $dark-pink;
-  z-index: 1;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
-  transform: scale(0.01);
-}
-
-.cl-btn-7_IMT:hover:after {
-  transform: scale(1);
-}
-
-.cl-btn-7_IMT:hover:before {
-  transform: scale(0.8) rotate(45deg);
-  color: #fff;
 }
 
 
 //стили кнопки закрытия - конец
 
 .title_IMT {
+  font-family: 'Montserrat-Semibold', sans-serif;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -90,6 +58,7 @@ $laptop: 1025px;
 }
 
 .containerIMT {
+  font-family: 'Montserrat-Semibold', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;

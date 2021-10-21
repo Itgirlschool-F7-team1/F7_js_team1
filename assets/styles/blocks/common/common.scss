@@ -1,9 +1,6 @@
 $pink: #f8eae8;
 $green: #d6e7da;
 
-.hidden {
-    display: none;
-}
 
 .body {
     background-color: $pink;
@@ -16,4 +13,10 @@ $green: #d6e7da;
 
 .body_green {
     background-color: $green;
+}
+
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
 }
