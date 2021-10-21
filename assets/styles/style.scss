@@ -1,5 +1,6 @@
-@import 'normalize.scss';
-@import 'fonts.scss';
+@import './normalize/normalize.scss';
+@import './fonts/fonts.scss';
+@import './blocks/common/common.scss';
 @import 'my_recipes.scss';
 @import 'random_recipe.scss';
 @import 'calories_calc.scss';
