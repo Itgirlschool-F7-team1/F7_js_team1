@@ -1,0 +1,111 @@
+$pink: #f8eae8;
+$green: #d6e7da;
+$dark-pink: #eb4b51;
+$dark-green: #219653;
+
+.recipe-section__aside {
+    width: 14%;
+    padding: 30px 20px;
+    border-radius: 15px;
+    height: 60vh;
+    margin: auto;
+    box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+    background-color: #d6e7da88;
+    // border: 1px solid $green;
+
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: row;
+        width: 94%;
+        height: fit-content;
+        padding: 5px 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+}
+
+.aside__button {
+    height: 30px;
+    width: 70%;
+    border-radius: 30px;
+    padding: 5px 15%;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFF;
+    color: $dark-green;
+
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+    }
+
+    &:active {
+        background: #8896a069;
+    }
+
+    @media screen and (max-width: 1024px) {
+        height: 30px;
+        width: fit-content;
+        border-radius: 30px;
+        padding: 5px 5%;
+        margin-bottom: 0px;
+    }
+}
+
+.tags__list {
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 15px 0;
+    margin-left: 15px;
+
+    @media screen and (max-width: 1024px) {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0px;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.tags__item {
+    margin: 15px 0px;
+    list-style-type: none;
+
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: #8896a069;
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin-right: 10px;
+    }
+}
