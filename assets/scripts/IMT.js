@@ -317,7 +317,7 @@ btn_clear_history_IMT.addEventListener('click', clearHistoryIMT);
 btn_clear_history_IMT.addEventListener('click', clear_chart_historyIMT);
 
 function clearHistoryIMT() {
-    localStorage.removeItem('enteredIMT');
+    localStorage.setItem('enteredIMT', []);
 }
 
 function clear_chart_historyIMT(){
