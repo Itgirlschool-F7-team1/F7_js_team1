@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/takzdorovo-common.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="shortcut icon" href="./assets/images/icon1red.png" type="img/png">
     <title>Так здорово</title>
 </head>
@@ -84,12 +84,12 @@
         <div class="main__content-container main__content-container-empty hidden">
 
             <div class="content-container__content" data-tabs-field="motionDiary">
-                <div class="main-md">
+                <p class="main-md">
                     <!-- кнопка для закрытия страницы -->
                     <div class="main_close_a_window">
                         <div class="cl-btn-7-md close-button_pink"></div>
                     </div>
-                    <section>
+                    <div>
 
                         <!-- заголовок -->
                         <div>
@@ -128,13 +128,13 @@
                                 <canvas id="myChartMotionDiary"></canvas>
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </p>
             </div>
 
 
             <div class="content-container__content" data-tabs-field="calorieСalculator">
-                <section class="calc_container">
+                <p class="calc_container">
                     <div class="calc_close_a_window">
                         <div class="cl-btn-7-calories close-button_pink"></div>
                     </div>
@@ -189,7 +189,7 @@
                             </div>
                         </form>
 
-                        <aside class="calories_right">
+                        <div class="calories_right">
                             <div class="calories_result" id="results">
                                 <h3 class="heading_calories_result">Ваша норма калорий:</h3>
                                 <ul class="counter_result-list">
@@ -225,13 +225,13 @@
                                 </ul>
 
                             </div>
-                        </aside>
+                        </div>
                     </div>
-                </section>
+                </p>
             </div>
 
             <div class="content-container__content" data-tabs-field="BMI">
-                <section class="main_container_IMT">
+                <p class="main_container_IMT">
                     <div class="btn_close_IMT">
                         <div class="cl-btn-7_IMT close-button_pink"></div>
                         <!-- кнопка закрытия окна -->
@@ -282,7 +282,7 @@
                         <div class="chart_historyIMT">
                             <canvas id="myChart_historyIMT" width="200" height="150"></canvas></div>
                     </div>
-                </section>
+                </p>
 
                 <div class="lightbox" id="example1">
                     <figure>
@@ -310,8 +310,8 @@
 
             <!-- <div class="content-container__content" data-tabs-field="pressureDiary">Дневник давления</div> -->
             <div class="content-container__content" data-tabs-field="myRecipes">
-                <section class="content-container__recipe-section">
-                    <aside class="recipe-section__aside">
+                <p class="content-container__recipe-section">
+                    <div class="recipe-section__aside">
                         <div class="aside__button" id="asideAddButton">Добавить</div>
                         <div class="recipe-section__tags">
                             <ul class="tags__list">
@@ -342,7 +342,7 @@
                             </ul>
                         </div>
 
-                    </aside>
+                    </div>
                     <div class="recipe-section__recipes">
                         <div class="resipes__close-button-subtitle-container">
                             <h3 class="recipes__title">Мои рецепты</h3>
@@ -402,10 +402,10 @@
                             <div class="enter-recipe__error"></div>
                         </div>
                     </div>
-                </section>
+                </p>
             </div>
             <div class="content-container__content" data-tabs-field="randomRecipe">
-                <section class="content-container__random-recipe-section">
+                <p class="content-container__random-recipe-section">
                     <div class="resipes__close-button-subtitle-container">
                         <h3 class="random-recipe-section__title">Случайный рецепт</h3>
                         <div class="cl-btn-7 enter-recipe__close-button close-button_green"
@@ -445,7 +445,7 @@
                             <p class="info__text">Для того чтобы начать поиск, нажмите кнопку "найти".</p>
                         </div>
                     </div>
-                </section>
+                </p>
             </div>
         </div>
     </main>
