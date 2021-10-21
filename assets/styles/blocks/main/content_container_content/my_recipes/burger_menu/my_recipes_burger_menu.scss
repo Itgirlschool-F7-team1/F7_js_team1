@@ -1,0 +1,125 @@
+$pink: #f8eae8;
+$green: #d6e7da;
+$dark-pink: #eb4b51;
+$dark-green: #219653;
+
+$color1: #FFECE1;
+$color2: #C4EFF2;
+$color3: #FFE9A7;
+
+
+
+
+
+
+
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    position: relative;
+    width: 33.33334%;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    counter-increment: item;
+}
+
+@media screen and (max-width: 768px) {
+    .list {
+        display: block;
+    }
+
+    .item {
+        width: auto;
+    }
+}
+
+.menu-trigger,
+.menu-trigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.menu-trigger {
+    position: relative;
+    width: 50px;
+    height: 44px;
+    background: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $dark-green;
+    border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(1) {
+    top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+    top: 20px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+}
+
+
+#recipeMenu01.active span:nth-of-type(1) {
+    transform: translateY(20px) rotate(-45deg);
+}
+
+#recipeMenu01.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#recipeMenu01.active span:nth-of-type(3) {
+    transform: translateY(-20px) rotate(45deg);
+}
+
+.tags__list_alternative {
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 15px 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+
+    position: absolute;
+    background-color: $green;
+    z-index: 2;
+    right: 0%;
+    width: 100%;
+
+}
+
+.menu-trigger {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .enter-recipe__ingredients-container .enter-recipe__label {
+        margin-left: 20px;
+    }
+
+}

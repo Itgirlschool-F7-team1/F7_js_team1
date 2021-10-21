@@ -20,3 +20,29 @@ $green: #d6e7da;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
+*,
+html *
+
+/* override x.xhtml.ru style */
+    {
+    scrollbar-width: thin;
+    scrollbar-color: $pink $green;
+}
+
+*::-webkit-scrollbar,
+html *::-webkit-scrollbar {
+    height: 10px;
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track,
+html *::-webkit-scrollbar-track {
+    background: $green;
+}
+
+*::-webkit-scrollbar-thumb,
+html *::-webkit-scrollbar-thumb {
+    background-color: $pink;
+}
