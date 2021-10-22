@@ -41,8 +41,8 @@ $laptop: 1025px;
   display: flex;
 }
 
-.cl-btn-7 {
-  margin-top: -10px;
+.cl-btn-7_IMT {
+  margin-top: -5px;
 }
 
 .cl-btn-7_IMT:before {
@@ -298,9 +298,10 @@ $laptop: 1025px;
 //контейнер для графика динамики ИМТ
 
 .chart_historyIMT {
-  width: 400px;
+  margin-left: 1vw;
+  width: 450px;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     width: 90%;
   }
 }
