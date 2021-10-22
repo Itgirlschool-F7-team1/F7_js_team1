@@ -21,15 +21,28 @@ $laptop: 1025px;
   max-height: fit-content;
 }
 
+
+// space-between и margin-left 40%
+
+.IMT__title-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 10px;
+  }
+}
+
+
 //стили кнопки закрытия - начало
 .btn_close_IMT {
   display: flex;
-  justify-content: flex-end;
-  // padding-top: 30px;
 }
 
-.cl-btn-7_IMT {
-  margin-left: 90%;
+.cl-btn-7 {
+  margin-top: -10px;
 }
 
 .cl-btn-7_IMT:before {
@@ -43,18 +56,38 @@ $laptop: 1025px;
 }
 
 
-//стили кнопки закрытия - конец
+//стили заголовка
 
 .title_IMT {
+  margin-left: 35%;
   font-family: 'Montserrat-Semibold', sans-serif;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
-  font-size: 40px;
+  font-size: 35px;
+
+  @media screen and (max-width: $laptop) {
+    margin-left: 30%;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 20%;
+    margin-bottom: 30px;
+  }
 
   @media screen and (max-width: $tablet) {
+    // 578
+    margin-left: 15%;
     font-size: 30px;
   }
+
+  @media screen and (max-width: $mobile) {
+    // 376px
+    margin-left: 20%;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+
 }
 
 .containerIMT {
@@ -76,7 +109,7 @@ $laptop: 1025px;
   flex-direction: row;
   gap: 40px;
 
-  @media screen and (max-width: 590px) {
+  @media screen and (max-width: $tablet) {
     flex-direction: column;
   }
 }
@@ -92,23 +125,28 @@ $laptop: 1025px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    // gap: 10px;
 
-    @media screen and (max-width: 960px) {
-      width: 100%;
+    @media screen and (max-width: $tablet) {
+      align-items: center
     }
   }
 }
 
 .btn_IMT {
+
+  height: 30px;
+  width: 200px;
+  border: 2px solid $dark-pink;
+  border-radius: 5px;
+
+
   margin: auto;
   margin-top: 10px;
-  width: 90%;
-  border: 0;
   text-align: center;
   padding: 7px 41px;
   text-decoration: none;
   box-shadow: none;
-  border-radius: 15px;
   font-family: 'Jost', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -130,9 +168,7 @@ $laptop: 1025px;
   @media screen and (max-width: 768px) {
     margin: auto;
   }
-
 }
-
 
 .show_valueIMT {
   display: flex;
@@ -269,29 +305,45 @@ $laptop: 1025px;
   }
 }
 
+//поля ввода
 .enter_input_IMT {
-
-  @media screen and (max-width: $mobile) {
-    width: 90%;
-    margin: auto;
-    height: 30px;
-  }
+  height: 30px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: $pink;
+  outline: none;
+  text-align: center;
 
   //наведение курсора на поле ввода
   &:hover {
-    box-shadow: 0px 0px 5px 2px #f57e82;
+    box-shadow: 0px 0px 5px 1px $dark-pink;
   }
+}
+
+//убираем стрелки в поле с цифрами
+#userHeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#userWeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 
 .btn_clear_history_IMT {
+  height: 30px;
+  width: 200px;
+  border: 2px solid $dark-pink;
+  border-radius: 5px;
+
+
   margin-top: 30px;
   border: 0;
   text-align: center;
   padding: 7px 30px;
   text-decoration: none;
   box-shadow: none;
-  border-radius: 15px;
   font-family: 'Jost', sans-serif;
   font-style: normal;
   font-weight: 600;
