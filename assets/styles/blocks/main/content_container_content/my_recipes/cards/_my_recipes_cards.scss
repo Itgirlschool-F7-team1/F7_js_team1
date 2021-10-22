@@ -20,13 +20,13 @@ $color3: #FFE9A7;
 .recipes__title {
     font-family: 'Montserrat-Semibold', sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 35px;
     line-height: 30px;
     text-align: center;
     margin-top: 5px;
     margin-bottom: 10px;
 
-    margin-left: 40%;
+    margin-left: 35%;
 
     @media screen and (max-width: 1024px) {
         width: 100%;
@@ -37,7 +37,7 @@ $color3: #FFE9A7;
 .recipes__subtitle {
     font-family: 'Montserrat-Semibold', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 22px;
     text-align: center;
     margin-top: 10px;
@@ -86,7 +86,7 @@ $color3: #FFE9A7;
     display: flex;
     align-items: center;
 
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: $color1;
 
     cursor: pointer;
