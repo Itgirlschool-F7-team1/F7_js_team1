@@ -49,24 +49,24 @@ sans-serif;
         justify-content: flex-end;
         width: 100px;
 
-        margin-top: -4%;
-        margin-right: -3%;
+        margin-top: -1%;
+        margin-right: -2%;
 
         @media screen and (max-width: 768px) {
-            margin-top: -10%;
+            margin-top: -3%;
 
         }
 
         @media screen and (max-width: 540px) {
-            margin-top: -25%;
+            margin-top: -5%;
         }
 
         @media screen and (max-width: 450px) {
-            margin-top: -25%;
+            margin-top: -5%;
         }
 
         @media screen and (max-width: 300px) {
-            margin-top: -30%;
+            margin-top: -10%;
         }
     }
 
