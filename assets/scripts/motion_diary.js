@@ -1,8 +1,9 @@
 const btnMotionDiary = document.querySelector('#btn_md');
 const btnMeanMotionDiary = document.querySelector('#btn_mean');
 const colorOne = ['#b1a28d'];
-const colorTwo = '#bf9999';
+const colorTwo = '#f8eae8';
 const colorThree = '#fff';
+// const colorFour = '#eb4b51';
 
 
 let arrDate = [];
@@ -146,7 +147,7 @@ const chartMotionDiary = new Chart(myChartMotionDiary, {
             cubicInterpolationMode: 'monotone', // сглаживание углов
             borderColor: colorThree,
             data: dataMotionDiary,
-            pointRadius: 6,
+            pointRadius: 4,
             pointBackgroundColor: colorsMotionDiary
 
         }]
@@ -186,7 +187,7 @@ function stepsChartUpdate() {
         backgroundColor: colorTwo,
         borderColor: colorThree,
         data: dataMotionDiary,
-        pointRadius: 6,
+        pointRadius: 4,
         pointBackgroundColor: colorsMotionDiary
     }];
     chartMotionDiary.update();
