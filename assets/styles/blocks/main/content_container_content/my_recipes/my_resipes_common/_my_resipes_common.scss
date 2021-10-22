@@ -1,27 +1,24 @@
 $dark-green: #219653;
 
-
+.my-recipes__close-button,
 .enter-recipe__close-button,
 .recipe-card__close-button {
     margin: 0;
-
 }
 
-
-
+.my-recipes__close-button:before,
 .enter-recipe__close-button:before,
 .recipe-card__close-button:before {
     content: '+';
     color: $dark-green;
 }
 
+.my-recipes__close-button:after,
 .enter-recipe__close-button:after,
 .recipe-card__close-button:after {
     content: '';
     background: $dark-green;
 }
-
-
 
 .content-container__recipe-section {
     background-color: white;
