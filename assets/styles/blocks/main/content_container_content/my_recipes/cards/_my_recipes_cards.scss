@@ -125,6 +125,7 @@ $color3: #FFE9A7;
 .card__img {
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
 
     @media screen and (max-width: 768px) {
         max-height: 100%;
