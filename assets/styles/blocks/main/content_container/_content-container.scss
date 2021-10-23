@@ -91,6 +91,7 @@ $dark-green: #219653;
 
 .main__content-container {
     display: flex;
+    max-width: 1200px;
 
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
@@ -100,7 +101,7 @@ $dark-green: #219653;
 
 .main__content-container_pink,
 .main__content-container_green {
-    margin-top: 100px;
+    margin-top: 5vh;
 
     @media screen and (max-width: 768px) {
         margin-top: 10px;

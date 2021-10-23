@@ -46,3 +46,29 @@ html *::-webkit-scrollbar-track {
 html *::-webkit-scrollbar-thumb {
     background-color: $pink;
 }
+
+
+html {
+    height: 100%;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.header {
+    flex: 0 0 auto;
+}
+
+.main {
+    flex: 1 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
