@@ -9,40 +9,12 @@ class Recipe {
     }
 }
 
-// Функции для стилизации инпута для загрузки фотографии
-document.querySelector(".enter-recipe__fileform").addEventListener("click", clickInput = () => {
-    document.querySelector("#recipePhoto").click();
-});
+const recipeCategorySubtitle = document.querySelector('.recipes__subtitle');
+const enterRecipeBlock = document.querySelector('.recipe-section__enter-recipe');
+const recipesBlock = document.querySelector('.recipe-section__recipes');
+const enterRecipeCloseButton = document.querySelector('#enterRecipeCloseButton');
 
 
-function getName() {
-    let i;
-    let str = document.getElementById("recipePhoto").value;
-    if (str.lastIndexOf('\\')) {
-        i = str.lastIndexOf('\\') + 1;
-    } else {
-        i = str.lastIndexOf('/') + 1;
-    }
-    let filename = str.slice(i);
-    let uploaded = document.getElementById("enter-recipe__fileformlabel");
-    uploaded.innerHTML = filename;
-}
-
-document.querySelector('.enter-recipe__photo').onchange = function(){
-    getName(this.value); 
-}
-
-//открытие и закрытие формы для добавления рецепта
-document.getElementById('asideAddButton').addEventListener('click', () => {
-    document.querySelector('.recipe-section__recipes').classList.add('hidden');
-    document.querySelector('.recipe-section__enter-recipe').classList.remove('hidden');
-})
-
-document.querySelector('#enterRecipeCloseButton').addEventListener('click', () => {
-    document.querySelector('.recipe-section__enter-recipe').classList.add('hidden');
-    document.querySelector('.recipe-section__recipes').classList.remove('hidden');
-
-})
 //Проверка хранилища
 if (localStorage.getItem('enteredRecipes') === null) {
     localStorage.setItem('enteredRecipes', '[]');
@@ -52,25 +24,27 @@ if (localStorage.getItem('idIndex') === null) {
 }
 
 
+//получаем url фотографии
+let getPhotoUrl = () => {
+    const inputRecipePhoto = document.getElementById("recipePhoto").files[0];
+    if (inputRecipePhoto) {
+        return new Promise((resolve) => {
+            const reader = new FileReader()
+            reader.onloadend = () => resolve(reader.result)
+            reader.readAsDataURL(inputRecipePhoto)
+        })
+    } else {
+        return "./assets/images/plate.png";
+    }
+}
+
 //Сохраняем в хранилище введенные данные
 async function getRecipeData() {
-    let getPhotoUrl = () => {
-        const inputRecipePhoto = document.getElementById("recipePhoto").files[0];
-        if (inputRecipePhoto) {
-            return new Promise((resolve) => {
-                const reader = new FileReader()
-                reader.onloadend = () => resolve(reader.result)
-                reader.readAsDataURL(inputRecipePhoto)
-            })
-        } else {
-            return "./assets/images/plate.png";
-        }
-    }
 
     const photoSrc = await getPhotoUrl();
 
     let recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    // console.log(recipes);
+
     const category = document.getElementById('recipeCategory').value;
     const recipeName = document.getElementById('recipeName').value;
     const ingredients = document.getElementById('recipeIngredients').value;
@@ -82,81 +56,57 @@ async function getRecipeData() {
         document.querySelector('.enter-recipe__error').innerHTML = "";
 
         let enteredRecipe = new Recipe(category, recipeName, photoSrc, ingredients, description, idIndex);
-        // console.log(enteredRecipe);
         let inputs = document.querySelectorAll(".enter-recipe__input");
         for (let input of inputs) {
             input.value = "";
         }
         document.getElementById("enter-recipe__fileformlabel").innerHTML = "";
-
         recipes.push(enteredRecipe);
-
-        // console.log(recipes);
         localStorage.setItem('enteredRecipes', JSON.stringify(recipes));
         idIndex++;
         localStorage.setItem('idIndex', JSON.stringify(idIndex));
-        // console.log(localStorage.getItem('enteredRecipes'));
     } else {
         document.querySelector('.enter-recipe__error').innerHTML = "Вы заполнили не все поля";
         return;
     }
 }
 
-document.getElementById('enterRecipeSaveButton').addEventListener('click', getRecipeData)
-
-
-
 //генерируем маленькие карточки
-function showRecipes(Array) {
+let showRecipes = (Array) => {
     const cards = document.querySelector('.recipe-section__cards');
     if (localStorage.getItem('enteredRecipes').length === 2) {
         cards.innerHTML = "Здесь будут ваши рецепты. Пожалуйста, добавьте первый рецепт."
-        document.querySelector('.recipes__subtitle').innerHTML = "";
+        recipeCategorySubtitle.innerHTML = "";
     } else {
         cards.innerHTML = "";
         for (let i = 0; i < Array.length; i++) {
             cards.innerHTML += `<div class="recipe-section__card" id="${Array[i].id}">
             <div class="card__img-container">
             <img src="${Array[i].photoUrl}" alt="Тарелка" class="card__img"></div>
-                        <h5 class="card__subtitle">${Array[i].recipeName}</h5>
-        </div>`;
+            <h5 class="card__subtitle">${Array[i].recipeName}</h5>
+            </div>`;
         }
 
     }
 
 }
-document.addEventListener("DOMContentLoaded", function () {
-    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    document.querySelector('.recipes__subtitle').innerHTML = "";
-    showRecipes(recipes);
-});
-document.getElementById('enterRecipeCloseButton').addEventListener('click', function () {
-    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    document.querySelector('.recipes__subtitle').innerHTML = "";
-    showRecipes(recipes);
-});
 
-document.getElementById('myRecipesBtn').addEventListener('click', function () {
-    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    document.querySelector('.recipes__subtitle').innerHTML = "";
-    showRecipes(recipes);
-});
-
+//при выборе категории показываем отфильтрованный список рецептов
 document.querySelector('.tags__list').addEventListener('click', function () {
     const recipes = filterRecipes(event);
     showRecipes(recipes);
-const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
-if(!enterRecipeForm.classList.contains('hidden')){
-    enterRecipeForm.classList.add('hidden');
-    document.querySelector('.recipe-section__recipes').classList.remove('hidden');
-}
+    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
+    if (!enterRecipeBlock.classList.contains('hidden')) {
+        enterRecipeBlock.classList.add('hidden');
+        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
+    }
 });
 document.querySelector('.tags__list_alternative').addEventListener('click', function () {
     const recipes = filterRecipes(event);
     showRecipes(recipes);
-    const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
-    if(!enterRecipeForm.classList.contains('hidden')){
-        enterRecipeForm.classList.add('hidden');
+    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
+    if (!enterRecipeBlock.classList.contains('hidden')) {
+        enterRecipeBlock.classList.add('hidden');
         document.querySelector('.recipe-section__recipes').classList.remove('hidden');
     }
 });
@@ -168,14 +118,18 @@ function showFullCard(event) {
     let targetParent = target.closest(".recipe-section__card");
     const cardArray = document.querySelectorAll('.recipe-section__card');
     let arrayToShow;
-    // console.log(card.outerHTML);
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    // console.log(target.id);
+
     if (cardArray.length === recipes.length) {
         arrayToShow = recipes;
     } else {
         arrayToShow = [];
-        cardArray.forEach(cardArrayItem => {
+        cardArray.forEach((cardArrayItem, index) => {
+            // arrayToShow[index] = recipes.filter((recipe) =>{
+            //     if (cardArrayItem.id === recipe.id){
+            //         return recipe;
+            //     }
+            // })
             for (let i = 0; i < recipes.length; i++) {
                 if (cardArrayItem.id === recipes[i].id) {
                     arrayToShow.push(recipes[i]);
@@ -184,7 +138,9 @@ function showFullCard(event) {
                     continue;
                 }
             }
+
         })
+        // console.log(arrayToShow);
     }
     if (target.classList.contains('card-active')) {
         target.classList.remove('card-active');
@@ -194,7 +150,7 @@ function showFullCard(event) {
             <h5 class="card__subtitle">${arrayToShow[index].recipeName}</h5>`;
         });
     } else {
-        // console.log(arrayToShow);
+        console.log(arrayToShow);
         if (target.classList.value === 'recipe-section__card' || target.classList.value === 'card__img' || target.classList.value === 'card__subtitle') {
             cardArray.forEach(card => {
                 card.classList.remove('card-active');
@@ -205,8 +161,8 @@ function showFullCard(event) {
         }
         for (let i = 0; i < arrayToShow.length; i++) {
             let cardInnerText = "";
-            // console.log(target.id);
-            // console.log(cardArray[i].id);
+            console.log(target.id);
+            console.log(cardArray[i].id);
 
             if (target.id === cardArray[i].id || targetParent.id === cardArray[i].id) {
                 targetParent.classList.add('card-active');
@@ -244,20 +200,59 @@ function filterRecipes(event) {
     const target = event.target;;
     // const cards = document.querySelector('.recipe-section__cards');
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
-    let newArray = [];
+    let newArray;
 
     if (target.classList.value === 'tags__item') {
-        document.querySelector('.recipes__subtitle').innerHTML = target.innerHTML;
+        recipeCategorySubtitle.innerHTML = target.innerHTML;
+
     } else {
-        document.querySelector('.recipes__subtitle').innerHTML = "";
+        recipeCategorySubtitle.innerHTML = "";
         newArray = recipes;
     }
-    for (let i = 0; i < recipes.length; i++) {
-        if (recipes[i].category === target.id || (recipes[i].category + 'Alt') === target.id) {
-            newArray.push(recipes[i]);
-        } else {
-            continue;
+    // for (let i = 0; i < recipes.length; i++) {
+    //     if (recipes[i].category === target.id || (recipes[i].category + 'Alt') === target.id) {
+    //         newArray.push(recipes[i]);
+    //     } else {
+    //         continue;
+    //     }
+    // }
+    newArray = recipes.filter((recipeItem) => {
+        if (recipeItem.category === target.id || (recipeItem.category + 'Alt') === target.id) {
+            return recipeItem;
         }
-    }
+    })
+
     return newArray;
 }
+
+
+//открытие и закрытие формы для добавления рецепта
+document.getElementById('asideAddButton').addEventListener('click', () => {
+    recipesBlock.classList.add('hidden');
+    enterRecipeBlock.classList.remove('hidden');
+})
+
+enterRecipeCloseButton.addEventListener('click', () => {
+    enterRecipeBlock.classList.add('hidden');
+    recipesBlock.classList.remove('hidden');
+})
+
+
+document.getElementById('enterRecipeSaveButton').addEventListener('click', getRecipeData);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
+    recipeCategorySubtitle.innerHTML = "";
+    showRecipes(recipes);
+});
+enterRecipeCloseButton.addEventListener('click', () => {
+    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
+    recipeCategorySubtitle.innerHTML = "";
+    showRecipes(recipes);
+});
+
+document.getElementById('myRecipesBtn').addEventListener('click', () => {
+    const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
+    recipeCategorySubtitle.innerHTML = "";
+    showRecipes(recipes);
+});
