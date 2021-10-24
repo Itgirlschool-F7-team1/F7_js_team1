@@ -1,6 +1,5 @@
 // @import 'fonts.scss';
 
-
 $pink: #f8e9e7;
 $dark-pink: #eb4b51;
 $white: #ffffff;
@@ -21,9 +20,6 @@ $laptop: 1025px;
   max-height: fit-content;
 }
 
-
-// space-between и margin-left 40%
-
 .IMT__title-container {
   display: flex;
   justify-content: space-between;
@@ -35,8 +31,7 @@ $laptop: 1025px;
   }
 }
 
-
-//стили кнопки закрытия - начало
+//стили кнопки закрытия
 .btn_close_IMT {
   display: flex;
 }
@@ -76,18 +71,15 @@ $laptop: 1025px;
   }
 
   @media screen and (max-width: $tablet) {
-    // 578
     margin-left: 15%;
     font-size: 30px;
   }
 
   @media screen and (max-width: $mobile) {
-    // 376px
     margin-left: 20%;
     margin-bottom: 20px;
     font-size: 25px;
   }
-
 }
 
 .containerIMT {
@@ -95,7 +87,7 @@ $laptop: 1025px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
+  gap: 2vw;
 
   @media screen and (max-width: $laptop) {
     flex-direction: column;
@@ -125,7 +117,6 @@ $laptop: 1025px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    // gap: 10px;
 
     @media screen and (max-width: $tablet) {
       align-items: center
@@ -134,12 +125,10 @@ $laptop: 1025px;
 }
 
 .btn_IMT {
-
   height: 30px;
   width: 200px;
   border: 2px solid $dark-pink;
   border-radius: 5px;
-
 
   margin: auto;
   margin-top: 10px;
@@ -182,7 +171,6 @@ $laptop: 1025px;
   align-items: center;
 }
 
-
 // график-шкала
 .IMT__gradient {
   height: 6px;
@@ -207,7 +195,6 @@ $laptop: 1025px;
     height: 85px;
   }
 }
-
 
 .IMTinfo {
   font-style: italic;
@@ -298,7 +285,6 @@ $laptop: 1025px;
 //контейнер для графика динамики ИМТ
 
 .chart_historyIMT {
-  margin-left: 1vw;
   width: 450px;
 
   @media screen and (max-width: $tablet) {
@@ -331,16 +317,12 @@ $laptop: 1025px;
   -webkit-appearance: none;
 }
 
-
 .btn_clear_history_IMT {
-  height: 30px;
   width: 200px;
   border: 2px solid $dark-pink;
   border-radius: 5px;
 
-
   margin-top: 30px;
-  border: 0;
   text-align: center;
   padding: 7px 30px;
   text-decoration: none;
@@ -362,7 +344,6 @@ $laptop: 1025px;
   &:active {
     background: $dark-pink;
   }
-
 }
 
 @media screen and (max-width: $mobile) {
