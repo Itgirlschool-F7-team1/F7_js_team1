@@ -1,0 +1,372 @@
+// @import 'fonts.scss';
+
+
+$pink: #f8e9e7;
+$dark-pink: #eb4b51;
+$white: #ffffff;
+
+$mobile: 376px;
+$tablet: 578px;
+$laptop: 1025px;
+
+.main_container_IMT {
+  max-width: 1200px;
+  min-height: 70vh;
+  margin: auto;
+  padding: 15px;
+
+  // margin-top: 50px;
+  border-radius: 20px;
+  background-color: $white;
+  max-height: fit-content;
+}
+
+
+// space-between и margin-left 40%
+
+.IMT__title-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 10px;
+  }
+}
+
+
+//стили кнопки закрытия - начало
+.btn_close_IMT {
+  display: flex;
+}
+
+.cl-btn-7_IMT {
+  margin-top: -5px;
+}
+
+.cl-btn-7_IMT:before {
+  content: '+';
+  color: $dark-pink;
+}
+
+.cl-btn-7_IMT:after {
+  content: '';
+  background: $dark-pink;
+}
+
+
+//стили заголовка
+
+.title_IMT {
+  margin-left: 35%;
+  font-family: 'Montserrat-Semibold', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 35px;
+
+  @media screen and (max-width: $laptop) {
+    margin-left: 30%;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 20%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    // 578
+    margin-left: 15%;
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    // 376px
+    margin-left: 20%;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+
+}
+
+.containerIMT {
+  font-family: 'Montserrat-Semibold', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+
+  @media screen and (max-width: $laptop) {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+}
+
+.calcIMT_and_showIMT {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+
+.calcIMT {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .userHeight_IMT,
+  .userWeight_IMT,
+  .date_IMT {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // gap: 10px;
+
+    @media screen and (max-width: $tablet) {
+      align-items: center
+    }
+  }
+}
+
+.btn_IMT {
+
+  height: 30px;
+  width: 200px;
+  border: 2px solid $dark-pink;
+  border-radius: 5px;
+
+
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  padding: 7px 41px;
+  text-decoration: none;
+  box-shadow: none;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18.0097px;
+  line-height: 30px;
+  color: $white;
+  background: $dark-pink;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 1px $dark-pink;
+  }
+
+  &:active {
+    background: $dark-pink;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: auto;
+  }
+}
+
+.show_valueIMT {
+  display: flex;
+  text-align: center;
+}
+
+.showIMT {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+// график-шкала
+.IMT__gradient {
+  height: 6px;
+  background: linear-gradient(90deg, #B5D4F1 0%, #81E6DB 37.77%, #E8D284 70.4%, #E2798E 100%);
+  margin-top: -28px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.chart__container_IMT {
+  width: 280px;
+  height: 55px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#grafica {
+  @media screen and (max-width: $mobile) {
+    width: 200px;
+    height: 85px;
+  }
+}
+
+
+.IMTinfo {
+  font-style: italic;
+}
+
+//подсказка по клику на весы (что такое ИМТ)
+.IMT_details {
+  vertical-align: super;
+  text-decoration: none;
+  color: $dark-pink;
+
+  .IMT_details_title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .IMT_details_text {
+    line-height: 150%;
+  }
+}
+
+/* Unopened lightbox */
+.lightbox {
+  display: none;
+}
+
+/* Opened lightbox */
+.lightbox:target {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lightbox content */
+.lightbox figcaption {
+  width: 25rem;
+  position: relative;
+  padding: 1.5em;
+  background-color: #f8eae8;
+}
+
+/* Close button */
+.lightbox .close {
+  position: relative;
+  display: block;
+}
+
+.lightbox .close::after {
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-pink;
+  border-radius: 50%;
+  color: white;
+  content: "×";
+  cursor: pointer;
+}
+
+/* Lightbox overlay */
+.lightbox .close::before {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .7);
+  content: "";
+  cursor: default;
+}
+
+//стили сообщений об ошибке
+.errorMessage_IMT {
+  color: red;
+  font-size: 10px;
+}
+
+//контейнер для графика динамики ИМТ
+
+.chart_historyIMT {
+  margin-left: 1vw;
+  width: 450px;
+
+  @media screen and (max-width: $tablet) {
+    width: 90%;
+  }
+}
+
+//поля ввода
+.enter_input_IMT {
+  height: 30px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: $pink;
+  outline: none;
+  text-align: center;
+
+  //наведение курсора на поле ввода
+  &:hover {
+    box-shadow: 0px 0px 5px 1px $dark-pink;
+  }
+}
+
+//убираем стрелки в поле с цифрами
+#userHeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#userWeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.btn_clear_history_IMT {
+  height: 30px;
+  width: 200px;
+  border: 2px solid $dark-pink;
+  border-radius: 5px;
+
+
+  margin-top: 30px;
+  border: 0;
+  text-align: center;
+  padding: 7px 30px;
+  text-decoration: none;
+  box-shadow: none;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  background: $dark-pink;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 1px $dark-pink;
+  }
+
+  &:active {
+    background: $dark-pink;
+  }
+
+}
+
+@media screen and (max-width: $mobile) {
+  .label_IMT {
+    text-align: center;
+  }
+}

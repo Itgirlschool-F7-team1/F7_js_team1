@@ -1,0 +1,47 @@
+$pink: #f8eae8;
+$green: #d6e7da;
+$dark-pink: #eb4b51;
+$dark-green: #219653;
+
+.header__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 10px;
+    }
+}
+
+.header__button {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba($color: #FFF, $alpha: 0.5);
+
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    cursor: pointer;
+}
+
+.header__button_pink {
+    background-color: rgba($color: #FFF, $alpha: 1.0);
+    color: $dark-pink;
+}
+
+.header__button_green {
+    background-color: rgba($color: #FFF, $alpha: 1.0);
+    color: $dark-green;
+}

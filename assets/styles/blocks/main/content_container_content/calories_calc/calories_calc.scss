@@ -1,0 +1,305 @@
+// @import 'fonts.scss';
+
+$pink: #f8eae8;
+$green: #d6e7da;
+$dark-pink: #eb4b51;
+
+// используемые шрифты
+
+.heading_calories-calc {
+    text-align: center;
+    font-family: 'Montserrat-Semibold', sans-serif;
+    margin-top: -30px;
+
+    @media screen and (max-width: 758px) {
+        margin-top: 0px;
+    }
+
+    @media screen and (max-width: 414px) {
+        margin-top: 0px;
+    }
+}
+
+
+
+//основной большой блок
+.calc_container {
+    max-width: 1200px;
+    border-radius: 20px;
+    min-height: 70vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    // border: 1px solid black;
+    background-color: #fff;
+
+    // width: 95%;
+    height: fit-content;
+    // margin: auto;
+    box-sizing: border-box;
+}
+
+.calc_close_a_window {
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    width: 100px;
+    margin-left: auto;
+}
+
+.cl-btn-7-calories {
+    @media screen and (max-width: 375px) {
+        margin-left: 50px;
+    }
+}
+
+.cl-btn-7-calories:before {
+    content: '+';
+    color: $dark-pink;
+}
+
+.cl-btn-7-calories:after {
+    content: '';
+    background: $dark-pink;
+}
+
+
+.container_calories-calc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Rubik-Regular', sans-serif;
+}
+
+
+.container_calories-calc_height,
+.container_calories-calc_weight,
+.container_calories-calc_age,
+.container_calories-calc_action {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 350px;
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-size: 15px;
+
+
+    @media screen and (max-width: 480px) {
+        width: 250px;
+    }
+}
+
+.calories_gender,
+.calories-calc_height,
+.calories-calc_weihgt,
+.calories-calc_age {
+    font-family: 'Montserrat-Semibold', sans-serif;
+    font-size: 15px;
+}
+
+// .container_calories-calc_action {
+//     width: 400px;
+//     padding-top: 10px;
+
+// }
+
+.calc_radio {
+    padding-top: 10px;
+}
+
+
+.calories_button {
+    border: 0;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+    box-shadow: none;
+    border-radius: 15px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 30px;
+    color: #FFFFFF;
+    background: $dark-pink;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 0px 5px 1px $dark-pink;
+    }
+
+    &:active {
+        background: $dark-pink;
+    }
+
+    @media screen and (max-width: 375px) {
+        margin-left: 40px;
+    }
+
+}
+
+.calc-error {
+    color: $dark-pink;
+    margin: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+// чтобы инпуты стали розовые
+input[type=radio] {
+    /* hide original inputs */
+    visibility: hidden;
+    position: absolute;
+}
+
+input[type=radio]+label {
+    cursor: pointer;
+}
+
+input[type=radio]+label:before {
+    height: 16px;
+    margin-right: 4px;
+    content: " ";
+    display: inline-block;
+    vertical-align: baseline;
+    transition: 0.3s;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: inset 0 -3px 6px #e4e4e4;
+    transition: 0.3s;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+/* DEFAULT */
+input[type=radio]+label:before {
+    border-radius: 50%;
+    width: 16px;
+}
+
+/* CHECKED */
+input[type=radio]:checked+label:before {
+    box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 3px #eb4b51;
+}
+
+.calc_height_input,
+.calc_weight_input,
+.calc_age_input,
+.custom-select {
+    color: $dark-pink;
+    // height: 15px;
+    width: 350px;
+    border: 1px solid #eedac9;
+    border-radius: 5px;
+    background-color: #f8eae871;
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 18px;
+
+    &:hover {
+        box-shadow: 0px 0px 5px 1px $pink;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0px;
+        width: 90%;
+    }
+}
+
+
+.form-control {
+    color: $dark-pink;
+    height: 15px;
+    width: 250px;
+    border: 1px solid #eedac9;
+    border-radius: 5px;
+
+    outline: none;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+
+    @media screen and (max-width: 375px) {
+        padding: 0px;
+        height: 30px;
+        width: 80%;
+    }
+
+    @media screen and (max-width: 414px) {
+        padding: 0px;
+        height: 30px;
+        width: 80%;
+    }
+}
+
+.custom-select {
+    width: 380px;
+    height: 45px;
+    padding: 10px;
+
+    @media screen and (max-width: 480px) {
+        width: 90%;
+    }
+}
+
+.counter_result-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 20px;
+    padding: 15px;
+    padding-top: 11px;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+
+
+    @media screen and (max-width: 890px) {
+        margin-left: 0px;
+        padding: 0px
+    }
+}
+
+.calories-calc_form {
+    @media screen and (max-width: 890px) {
+        margin-right: 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin-right: 0px;
+    }
+}
+
+.heading_calories_result {
+    margin-left: 35px;
+    margin-top: 50px;
+
+    @media screen and (max-width: 375px) {
+        text-align: left;
+        margin-left: 40px;
+    }
+}
+
+.heading_calories-result {
+    margin: 0px;
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.calories_calc-text {
+    margin: 0px;
+}
+
+.calc-option {
+    width: 350px;
+    height: fit-content;
+    font-size: 10px;
+}

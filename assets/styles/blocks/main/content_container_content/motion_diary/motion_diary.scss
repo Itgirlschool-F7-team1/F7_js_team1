@@ -1,0 +1,303 @@
+// @import 'fonts.scss';
+// переменные с используемыми цветами
+
+$pink: #f8eae8;
+$back: #bf9999;
+$font: black;
+$font2: #6d6552;
+$dark-pink: #eb4b51;
+
+$fz1:'Montserrat-Semibold',
+sans-serif;
+
+
+.main-md {
+    max-width: 1200px;
+    border-radius: 20px;
+    min-height: 70vh;
+    margin: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 30px;
+    background-color: #fff;
+
+    @media screen and (max-width: 420px) {
+        padding-bottom: 5px;
+    }
+
+    .motion-diary__title-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 20px;
+        }
+    }
+
+
+
+
+    // стили кнопки
+
+    .main_close_a_window {
+        display: flex;
+        height: 60px;
+        justify-content: flex-end;
+        width: 100px;
+
+        margin-top: -5%;
+        margin-right: -4%;
+
+        @media screen and (max-width: 768px) {
+            margin-top: -10%;
+
+        }
+
+        @media screen and (max-width: 578px) {
+            margin-top: -23%;
+        }
+
+        @media screen and (max-width: 450px) {
+            margin-top: -15%;
+        }
+
+        @media screen and (max-width: 300px) {
+            margin-top: -30%;
+        }
+    }
+
+
+    .errorMessage_dateMd,
+    .errorMessage_stepsMd {
+        text-align: center;
+        padding-top: 5px;
+        color: red;
+        font-size: 10px;
+
+    }
+
+    .cl-btn-7-md:before {
+        content: '+';
+        color: $dark-pink;
+    }
+
+    .cl-btn-7-md:after {
+        content: '';
+        background: $dark-pink;
+    }
+
+    .cl-btn-7-md:hover:before {
+        color: #fff;
+    }
+
+    // стили заголовка
+    .title-md {
+        color: $font;
+        font-family: $fz1;
+        font-size: 35px;
+        text-align: center;
+        margin-left: 30%;
+        gap: 5px;
+
+        @media screen and (max-width: 768px) {
+            margin-left: 20%;
+
+        }
+
+        @media screen and (max-width: 450px) {
+            margin-top: -20%;
+        }
+
+
+        .motionDiary__recommendation {
+            height: 40px;
+
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            font-size: 30px;
+            margin-top: 0px;
+        }
+
+    }
+
+    .section-datasets {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+
+        font-family: $fz1;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+
+        }
+    }
+
+    .section-datasets__box {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding-right: 50px;
+        border-right: 1px dashed $back;
+
+        @media screen and (max-width: 768px) {
+            border-right: none;
+            padding-right: 0px;
+            padding-bottom: 20px;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+
+        }
+
+    }
+
+    .section-datasets__dateToday,
+    .section-datasets__stepsToday {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-datasets__text {
+        margin-bottom: 10px;
+        color: $font;
+
+        @media screen and (max-width: 768px) {
+            // margin-left: 10%;
+            text-align: center;
+        }
+    }
+
+    .section-datasets__input_one,
+    .section-datasets__input_second {
+
+        color: $font2;
+        height: 30px;
+        width: 200px;
+        border: 1px solid #eedac9;
+        border-radius: 5px;
+        background-color: #f8eae871;
+        outline: none;
+        text-align: center;
+
+        &:hover {
+            box-shadow: 0px 0px 3px 1px $font2;
+        }
+
+        @media screen and (max-width: 768px) {
+            height: 40px;
+            width: 300px;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 80%;
+        }
+    }
+
+
+    // убираю стрелки в поле
+    .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .section-datasets__buttonSaveMd,
+    .section-datasets__buttonMean {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-datasets__btn,
+    .section-datasets__btnMean {
+
+        height: 35px;
+        width: 200px;
+        border: 1px solid #eedac9;
+        border-radius: 5px;
+        background-color: $dark-pink;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0px 0px 3px 1px $font2;
+        }
+
+        &:active {
+            background: $back;
+        }
+
+        @media screen and (max-width: 768px) {
+            height: 40px;
+            width: 300px;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 80%;
+        }
+    }
+
+    // успехи пользователя.блок мотивации и среднее значение
+    #personalRecords_box {
+
+        color: $font2;
+        font-size: 15px;
+        text-align: center;
+        width: 200px;
+
+
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            margin: auto;
+        }
+
+    }
+
+    #personalRecords_mean {
+
+        color: $font2;
+        padding-top: 15px;
+        font-size: 30px;
+        text-align: left;
+        width: 200px;
+    }
+
+
+    .chart-md {
+        height: 50%;
+        width: 65%;
+        padding-left: 30px;
+
+        @media screen and (max-width: 768px) {
+            align-content: center;
+            height: 80%;
+            width: 100%;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        @media screen and (max-width: 420px) {
+            padding: 20px;
+
+        }
+
+    }
+
+}
