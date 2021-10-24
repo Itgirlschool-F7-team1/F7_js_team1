@@ -9,11 +9,14 @@ class Recipe {
     }
 }
 
+
 const recipeCategorySubtitle = document.querySelector('.recipes__subtitle');
 const enterRecipeBlock = document.querySelector('.recipe-section__enter-recipe');
 const recipesBlock = document.querySelector('.recipe-section__recipes');
 const enterRecipeCloseButton = document.querySelector('#enterRecipeCloseButton');
-
+const hamburgerMenuButton = document.getElementById('recipeMenu01');
+const cards = document.querySelector('.recipe-section__cards');
+const enterRecipeError = document.querySelector('.enter-recipe__error');
 
 //Проверка хранилища
 if (localStorage.getItem('enteredRecipes') === null) {
@@ -53,7 +56,7 @@ async function getRecipeData() {
 
 
     if (category && recipeName && ingredients && description) {
-        document.querySelector('.enter-recipe__error').innerHTML = "";
+        enterRecipeError.innerHTML = "";
 
         let enteredRecipe = new Recipe(category, recipeName, photoSrc, ingredients, description, idIndex);
         let inputs = document.querySelectorAll(".enter-recipe__input");
@@ -66,14 +69,13 @@ async function getRecipeData() {
         idIndex++;
         localStorage.setItem('idIndex', JSON.stringify(idIndex));
     } else {
-        document.querySelector('.enter-recipe__error').innerHTML = "Вы заполнили не все поля";
+        enterRecipeError.innerHTML = "Вы заполнили не все поля";
         return;
     }
 }
 
 //генерируем маленькие карточки
 let showRecipes = (Array) => {
-    const cards = document.querySelector('.recipe-section__cards');
     if (localStorage.getItem('enteredRecipes').length === 2) {
         cards.innerHTML = "Здесь будут ваши рецепты. Пожалуйста, добавьте первый рецепт."
         recipeCategorySubtitle.innerHTML = "";
@@ -86,34 +88,12 @@ let showRecipes = (Array) => {
             <h5 class="card__subtitle">${Array[i].recipeName}</h5>
             </div>`;
         }
-
     }
-
 }
-
-//при выборе категории показываем отфильтрованный список рецептов
-document.querySelector('.tags__list').addEventListener('click', function () {
-    const recipes = filterRecipes(event);
-    showRecipes(recipes);
-    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
-    if (!enterRecipeBlock.classList.contains('hidden')) {
-        enterRecipeBlock.classList.add('hidden');
-        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
-    }
-});
-document.querySelector('.tags__list_alternative').addEventListener('click', function () {
-    const recipes = filterRecipes(event);
-    showRecipes(recipes);
-    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
-    if (!enterRecipeBlock.classList.contains('hidden')) {
-        enterRecipeBlock.classList.add('hidden');
-        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
-    }
-});
 
 
 //Разворачиваем карточки при нажатии и сворачиваем при повторном нажатии
-function showFullCard(event) {
+let showFullCard =(event) => {
     const target = event.target;
     let targetParent = target.closest(".recipe-section__card");
     const cardArray = document.querySelectorAll('.recipe-section__card');
@@ -124,23 +104,13 @@ function showFullCard(event) {
         arrayToShow = recipes;
     } else {
         arrayToShow = [];
-        cardArray.forEach((cardArrayItem, index) => {
-            // arrayToShow[index] = recipes.filter((recipe) =>{
-            //     if (cardArrayItem.id === recipe.id){
-            //         return recipe;
-            //     }
-            // })
-            for (let i = 0; i < recipes.length; i++) {
-                if (cardArrayItem.id === recipes[i].id) {
-                    arrayToShow.push(recipes[i]);
-                    break;
-                } else {
-                    continue;
+            cardArray.forEach((cardArrayItem, index) => {
+            recipes.forEach((recipe) =>{
+                if (cardArrayItem.id === recipe.id){
+                    arrayToShow.push(recipe);
                 }
-            }
-
-        })
-        // console.log(arrayToShow);
+            })
+            })
     }
     if (target.classList.contains('card-active')) {
         target.classList.remove('card-active');
@@ -150,10 +120,9 @@ function showFullCard(event) {
             <h5 class="card__subtitle">${arrayToShow[index].recipeName}</h5>`;
         });
     } else {
-        console.log(arrayToShow);
         if (target.classList.value === 'recipe-section__card' || target.classList.value === 'card__img' || target.classList.value === 'card__subtitle') {
             cardArray.forEach(card => {
-                card.classList.remove('card-active');
+            card.classList.remove('card-active');
             })
             target.classList.add('card-active');
         } else {
@@ -161,8 +130,6 @@ function showFullCard(event) {
         }
         for (let i = 0; i < arrayToShow.length; i++) {
             let cardInnerText = "";
-            console.log(target.id);
-            console.log(cardArray[i].id);
 
             if (target.id === cardArray[i].id || targetParent.id === cardArray[i].id) {
                 targetParent.classList.add('card-active');
@@ -180,42 +147,26 @@ function showFullCard(event) {
                 continue;
             }
         }
-        // console.log(document.querySelector(".card-active"));
         document.querySelector(".card-active").scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         })
     }
 }
-document.querySelector('.recipe-section__cards').addEventListener("click", showFullCard);
-
-//гамбургер меню: открытие и закрытие
-document.getElementById('recipeMenu01').addEventListener('click', () => {
-    document.getElementById('recipeMenu01').classList.toggle('active');
-    document.querySelector('.tags__list_alternative').classList.toggle('hidden');
-});
 
 //фильтруем рецепты при выборе категории
-function filterRecipes(event) {
+let filterRecipes = (event) => {
     const target = event.target;;
-    // const cards = document.querySelector('.recipe-section__cards');
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
     let newArray;
 
     if (target.classList.value === 'tags__item') {
         recipeCategorySubtitle.innerHTML = target.innerHTML;
-
     } else {
         recipeCategorySubtitle.innerHTML = "";
         newArray = recipes;
     }
-    // for (let i = 0; i < recipes.length; i++) {
-    //     if (recipes[i].category === target.id || (recipes[i].category + 'Alt') === target.id) {
-    //         newArray.push(recipes[i]);
-    //     } else {
-    //         continue;
-    //     }
-    // }
+
     newArray = recipes.filter((recipeItem) => {
         if (recipeItem.category === target.id || (recipeItem.category + 'Alt') === target.id) {
             return recipeItem;
@@ -237,9 +188,11 @@ enterRecipeCloseButton.addEventListener('click', () => {
     recipesBlock.classList.remove('hidden');
 })
 
-
+//сохраняем данные
 document.getElementById('enterRecipeSaveButton').addEventListener('click', getRecipeData);
 
+
+//генерируем карточки
 document.addEventListener("DOMContentLoaded", () => {
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
     recipeCategorySubtitle.innerHTML = "";
@@ -255,4 +208,35 @@ document.getElementById('myRecipesBtn').addEventListener('click', () => {
     const recipes = JSON.parse(localStorage.getItem('enteredRecipes'));
     recipeCategorySubtitle.innerHTML = "";
     showRecipes(recipes);
+});
+
+
+
+//при выборе категории показываем отфильтрованный список рецептов
+document.querySelector('.tags__list').addEventListener('click', function () {
+    const recipes = filterRecipes(event);
+    showRecipes(recipes);
+    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
+    if (!enterRecipeBlock.classList.contains('hidden')) {
+        enterRecipeBlock.classList.add('hidden');
+        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
+    }
+});
+document.querySelector('.tags__list_alternative').addEventListener('click', function () {
+    const recipes = filterRecipes(event);
+    showRecipes(recipes);
+    // const enterRecipeForm = document.querySelector('.recipe-section__enter-recipe');
+    if (!enterRecipeBlock.classList.contains('hidden')) {
+        enterRecipeBlock.classList.add('hidden');
+        document.querySelector('.recipe-section__recipes').classList.remove('hidden');
+    }
+});
+
+//разворачиваем и сжимаем арточки при клике
+cards.addEventListener("click", showFullCard);
+
+//гамбургер меню: открытие и закрытие
+hamburgerMenuButton.addEventListener('click', () => {
+    hamburgerMenuButton.classList.toggle('active');
+    document.querySelector('.tags__list_alternative').classList.toggle('hidden');
 });
