@@ -36,7 +36,12 @@ $dark-green: #219653;
     cursor: pointer;
 }
 
-.header__button_active {
+.header__button_pink {
     background-color: rgba($color: #FFF, $alpha: 1.0);
     color: $dark-pink;
+}
+
+.header__button_green {
+    background-color: rgba($color: #FFF, $alpha: 1.0);
+    color: $dark-green;
 }
