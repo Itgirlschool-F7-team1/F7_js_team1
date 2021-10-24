@@ -20,7 +20,7 @@ ___
 
 ___
 
-![gif](https://imgflip.com/gif/5rn280.gif)
+![gif](https://github.com/Itgirlschool-F7-team1/F7_js_team1/blob/main/assets/images/5rn280.gif)
 
 
  ___
