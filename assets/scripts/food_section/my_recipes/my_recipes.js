@@ -9,7 +9,6 @@ class Recipe {
     }
 }
 
-
 const recipeCategorySubtitle = document.querySelector('.recipes__subtitle');
 const enterRecipeBlock = document.querySelector('.recipe-section__enter-recipe');
 const recipesBlock = document.querySelector('.recipe-section__recipes');
