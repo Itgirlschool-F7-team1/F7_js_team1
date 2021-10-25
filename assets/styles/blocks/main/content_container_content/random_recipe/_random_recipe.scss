@@ -63,6 +63,10 @@ $color3: #FFE9A7;
         width: 100%;
         margin-left: 5%;
     }
+
+    @media screen and (max-width: 320px) {
+        font-size: 25px;
+    }
 }
 
 .random-recipe-section__input-container {
