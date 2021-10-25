@@ -23,7 +23,7 @@ if (localStorage.getItem('enteredSteps') === null) {
 }
 
 // создаем функцию по сохранению данных
-function saveInfoSteps() {
+let saveInfoSteps = () => {
     const stepsToday = document.querySelector('#localdate').value;
     const steps = document.querySelector('#steps_today').value;
 
@@ -99,7 +99,8 @@ function saveInfoSteps() {
 
 // функция для записи в график даты(разделяем объект на две части для построения графика)
 
-function getArrayChartDate() {
+
+let getArrayChartDate = () => {
     let stepsArray = JSON.parse(localStorage.getItem('enteredSteps'))
     if (stepsArray.length > null) {
         arrDate = stepsArray.map(
@@ -114,7 +115,7 @@ function getArrayChartDate() {
 
 // функция для записи в график шагов
 
-function getArrayChartSteps() {
+let getArrayChartSteps = () => {
 
     let stepsArray = JSON.parse(localStorage.getItem('enteredSteps'))
     if (stepsArray.length > null) {
@@ -176,7 +177,7 @@ const chartMotionDiary = new Chart(myChartMotionDiary, {
 })
 
 // обновление графика
-function stepsChartUpdate() {
+let stepsChartUpdate = () => {
     const labelsMotionDiary = getArrayChartDate();
     const dataMotionDiary = getArrayChartSteps();
     const colorsMotionDiary = colorOne;
@@ -194,7 +195,8 @@ function stepsChartUpdate() {
     chartMotionDiary.update();
 }
 
-function averageValueCalculation() {
+
+let averageValueCalculation = () => {
 
     let arrStepsAll = getArrayChartSteps();
     let sum = 0;
