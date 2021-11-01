@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -749,6 +750,1118 @@ html {
 
 .content-container__content {
   width: 100%;
+}
+
+.heading_calories-calc {
+  text-align: center;
+  font-family: 'Montserrat-Semibold', sans-serif;
+  margin-top: 30px;
+  font-size: 35px;
+  margin-left: 35%;
+}
+
+@media screen and (max-width: 860px) {
+  .heading_calories-calc {
+    margin-top: 30px;
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading_calories-calc {
+    margin-top: 20px;
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .heading_calories-calc {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .heading_calories-calc {
+    font-size: 25px;
+  }
+}
+
+.calc_title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.cl-btn-7-calories:before {
+  content: '+';
+  color: #eb4b51;
+}
+
+.cl-btn-7-calories:after {
+  content: '';
+  background: #eb4b51;
+}
+
+.container_calories-calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Rubik-Regular', sans-serif;
+  padding: 0 10%;
+}
+
+.calc_container {
+  max-width: 1200px;
+  border-radius: 20px;
+  min-height: 70vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container_calories-calc_height,
+.container_calories-calc_weight,
+.container_calories-calc_age,
+.container_calories-calc_action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  width: 350px;
+  font-family: 'Montserrat-Semibold', sans-serif;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .container_calories-calc_height,
+  .container_calories-calc_weight,
+  .container_calories-calc_age,
+  .container_calories-calc_action {
+    width: 250px;
+  }
+}
+
+.calories_gender,
+.calories-calc_height,
+.calories-calc_weihgt,
+.calories-calc_age {
+  font-family: 'Montserrat-Semibold', sans-serif;
+  font-size: 15px;
+}
+
+.calc_radio {
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .form-group {
+    position: relative;
+    margin-left: 110%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+.calories_button {
+  height: 35px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: #eb4b51;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.calories_button:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px #6d6552;
+          box-shadow: 0px 0px 3px 1px #6d6552;
+}
+
+.calories_button:active {
+  background: #bf9999;
+}
+
+.calc-error {
+  color: #eb4b51;
+  margin: 15px;
+  text-align: center;
+  font-size: 15px;
+}
+
+input[type=radio] {
+  /* hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+
+input[type=radio] + label {
+  cursor: pointer;
+}
+
+input[type=radio] + label:before {
+  height: 16px;
+  margin-right: 4px;
+  content: " ";
+  display: inline-block;
+  vertical-align: baseline;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 -3px 6px #e4e4e4;
+          box-shadow: inset 0 -3px 6px #e4e4e4;
+  transition: 0.3s;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+/* DEFAULT */
+input[type=radio] + label:before {
+  border-radius: 50%;
+  width: 16px;
+}
+
+/* CHECKED */
+input[type=radio]:checked + label:before {
+  -webkit-box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 3px #eb4b51;
+          box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 3px #eb4b51;
+}
+
+.calc_height_input,
+.calc_weight_input,
+.calc_age_input,
+.custom-select {
+  color: #eb4b51;
+  width: 350px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: #f8eae871;
+  outline: none;
+  text-align: center;
+  padding: 10px;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+.calc_height_input:hover,
+.calc_weight_input:hover,
+.calc_age_input:hover,
+.custom-select:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #6d6552;
+          box-shadow: 0px 0px 5px 1px #6d6552;
+}
+
+@media screen and (max-width: 480px) {
+  .calc_height_input,
+  .calc_weight_input,
+  .calc_age_input,
+  .custom-select {
+    padding: 0px;
+    width: 90%;
+  }
+}
+
+.calc_weight_input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc_height_input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc_age_input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control {
+  color: #eb4b51;
+  height: 15px;
+  width: 250px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 375px) {
+  .form-control {
+    padding: 0px;
+    height: 30px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .form-control {
+    padding: 0px;
+    height: 30px;
+    width: 80%;
+  }
+}
+
+.counter_result-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+  padding: 15px;
+  padding-top: 11px;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (max-width: 890px) {
+  .counter_result-list {
+    margin-left: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .calories-calc_form {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calories-calc_form {
+    margin-right: 0px;
+  }
+}
+
+.heading_calories_result {
+  margin-left: 35px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 375px) {
+  .heading_calories_result {
+    text-align: left;
+    margin-left: 40px;
+  }
+}
+
+.heading_calories-result {
+  margin: 0px;
+  margin-bottom: 2px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.calories_calc-text {
+  margin: 0px;
+}
+
+.calc-option {
+  width: 350px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 10px;
+}
+
+.main_container_IMT {
+  max-width: 1200px;
+  min-height: 70vh;
+  margin: auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.IMT__title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 578px) {
+  .IMT__title-container {
+    margin-bottom: 10px;
+  }
+}
+
+.btn_close_IMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cl-btn-7_IMT {
+  margin-top: -5px;
+}
+
+.cl-btn-7_IMT:before {
+  content: '+';
+  color: #eb4b51;
+}
+
+.cl-btn-7_IMT:after {
+  content: '';
+  background: #eb4b51;
+}
+
+.title_IMT {
+  margin-left: 35%;
+  font-family: 'Montserrat-Semibold', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+@media screen and (max-width: 1025px) {
+  .title_IMT {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title_IMT {
+    margin-left: 20%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .title_IMT {
+    margin-left: 15%;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .title_IMT {
+    margin-left: 20%;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+}
+
+.containerIMT {
+  font-family: 'Montserrat-Semibold', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2vw;
+}
+
+@media screen and (max-width: 1025px) {
+  .containerIMT {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 50px;
+  }
+}
+
+.calcIMT_and_showIMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 40px;
+}
+
+@media screen and (max-width: 578px) {
+  .calcIMT_and_showIMT {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.calcIMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.calcIMT .userHeight_IMT,
+.calcIMT .userWeight_IMT,
+.calcIMT .date_IMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 578px) {
+  .calcIMT .userHeight_IMT,
+  .calcIMT .userWeight_IMT,
+  .calcIMT .date_IMT {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.btn_IMT {
+  height: 35px;
+  width: 200px;
+  border: 2px solid #eb4b51;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  padding: 7px 41px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18.0097px;
+  line-height: 30px;
+  color: #ffffff;
+  background: #eb4b51;
+  cursor: pointer;
+}
+
+.btn_IMT:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
+          box-shadow: 0px 0px 5px 1px #eb4b51;
+}
+
+.btn_IMT:active {
+  background: #eb4b51;
+}
+
+@media screen and (max-width: 768px) {
+  .btn_IMT {
+    margin: auto;
+  }
+}
+
+.show_valueIMT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.showIMT {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.IMT__gradient {
+  height: 6px;
+  background: -webkit-gradient(linear, left top, right top, from(#B5D4F1), color-stop(37.77%, #81E6DB), color-stop(70.4%, #E8D284), to(#E2798E));
+  background: linear-gradient(90deg, #B5D4F1 0%, #81E6DB 37.77%, #E8D284 70.4%, #E2798E 100%);
+  margin-top: -28px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.chart__container_IMT {
+  width: 280px;
+  height: 55px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 376px) {
+  #grafica {
+    width: 200px;
+    height: 85px;
+  }
+}
+
+.IMTinfo {
+  font-style: italic;
+}
+
+.IMT_details {
+  vertical-align: super;
+  text-decoration: none;
+  color: #eb4b51;
+}
+
+.IMT_details .IMT_details_title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.IMT_details .IMT_details_text {
+  line-height: 150%;
+}
+
+/* Unopened lightbox */
+.lightbox {
+  display: none;
+}
+
+/* Opened lightbox */
+.lightbox:target {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Lightbox content */
+.lightbox figcaption {
+  width: 25rem;
+  position: relative;
+  padding: 1.5em;
+  background-color: #f8eae8;
+}
+
+/* Close button */
+.lightbox .close {
+  position: relative;
+  display: block;
+}
+
+.lightbox .close::after {
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #eb4b51;
+  border-radius: 50%;
+  color: white;
+  content: "×";
+  cursor: pointer;
+}
+
+/* Lightbox overlay */
+.lightbox .close::before {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  content: "";
+  cursor: default;
+}
+
+.errorMessage_IMT {
+  color: red;
+  font-size: 10px;
+}
+
+.chart_historyIMT {
+  width: 450px;
+}
+
+@media screen and (max-width: 578px) {
+  .chart_historyIMT {
+    width: 90%;
+  }
+}
+
+.enter_input_IMT {
+  height: 30px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: #f8e9e7;
+  outline: none;
+  text-align: center;
+}
+
+.enter_input_IMT:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
+          box-shadow: 0px 0px 5px 1px #eb4b51;
+}
+
+#userHeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#userWeight::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.btn_clear_history_IMT {
+  width: 200px;
+  border: 2px solid #eb4b51;
+  border-radius: 5px;
+  margin-top: 30px;
+  text-align: center;
+  padding: 7px 30px;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  background: #eb4b51;
+  cursor: pointer;
+}
+
+.btn_clear_history_IMT:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #eb4b51;
+          box-shadow: 0px 0px 5px 1px #eb4b51;
+}
+
+.btn_clear_history_IMT:active {
+  background: #eb4b51;
+}
+
+@media screen and (max-width: 376px) {
+  .label_IMT {
+    text-align: center;
+  }
+}
+
+.main-md {
+  max-width: 1200px;
+  border-radius: 20px;
+  min-height: 70vh;
+  margin: auto;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 30px;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 420px) {
+  .main-md {
+    padding-bottom: 5px;
+  }
+}
+
+.main-md .motion-diary__title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .motion-diary__title-container {
+    margin-top: 20px;
+  }
+}
+
+.main-md .main_close_a_window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100px;
+  margin-top: -5%;
+  margin-right: -4%;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .main_close_a_window {
+    margin-top: -10%;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .main-md .main_close_a_window {
+    margin-top: -23%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-md .main_close_a_window {
+    margin-top: -15%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .main-md .main_close_a_window {
+    margin-top: -30%;
+  }
+}
+
+.main-md .errorMessage_dateMd,
+.main-md .errorMessage_stepsMd {
+  text-align: center;
+  padding-top: 5px;
+  color: red;
+  font-size: 10px;
+}
+
+.main-md .cl-btn-7-md:before {
+  content: '+';
+  color: #eb4b51;
+}
+
+.main-md .cl-btn-7-md:after {
+  content: '';
+  background: #eb4b51;
+}
+
+.main-md .cl-btn-7-md:hover:before {
+  color: #fff;
+}
+
+.main-md .title-md {
+  color: black;
+  font-family: "Montserrat-Semibold", sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-left: 30%;
+  gap: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .title-md {
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main-md .title-md {
+    margin-top: -20%;
+  }
+}
+
+.main-md .title-md .motionDiary__recommendation {
+  height: 40px;
+}
+
+@media screen and (max-width: 450px) {
+  .main-md .title-md .motionDiary__recommendation {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .title-md {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 30px;
+    margin-top: 0px;
+  }
+}
+
+.main-md .section-datasets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 40px;
+  font-family: "Montserrat-Semibold", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .section-datasets {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.main-md .section-datasets__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding-right: 50px;
+  border-right: 1px dashed #bf9999;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .section-datasets__box {
+    border-right: none;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+}
+
+.main-md .section-datasets__dateToday,
+.main-md .section-datasets__stepsToday {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-md .section-datasets__text {
+  margin-bottom: 10px;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .section-datasets__text {
+    text-align: center;
+  }
+}
+
+.main-md .section-datasets__input_one,
+.main-md .section-datasets__input_second {
+  color: #6d6552;
+  height: 30px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: #f8eae871;
+  outline: none;
+  text-align: center;
+}
+
+.main-md .section-datasets__input_one:hover,
+.main-md .section-datasets__input_second:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px #6d6552;
+          box-shadow: 0px 0px 3px 1px #6d6552;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .section-datasets__input_one,
+  .main-md .section-datasets__input_second {
+    height: 40px;
+    width: 300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-md .section-datasets__input_one,
+  .main-md .section-datasets__input_second {
+    width: 80%;
+  }
+}
+
+.main-md .section-datasets__input_second[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main-md .section-datasets__buttonSaveMd,
+.main-md .section-datasets__buttonMean {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-md .section-datasets__btn,
+.main-md .section-datasets__btnMean {
+  height: 35px;
+  width: 200px;
+  border: 1px solid #eedac9;
+  border-radius: 5px;
+  background-color: #eb4b51;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.main-md .section-datasets__btn:hover,
+.main-md .section-datasets__btnMean:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px #6d6552;
+          box-shadow: 0px 0px 3px 1px #6d6552;
+}
+
+.main-md .section-datasets__btn:active,
+.main-md .section-datasets__btnMean:active {
+  background: #bf9999;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .section-datasets__btn,
+  .main-md .section-datasets__btnMean {
+    height: 40px;
+    width: 300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-md .section-datasets__btn,
+  .main-md .section-datasets__btnMean {
+    width: 80%;
+  }
+}
+
+.main-md #personalRecords_box {
+  color: #6d6552;
+  font-size: 15px;
+  text-align: center;
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md #personalRecords_box {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.main-md #personalRecords_mean {
+  color: #6d6552;
+  padding-top: 15px;
+  font-size: 30px;
+  text-align: left;
+  width: 200px;
+}
+
+.main-md .chart-md {
+  height: 50%;
+  width: 65%;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-md .chart-md {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 80%;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main-md .chart-md {
+    padding: 20px;
+  }
 }
 
 .my-recipes__close-button,
