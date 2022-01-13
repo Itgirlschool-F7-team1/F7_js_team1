@@ -1,28 +1,24 @@
-@import './normalize/normalize';
-@import './fonts/fonts';
-@import './components/exit_button/exit_button';
-@import './components/buttons/buttons';
+@import "./normalize/normalize";
+@import "./fonts/fonts";
+@import "./components/exit_button/exit_button";
+@import "./components/buttons/buttons";
 
-@import './blocks/common/common';
-@import './blocks/header/title/header-title';
-@import './blocks/header/buttons/header_buttons';
-@import './blocks/main/content_container/content-container';
-@import './blocks/main/content_container_content/content_container_content_common/content_container_content';
-@import './blocks/main/content_container_content/calories_calc/calories_calc.scss';
-@import './blocks/main/content_container_content/IMT/IMT.scss';
-@import './blocks/main/content_container_content/motion_diary/motion_diary.scss';
-@import './blocks/main/content_container_content/my_recipes/my_resipes_common/my_resipes_common';
-@import './blocks/main/content_container_content/my_recipes/aside/my_recipe_aside';
-@import './blocks/main/content_container_content/my_recipes/burger_menu/my_recipes_burger_menu';
-@import './blocks/main/content_container_content/my_recipes/cards/my_recipes_cards';
-@import './blocks/main/content_container_content/my_recipes/enter_recipe/my_recipes_enter_recipe';
+@import "./blocks/common/common";
+@import "./blocks/header/title/header-title";
+@import "./blocks/header/buttons/header_buttons";
+@import "./blocks/main/content_container/content-container";
+@import "./blocks/main/content_container_content/content_container_content_common/content_container_content";
+@import "./blocks/main/content_container_content/calories_calc/calories_calc.scss";
+@import "./blocks/main/content_container_content/IMT/IMT.scss";
+@import "./blocks/main/content_container_content/motion_diary/motion_diary.scss";
+@import "./blocks/main/content_container_content/my_recipes/my_resipes_common/my_resipes_common";
+@import "./blocks/main/content_container_content/my_recipes/aside/my_recipe_aside";
+@import "./blocks/main/content_container_content/my_recipes/burger_menu/my_recipes_burger_menu";
+@import "./blocks/main/content_container_content/my_recipes/cards/my_recipes_cards";
+@import "./blocks/main/content_container_content/my_recipes/enter_recipe/my_recipes_enter_recipe";
 
+@import "./blocks/main/content_container_content/random_recipe/random_recipe";
 
-@import './blocks/main/content_container_content/random_recipe/random_recipe';
+@import "./blocks/footer/footer";
 
-@import './blocks/footer/footer';
-
-
-
-
-@import './hidden/hidden';
+@import "./hidden/hidden";
