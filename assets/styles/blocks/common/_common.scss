@@ -1,74 +1,67 @@
 $pink: #f8eae8;
 $green: #d6e7da;
 
-
 .body {
-    background-color: $pink;
+  background-color: $pink;
 }
 
-
 .body_pink {
-    background-color: $pink;
+  background-color: $pink;
 }
 
 .body_green {
-    background-color: $green;
+  background-color: $green;
 }
-
 
 .main {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 
 *,
 html *
 
-/* override x.xhtml.ru style */
-    {
-    scrollbar-width: thin;
-    scrollbar-color: $pink $green;
+/* override x.xhtml.ru style */ {
+  scrollbar-width: thin;
+  scrollbar-color: $pink $green;
 }
 
 *::-webkit-scrollbar,
 html *::-webkit-scrollbar {
-    height: 10px;
-    width: 9px;
+  height: 10px;
+  width: 9px;
 }
 
 *::-webkit-scrollbar-track,
 html *::-webkit-scrollbar-track {
-    background: $green;
+  background: $green;
 }
 
 *::-webkit-scrollbar-thumb,
 html *::-webkit-scrollbar-thumb {
-    background-color: $pink;
+  background-color: $pink;
 }
 
-
 html {
-    height: 100%;
+  height: 100%;
 }
 
 .body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .header {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .main {
-    flex: 1 0 auto;
-    max-width: 1200px;
-    width: 100%;
+  flex: 1 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .footer {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }

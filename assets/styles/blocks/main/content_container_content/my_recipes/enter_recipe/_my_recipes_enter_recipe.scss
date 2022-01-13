@@ -3,301 +3,289 @@ $green: #d6e7da;
 $dark-pink: #eb4b51;
 $dark-green: #219653;
 
-$color1: #FFECE1;
-$color2: #C4EFF2;
-$color3: #FFE9A7;
+$color1: #ffece1;
+$color2: #c4eff2;
+$color3: #ffe9a7;
 
 .recipe-section__enter-recipe {
-    width: 80%;
-    min-height: 70vh;
-    height: 70vh;
+  width: 80%;
+  min-height: 70vh;
+  height: 70vh;
 
-    @media screen and (max-width: 1024px) {
-        width: 95%;
-        overflow-y: initial;
-        height: fit-content;
-        min-height: fit-content;
-    }
+  @media screen and (max-width: 1024px) {
+    width: 95%;
+    overflow-y: initial;
+    height: fit-content;
+    min-height: fit-content;
+  }
 }
 
 .enter-recipe__header-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    width: 93%;
+  width: 93%;
 
-    @media screen and (max-width: 480px) {
-        padding-left: 10%;
-    }
+  @media screen and (max-width: 480px) {
+    padding-left: 10%;
+  }
 }
 
 .enter-recipe__form {
-    margin-top: 30px;
-    width: calc(100% - 25px);
-    height: 85%;
+  margin-top: 30px;
+  width: calc(100% - 25px);
+  height: 85%;
 
-    overflow-y: scroll;
+  overflow-y: scroll;
 
-
-    @media screen and (max-width: 1024px) {
-        width: 95%;
-        overflow-y: initial;
-        height: fit-content;
-        min-height: fit-content;
-    }
+  @media screen and (max-width: 1024px) {
+    width: 95%;
+    overflow-y: initial;
+    height: fit-content;
+    min-height: fit-content;
+  }
 }
 
 .enter-recipe__button {
-    width: 100px;
+  width: 100px;
 
-    padding: 5px 40px;
-    margin-bottom: 30px;
-    margin-left: 30px;
+  padding: 5px 40px;
+  margin-bottom: 30px;
+  margin-left: 30px;
 
-    background-color: $dark-green;
-    color: white;
+  background-color: $dark-green;
+  color: white;
 
-    &:hover {
-        box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
-    }
+  &:hover {
+    box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+  }
 
-    &:active {
-        color: $green;
-        background-color: #2ebe6b;
-    }
+  &:active {
+    color: $green;
+    background-color: #2ebe6b;
+  }
 }
 
 .enter-recipe__label {
-    font-family: 'Montserrat-Semibold', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
+  font-family: "Montserrat-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
 
-    margin-left: 30px;
+  margin-left: 30px;
 
-    @media screen and (max-width: 890px) {
-
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 890px) {
+    margin-left: 20px;
+  }
 }
 
 .enter-recipe__input {
-    margin-bottom: 20px;
-    font-family: 'Rubik-Regular', sans-serif;
-    font-size: 16px;
-    line-height: 27px;
-    font-weight: normal;
-    font-style: normal;
+  margin-bottom: 20px;
+  font-family: "Rubik-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: normal;
+  font-style: normal;
 
-    border: 1px solid #45cd7f;
-    border-radius: 5px;
-    background-color: #d6e7da61;
-    outline: none;
+  border: 1px solid #45cd7f;
+  border-radius: 5px;
+  background-color: #d6e7da61;
+  outline: none;
 
-    &:hover {
-        box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
-    }
+  &:hover {
+    box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+  }
 }
 
 .enter-recipe__selection {
-    margin-left: 30px;
-    height: 30px;
-    width: 405px;
+  margin-left: 30px;
+  height: 30px;
+  width: 405px;
 
-
-    @media screen and (max-width: 768px) {
-        width: 94%;
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 768px) {
+    width: 94%;
+    margin-left: 20px;
+  }
 }
 
 .enter-recipe__name {
-    margin-left: 58px;
-    width: 400px;
+  margin-left: 58px;
+  width: 400px;
 
-    @media screen and (max-width: 890px) {
-        width: 93%;
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 890px) {
+    width: 93%;
+    margin-left: 20px;
+  }
 }
 
 .enter-recipe__fileform {
-    display: inline-block;
-    background-color: #FFFFFF;
-    // border: 1.5px solid black;
-    // border-radius: 2px;
-    border: 1.5px solid #45cd7f;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 30px;
-    overflow: hidden;
-    width: 405px;
-    min-width: 330px;
-    margin-left: 98px;
+  display: inline-block;
+  background-color: #ffffff;
+  // border: 1.5px solid black;
+  // border-radius: 2px;
+  border: 1.5px solid #45cd7f;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  overflow: hidden;
+  width: 405px;
+  min-width: 330px;
+  margin-left: 98px;
 
-    font-family: 'Montserrat-Semibold', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
+  font-family: "Montserrat-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
 
-    color: $dark-green;
+  color: $dark-green;
 
-    &:hover {
-        box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
-        border: 1px solid $dark-green;
-    }
+  &:hover {
+    box-shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+    border: 1px solid $dark-green;
+  }
 
-    &:active {
-        background: #8896a069;
-    }
+  &:active {
+    background: #8896a069;
+  }
 
-    @media screen and (max-width: 890px) {
-        width: 72%;
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 890px) {
+    width: 72%;
+    margin-left: 20px;
+  }
 
-    @media screen and (max-width: 830px) {
-        width: 94%;
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 830px) {
+    width: 94%;
+    margin-left: 20px;
+  }
 
-    @media screen and (max-width: 460px) {
-
-        min-width: 92%;
-    }
+  @media screen and (max-width: 460px) {
+    min-width: 92%;
+  }
 }
 
 .enter-recipe__fileform .enter-recipe__selectbutton {
-    background-color: $green;
-    border: 1px solid $green;
-    border-radius: 1px;
-    color: $dark-green;
-    float: right;
-    font-size: 12px;
-    height: 30px;
+  background-color: $green;
+  border: 1px solid $green;
+  border-radius: 1px;
+  color: $dark-green;
+  float: right;
+  font-size: 12px;
+  height: 30px;
 
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 
-    overflow: hidden;
-    padding: 2px 6px;
-    text-align: center;
+  overflow: hidden;
+  padding: 2px 6px;
+  text-align: center;
 
-    width: 120px;
+  width: 120px;
 
-    @media screen and (max-width: 530px) {
-
-        width: 100px;
-    }
+  @media screen and (max-width: 530px) {
+    width: 100px;
+  }
 }
 
 #recipePhoto {
-    display: none;
-    // position: relative;
-    // top: -40px;
+  display: none;
+  // position: relative;
+  // top: -40px;
 }
 
 .enter-recipe__fileformlabel {
-    background-color: #FFFFFF;
-    float: left;
-    height: 22px;
-    line-height: 22px;
-    overflow: hidden;
-    padding: 2px;
-    text-align: left;
-    vertical-align: middle;
-    // width: calc(100% - 130px);
-    width: 65%;
+  background-color: #ffffff;
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  padding: 2px;
+  text-align: left;
+  vertical-align: middle;
+  // width: calc(100% - 130px);
+  width: 65%;
 
+  @media screen and (max-width: 530px) {
+    width: 60%;
+  }
 
-    @media screen and (max-width: 530px) {
+  @media screen and (max-width: 370px) {
+    width: 40%;
+  }
 
-        width: 60%;
-    }
-
-    @media screen and (max-width: 370px) {
-
-        width: 40%;
-    }
-
-    @media screen and (max-width: 270px) {
-
-        width: 35%;
-    }
+  @media screen and (max-width: 270px) {
+    width: 35%;
+  }
 }
 
 .enter-recipe__photo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    @media screen and (max-width: 890px) {
-
-        flex-wrap: wrap;
-    }
+  @media screen and (max-width: 890px) {
+    flex-wrap: wrap;
+  }
 }
 
 .enter-recipe__ingredients-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 
-    width: calc(100% - 10px);
-    margin-top: 20px;
+  width: calc(100% - 10px);
+  margin-top: 20px;
 
-    & .enter-recipe__label {
-        margin-left: 30px;
-    }
+  & .enter-recipe__label {
+    margin-left: 30px;
+  }
 
-    @media screen and (max-width: 1200px) {
-        width: 100%;
-        margin-left: 5px;
-        flex-direction: column;
-    }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    margin-left: 5px;
+    flex-direction: column;
+  }
 
-    @media screen and (max-width: 1024px) {
-        width: 100%;
-        // margin-left: 10px;
-    }
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    // margin-left: 10px;
+  }
 }
 
 .enter-recipe__ingredients {
-    margin-left: 14px;
-    width: 67%;
-    height: 80px;
-    margin-bottom: 10px;
+  margin-left: 14px;
+  width: 67%;
+  height: 80px;
+  margin-bottom: 10px;
 
-    @media screen and (max-width: 1200px) {
-        width: 93%;
-        margin-left: 15px;
-    }
+  @media screen and (max-width: 1200px) {
+    width: 93%;
+    margin-left: 15px;
+  }
 }
 
 .enter-recipe__text {
-    margin-left: 30px;
-    width: 93%;
-    height: 120px;
+  margin-left: 30px;
+  width: 93%;
+  height: 120px;
 
-
-    @media screen and (max-width: 1200px) {
-        margin-left: 20px;
-    }
+  @media screen and (max-width: 1200px) {
+    margin-left: 20px;
+  }
 }
 
-
 .enter-recipe__error {
-    margin-left: 30px;
+  margin-left: 30px;
 
-    font-family: 'Montserrat-Semibold', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+  font-family: "Montserrat-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 
-    color: $dark-green;
+  color: $dark-green;
 }
 
 .enter-recipe__close-button {
-    margin-right: -60px;
+  margin-right: -60px;
 
-    @media screen and (max-width: 480px) {
-        margin-right: 0px;
-    }
+  @media screen and (max-width: 480px) {
+    margin-right: 0px;
+  }
 }

@@ -41,21 +41,20 @@ $laptop: 1025px;
 }
 
 .cl-btn-7_IMT:before {
-  content: '+';
+  content: "+";
   color: $dark-pink;
 }
 
 .cl-btn-7_IMT:after {
-  content: '';
+  content: "";
   background: $dark-pink;
 }
-
 
 //стили заголовка
 
 .title_IMT {
   margin-left: 35%;
-  font-family: 'Montserrat-Semibold', sans-serif;
+  font-family: "Montserrat-Semibold", sans-serif;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -83,7 +82,7 @@ $laptop: 1025px;
 }
 
 .containerIMT {
-  font-family: 'Montserrat-Semibold', sans-serif;
+  font-family: "Montserrat-Semibold", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -119,7 +118,7 @@ $laptop: 1025px;
     width: 100%;
 
     @media screen and (max-width: $tablet) {
-      align-items: center
+      align-items: center;
     }
   }
 }
@@ -136,7 +135,7 @@ $laptop: 1025px;
   padding: 7px 41px;
   text-decoration: none;
   box-shadow: none;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18.0097px;
@@ -174,7 +173,13 @@ $laptop: 1025px;
 // график-шкала
 .IMT__gradient {
   height: 6px;
-  background: linear-gradient(90deg, #B5D4F1 0%, #81E6DB 37.77%, #E8D284 70.4%, #E2798E 100%);
+  background: linear-gradient(
+    90deg,
+    #b5d4f1 0%,
+    #81e6db 37.77%,
+    #e8d284 70.4%,
+    #e2798e 100%
+  );
   margin-top: -28px;
   margin-left: 10px;
   margin-right: 10px;
@@ -271,7 +276,7 @@ $laptop: 1025px;
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, 0.7);
   content: "";
   cursor: default;
 }
@@ -327,12 +332,12 @@ $laptop: 1025px;
   padding: 7px 30px;
   text-decoration: none;
   box-shadow: none;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   background: $dark-pink;
 
   cursor: pointer;
